@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -155,7 +155,6 @@
 				A28F2919EDCCCFD4845B2F1C /* Pods-SolemTests.debug.xcconfig */,
 				942470114EFD538CFDF434D3 /* Pods-SolemTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -624,7 +623,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A28F2919EDCCCFD4845B2F1C /* Pods-SolemTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
@@ -647,7 +646,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 942470114EFD538CFDF434D3 /* Pods-SolemTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
@@ -670,7 +669,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0F1B93634E52E96A24B0D517 /* Pods-Solem-SolemUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
 				INFOPLIST_FILE = SolemUITests/Info.plist;
@@ -691,7 +690,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 217ED3484008182CBE5AB1DA /* Pods-Solem-SolemUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
 				INFOPLIST_FILE = SolemUITests/Info.plist;
