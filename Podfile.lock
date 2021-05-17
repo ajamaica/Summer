@@ -1,0 +1,65 @@
+PODS:
+  - Alamofire (5.4.3)
+  - ASKSecp256k1 (0.0.6)
+  - CryptoSwift (1.4.0)
+  - RxAlamofire (6.1.1):
+    - RxAlamofire/Core (= 6.1.1)
+  - RxAlamofire/Core (6.1.1):
+    - Alamofire (~> 5.4)
+    - RxSwift (~> 6.0)
+  - RxCocoa (6.1.0):
+    - RxRelay (= 6.1.0)
+    - RxSwift (= 6.1.0)
+  - RxRelay (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxSwift (6.1.0)
+  - SolanaSwift (0.3.0):
+    - ASKSecp256k1
+    - CryptoSwift
+    - RxAlamofire
+    - RxCocoa
+    - Starscream
+    - TweetNacl
+  - Starscream (4.0.4)
+  - TweetNacl (1.0.2)
+
+DEPENDENCIES:
+  - SolanaSwift (from `https://github.com/p2p-org/solana-swift.git`, tag `0.3.0`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ASKSecp256k1
+    - CryptoSwift
+    - RxAlamofire
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - Starscream
+    - TweetNacl
+
+EXTERNAL SOURCES:
+  SolanaSwift:
+    :git: https://github.com/p2p-org/solana-swift.git
+    :tag: 0.3.0
+
+CHECKOUT OPTIONS:
+  SolanaSwift:
+    :git: https://github.com/p2p-org/solana-swift.git
+    :tag: 0.3.0
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  ASKSecp256k1: 58eb44dfa57f9d29ac0b02fe5de5a312064517f2
+  CryptoSwift: 7cc902df1784de3b389a387756c7d710f197730c
+  RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
+  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
+  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
+  SolanaSwift: 1d17d9ad53b92cdc62373f35d00e750625eff508
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
+
+PODFILE CHECKSUM: 5d857798a782f9bcc91db89e2af1cd508b71193c
+
+COCOAPODS: 1.10.1
