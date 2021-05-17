@@ -42,17 +42,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06F065D226528ED000032BDA /* Solem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06F065D226528ED000032BDA /* Summer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Summer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F065D526528ED000032BDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06F065D726528ED000032BDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		06F065D926528ED000032BDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		06F065DE26528ED300032BDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06F065E126528ED300032BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06F065E326528ED300032BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06F065E826528ED300032BDA /* SolemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06F065E826528ED300032BDA /* SummerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SummerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F065EC26528ED300032BDA /* SolemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolemTests.swift; sourceTree = "<group>"; };
 		06F065EE26528ED300032BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06F065F326528ED300032BDA /* SolemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06F065F326528ED300032BDA /* SummerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SummerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F065F726528ED300032BDA /* SolemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolemUITests.swift; sourceTree = "<group>"; };
 		06F065F926528ED300032BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F06606265292DA00032BDA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -102,9 +102,9 @@
 		06F065C926528ED000032BDA = {
 			isa = PBXGroup;
 			children = (
-				06F065D426528ED000032BDA /* Solem */,
-				06F065EB26528ED300032BDA /* SolemTests */,
-				06F065F626528ED300032BDA /* SolemUITests */,
+				06F065D426528ED000032BDA /* Summer */,
+				06F065EB26528ED300032BDA /* SummerTests */,
+				06F065F626528ED300032BDA /* SummerUITests */,
 				06F065D326528ED000032BDA /* Products */,
 				E439B1155BDDEEBB0DABE11B /* Pods */,
 				EEF8B4D443649CF34016E6F5 /* Frameworks */,
@@ -114,14 +114,14 @@
 		06F065D326528ED000032BDA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				06F065D226528ED000032BDA /* Solem.app */,
-				06F065E826528ED300032BDA /* SolemTests.xctest */,
-				06F065F326528ED300032BDA /* SolemUITests.xctest */,
+				06F065D226528ED000032BDA /* Summer.app */,
+				06F065E826528ED300032BDA /* SummerTests.xctest */,
+				06F065F326528ED300032BDA /* SummerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		06F065D426528ED000032BDA /* Solem */ = {
+		06F065D426528ED000032BDA /* Summer */ = {
 			isa = PBXGroup;
 			children = (
 				06F06605265292C600032BDA /* Coordinators */,
@@ -133,25 +133,25 @@
 				06F065E026528ED300032BDA /* LaunchScreen.storyboard */,
 				06F065E326528ED300032BDA /* Info.plist */,
 			);
-			path = Solem;
+			path = Summer;
 			sourceTree = "<group>";
 		};
-		06F065EB26528ED300032BDA /* SolemTests */ = {
+		06F065EB26528ED300032BDA /* SummerTests */ = {
 			isa = PBXGroup;
 			children = (
 				06F065EC26528ED300032BDA /* SolemTests.swift */,
 				06F065EE26528ED300032BDA /* Info.plist */,
 			);
-			path = SolemTests;
+			path = SummerTests;
 			sourceTree = "<group>";
 		};
-		06F065F626528ED300032BDA /* SolemUITests */ = {
+		06F065F626528ED300032BDA /* SummerUITests */ = {
 			isa = PBXGroup;
 			children = (
 				06F065F726528ED300032BDA /* SolemUITests.swift */,
 				06F065F926528ED300032BDA /* Info.plist */,
 			);
-			path = SolemUITests;
+			path = SummerUITests;
 			sourceTree = "<group>";
 		};
 		06F06605265292C600032BDA /* Coordinators */ = {
@@ -231,9 +231,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		06F065D126528ED000032BDA /* Solem */ = {
+		06F065D126528ED000032BDA /* Summer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06F065FC26528ED300032BDA /* Build configuration list for PBXNativeTarget "Solem" */;
+			buildConfigurationList = 06F065FC26528ED300032BDA /* Build configuration list for PBXNativeTarget "Summer" */;
 			buildPhases = (
 				CFBE3E35E974A6B07C7C4BDB /* [CP] Check Pods Manifest.lock */,
 				06F065CE26528ED000032BDA /* Sources */,
@@ -245,14 +245,14 @@
 			);
 			dependencies = (
 			);
-			name = Solem;
+			name = Summer;
 			productName = Solem;
-			productReference = 06F065D226528ED000032BDA /* Solem.app */;
+			productReference = 06F065D226528ED000032BDA /* Summer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		06F065E726528ED300032BDA /* SolemTests */ = {
+		06F065E726528ED300032BDA /* SummerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06F065FF26528ED300032BDA /* Build configuration list for PBXNativeTarget "SolemTests" */;
+			buildConfigurationList = 06F065FF26528ED300032BDA /* Build configuration list for PBXNativeTarget "SummerTests" */;
 			buildPhases = (
 				7A78ECB356241F661DB8C8A6 /* [CP] Check Pods Manifest.lock */,
 				06F065E426528ED300032BDA /* Sources */,
@@ -264,14 +264,14 @@
 			dependencies = (
 				06F065EA26528ED300032BDA /* PBXTargetDependency */,
 			);
-			name = SolemTests;
+			name = SummerTests;
 			productName = SolemTests;
-			productReference = 06F065E826528ED300032BDA /* SolemTests.xctest */;
+			productReference = 06F065E826528ED300032BDA /* SummerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		06F065F226528ED300032BDA /* SolemUITests */ = {
+		06F065F226528ED300032BDA /* SummerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06F0660226528ED300032BDA /* Build configuration list for PBXNativeTarget "SolemUITests" */;
+			buildConfigurationList = 06F0660226528ED300032BDA /* Build configuration list for PBXNativeTarget "SummerUITests" */;
 			buildPhases = (
 				56BE659234E42DC78F771F70 /* [CP] Check Pods Manifest.lock */,
 				06F065EF26528ED300032BDA /* Sources */,
@@ -284,9 +284,9 @@
 			dependencies = (
 				06F065F526528ED300032BDA /* PBXTargetDependency */,
 			);
-			name = SolemUITests;
+			name = SummerUITests;
 			productName = SolemUITests;
-			productReference = 06F065F326528ED300032BDA /* SolemUITests.xctest */;
+			productReference = 06F065F326528ED300032BDA /* SummerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -311,7 +311,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 06F065CD26528ED000032BDA /* Build configuration list for PBXProject "Solem" */;
+			buildConfigurationList = 06F065CD26528ED000032BDA /* Build configuration list for PBXProject "Summer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -324,9 +324,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				06F065D126528ED000032BDA /* Solem */,
-				06F065E726528ED300032BDA /* SolemTests */,
-				06F065F226528ED300032BDA /* SolemUITests */,
+				06F065D126528ED000032BDA /* Summer */,
+				06F065E726528ED300032BDA /* SummerTests */,
+				06F065F226528ED300032BDA /* SummerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -497,12 +497,12 @@
 /* Begin PBXTargetDependency section */
 		06F065EA26528ED300032BDA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 06F065D126528ED000032BDA /* Solem */;
+			target = 06F065D126528ED000032BDA /* Summer */;
 			targetProxy = 06F065E926528ED300032BDA /* PBXContainerItemProxy */;
 		};
 		06F065F526528ED300032BDA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 06F065D126528ED000032BDA /* Solem */;
+			target = 06F065D126528ED000032BDA /* Summer */;
 			targetProxy = 06F065F426528ED300032BDA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -643,12 +643,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
-				INFOPLIST_FILE = Solem/Info.plist;
+				INFOPLIST_FILE = Summer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.Solem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.Summer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -663,12 +663,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
-				INFOPLIST_FILE = Solem/Info.plist;
+				INFOPLIST_FILE = Summer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.Solem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.Summer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -728,7 +728,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
-				INFOPLIST_FILE = SolemUITests/Info.plist;
+				INFOPLIST_FILE = SommerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -738,7 +738,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Solem;
+				TEST_TARGET_NAME = Summer;
 			};
 			name = Debug;
 		};
@@ -749,7 +749,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
-				INFOPLIST_FILE = SolemUITests/Info.plist;
+				INFOPLIST_FILE = SommerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -759,14 +759,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Solem;
+				TEST_TARGET_NAME = Summer;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		06F065CD26528ED000032BDA /* Build configuration list for PBXProject "Solem" */ = {
+		06F065CD26528ED000032BDA /* Build configuration list for PBXProject "Summer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06F065FA26528ED300032BDA /* Debug */,
@@ -775,7 +775,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06F065FC26528ED300032BDA /* Build configuration list for PBXNativeTarget "Solem" */ = {
+		06F065FC26528ED300032BDA /* Build configuration list for PBXNativeTarget "Summer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06F065FD26528ED300032BDA /* Debug */,
@@ -784,7 +784,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06F065FF26528ED300032BDA /* Build configuration list for PBXNativeTarget "SolemTests" */ = {
+		06F065FF26528ED300032BDA /* Build configuration list for PBXNativeTarget "SummerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06F0660026528ED300032BDA /* Debug */,
@@ -793,7 +793,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06F0660226528ED300032BDA /* Build configuration list for PBXNativeTarget "SolemUITests" */ = {
+		06F0660226528ED300032BDA /* Build configuration list for PBXNativeTarget "SummerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06F0660326528ED300032BDA /* Debug */,
