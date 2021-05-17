@@ -10,11 +10,15 @@
 		06F065D626528ED000032BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D526528ED000032BDA /* AppDelegate.swift */; };
 		06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D726528ED000032BDA /* SceneDelegate.swift */; };
 		06F065DA26528ED000032BDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D926528ED000032BDA /* ViewController.swift */; };
-		06F065DD26528ED000032BDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F065DB26528ED000032BDA /* Main.storyboard */; };
 		06F065DF26528ED300032BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F065DE26528ED300032BDA /* Assets.xcassets */; };
 		06F065E226528ED300032BDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F065E026528ED300032BDA /* LaunchScreen.storyboard */; };
 		06F065ED26528ED300032BDA /* SolemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065EC26528ED300032BDA /* SolemTests.swift */; };
 		06F065F826528ED300032BDA /* SolemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065F726528ED300032BDA /* SolemUITests.swift */; };
+		06F06607265292DA00032BDA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F06606265292DA00032BDA /* Coordinator.swift */; };
+		06F0660C2652941200032BDA /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F0660A2652941200032BDA /* StartViewController.swift */; };
+		06F0660D2652941200032BDA /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F0660B2652941200032BDA /* StartViewController.xib */; };
+		06F066102652945000032BDA /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F0660F2652945000032BDA /* StartViewModel.swift */; };
+		06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F06613265294DB00032BDA /* StartViewCoordinator.swift */; };
 		387584B681A28936A6AA6394 /* Pods_SolemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C13E1095954D5F1C60AA09F /* Pods_SolemTests.framework */; };
 		CF6298B1325318A629EF02DE /* Pods_Solem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2992D04AEF60D15E4079590 /* Pods_Solem.framework */; };
 		DE39740136B37770922890F1 /* Pods_Solem_SolemUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E94EB10036D21EC474B0E7 /* Pods_Solem_SolemUITests.framework */; };
@@ -42,7 +46,6 @@
 		06F065D526528ED000032BDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06F065D726528ED000032BDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		06F065D926528ED000032BDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		06F065DC26528ED000032BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06F065DE26528ED300032BDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06F065E126528ED300032BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06F065E326528ED300032BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +55,11 @@
 		06F065F326528ED300032BDA /* SolemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F065F726528ED300032BDA /* SolemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolemUITests.swift; sourceTree = "<group>"; };
 		06F065F926528ED300032BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06F06606265292DA00032BDA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		06F0660A2652941200032BDA /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		06F0660B2652941200032BDA /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		06F0660F2652945000032BDA /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		06F06613265294DB00032BDA /* StartViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewCoordinator.swift; sourceTree = "<group>"; };
 		0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Solem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solem.debug.xcconfig"; path = "Target Support Files/Pods-Solem/Pods-Solem.debug.xcconfig"; sourceTree = "<group>"; };
 		0F1B93634E52E96A24B0D517 /* Pods-Solem-SolemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solem-SolemUITests.debug.xcconfig"; path = "Target Support Files/Pods-Solem-SolemUITests/Pods-Solem-SolemUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		217ED3484008182CBE5AB1DA /* Pods-Solem-SolemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solem-SolemUITests.release.xcconfig"; path = "Target Support Files/Pods-Solem-SolemUITests/Pods-Solem-SolemUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,10 +124,11 @@
 		06F065D426528ED000032BDA /* Solem */ = {
 			isa = PBXGroup;
 			children = (
+				06F06605265292C600032BDA /* Coordinators */,
+				06F066082652935E00032BDA /* Views */,
 				06F065D526528ED000032BDA /* AppDelegate.swift */,
 				06F065D726528ED000032BDA /* SceneDelegate.swift */,
 				06F065D926528ED000032BDA /* ViewController.swift */,
-				06F065DB26528ED000032BDA /* Main.storyboard */,
 				06F065DE26528ED300032BDA /* Assets.xcassets */,
 				06F065E026528ED300032BDA /* LaunchScreen.storyboard */,
 				06F065E326528ED300032BDA /* Info.plist */,
@@ -143,6 +152,57 @@
 				06F065F926528ED300032BDA /* Info.plist */,
 			);
 			path = SolemUITests;
+			sourceTree = "<group>";
+		};
+		06F06605265292C600032BDA /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				06F06606265292DA00032BDA /* Coordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		06F066082652935E00032BDA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06F06609265293DB00032BDA /* StartView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		06F06609265293DB00032BDA /* StartView */ = {
+			isa = PBXGroup;
+			children = (
+				06F06612265294C500032BDA /* Navigator */,
+				06F066112652947200032BDA /* UI */,
+				06F0660E2652943800032BDA /* ViewModel */,
+			);
+			path = StartView;
+			sourceTree = "<group>";
+		};
+		06F0660E2652943800032BDA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				06F0660F2652945000032BDA /* StartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		06F066112652947200032BDA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				06F0660A2652941200032BDA /* StartViewController.swift */,
+				06F0660B2652941200032BDA /* StartViewController.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		06F06612265294C500032BDA /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				06F06613265294DB00032BDA /* StartViewCoordinator.swift */,
+			);
+			path = Navigator;
 			sourceTree = "<group>";
 		};
 		E439B1155BDDEEBB0DABE11B /* Pods */ = {
@@ -278,7 +338,7 @@
 			files = (
 				06F065E226528ED300032BDA /* LaunchScreen.storyboard in Resources */,
 				06F065DF26528ED300032BDA /* Assets.xcassets in Resources */,
-				06F065DD26528ED000032BDA /* Main.storyboard in Resources */,
+				06F0660D2652941200032BDA /* StartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +466,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */,
+				06F0660C2652941200032BDA /* StartViewController.swift in Sources */,
+				06F066102652945000032BDA /* StartViewModel.swift in Sources */,
+				06F06607265292DA00032BDA /* Coordinator.swift in Sources */,
 				06F065DA26528ED000032BDA /* ViewController.swift in Sources */,
 				06F065D626528ED000032BDA /* AppDelegate.swift in Sources */,
 				06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */,
@@ -444,14 +508,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		06F065DB26528ED000032BDA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				06F065DC26528ED000032BDA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		06F065E026528ED300032BDA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
