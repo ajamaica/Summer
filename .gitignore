@@ -104,3 +104,8 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride

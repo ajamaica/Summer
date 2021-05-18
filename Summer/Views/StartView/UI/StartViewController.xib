@@ -3,11 +3,12 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="Solem" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="Summer" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,19 +18,44 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOLEM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UQ-VC-ia4">
-                    <rect key="frame" x="160.5" y="431" width="93" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Purples-Horizon" translatesAutoresizingMaskIntoConstraints="NO" id="JIh-nv-YRs">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="azc-3D-9b0">
+                    <rect key="frame" x="125" y="425.5" width="164.5" height="43.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnG-he-Klz">
+                            <rect key="frame" x="0.0" y="0.0" width="22.5" height="43.5"/>
+                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="37"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6J-WW-7JF">
+                            <rect key="frame" x="30.5" y="0.0" width="134" height="43.5"/>
+                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="37"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="Primary"/>
             <constraints>
-                <constraint firstItem="7UQ-VC-ia4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="G0K-0f-vPV"/>
-                <constraint firstItem="7UQ-VC-ia4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kcr-T4-zUv"/>
+                <constraint firstItem="JIh-nv-YRs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HBw-MO-Xpt"/>
+                <constraint firstItem="azc-3D-9b0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HCn-Vw-coF"/>
+                <constraint firstItem="azc-3D-9b0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-1" id="JF9-8l-QRt"/>
+                <constraint firstItem="JIh-nv-YRs" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="OAs-jb-DTA"/>
+                <constraint firstItem="JIh-nv-YRs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kOE-f5-dOr"/>
+                <constraint firstAttribute="bottom" secondItem="JIh-nv-YRs" secondAttribute="bottom" id="udM-ow-csg"/>
             </constraints>
             <point key="canvasLocation" x="95.652173913043484" y="108.48214285714285"/>
         </view>
     </objects>
+    <resources>
+        <image name="Purples-Horizon" width="3840" height="2160"/>
+        <namedColor name="Primary">
+            <color red="0.11886625739999999" green="0.39844644070000002" blue="0.65885156389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>
