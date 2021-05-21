@@ -18,9 +18,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Purples-Horizon" translatesAutoresizingMaskIntoConstraints="NO" id="JIh-nv-YRs">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="azc-3D-9b0">
                     <rect key="frame" x="125" y="425.5" width="164.5" height="43.5"/>
                     <subviews>
@@ -42,20 +39,15 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="Primary"/>
             <constraints>
-                <constraint firstItem="JIh-nv-YRs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HBw-MO-Xpt"/>
                 <constraint firstItem="azc-3D-9b0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HCn-Vw-coF"/>
                 <constraint firstItem="azc-3D-9b0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-1" id="JF9-8l-QRt"/>
-                <constraint firstItem="JIh-nv-YRs" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="OAs-jb-DTA"/>
-                <constraint firstItem="JIh-nv-YRs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kOE-f5-dOr"/>
-                <constraint firstAttribute="bottom" secondItem="JIh-nv-YRs" secondAttribute="bottom" id="udM-ow-csg"/>
             </constraints>
             <point key="canvasLocation" x="95.652173913043484" y="108.48214285714285"/>
         </view>
     </objects>
     <resources>
-        <image name="Purples-Horizon" width="3840" height="2160"/>
         <namedColor name="Primary">
-            <color red="0.11886625739999999" green="0.39844644070000002" blue="0.65885156389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.1218988225" green="0.11271969229999999" blue="0.16863363980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

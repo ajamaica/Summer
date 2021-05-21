@@ -27,7 +27,7 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
-        let seconds = 4.0
+        let seconds = 2.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             self.delegate?.goToStartUpsell()
         }
