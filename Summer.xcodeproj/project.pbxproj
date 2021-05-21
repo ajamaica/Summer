@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */; };
 		0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4C2655400D005EAE15 /* SolanaModule.swift */; };
-		06676758265535CD00108D21 /* UpsellViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06676756265535CD00108D21 /* UpsellViewViewController.swift */; };
-		06676759265535CD00108D21 /* UpsellViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06676757265535CD00108D21 /* UpsellViewViewController.xib */; };
+		064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F22657D06600D45DF2 /* UpsellViewModel.swift */; };
+		064F84F72657D0B600D45DF2 /* UpsellViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F62657D0B600D45DF2 /* UpsellViewCoordinator.swift */; };
+		06676758265535CD00108D21 /* UpsellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06676756265535CD00108D21 /* UpsellViewController.swift */; };
+		06676759265535CD00108D21 /* UpsellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06676757265535CD00108D21 /* UpsellViewController.xib */; };
 		06F065D626528ED000032BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D526528ED000032BDA /* AppDelegate.swift */; };
 		06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D726528ED000032BDA /* SceneDelegate.swift */; };
 		06F065DF26528ED300032BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F065DE26528ED300032BDA /* Assets.xcassets */; };
@@ -47,8 +49,10 @@
 /* Begin PBXFileReference section */
 		0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccountStorage.swift; sourceTree = "<group>"; };
 		0648DA4C2655400D005EAE15 /* SolanaModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaModule.swift; sourceTree = "<group>"; };
-		06676756265535CD00108D21 /* UpsellViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewViewController.swift; sourceTree = "<group>"; };
-		06676757265535CD00108D21 /* UpsellViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpsellViewViewController.xib; sourceTree = "<group>"; };
+		064F84F22657D06600D45DF2 /* UpsellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewModel.swift; sourceTree = "<group>"; };
+		064F84F62657D0B600D45DF2 /* UpsellViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewCoordinator.swift; sourceTree = "<group>"; };
+		06676756265535CD00108D21 /* UpsellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewController.swift; sourceTree = "<group>"; };
+		06676757265535CD00108D21 /* UpsellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpsellViewController.xib; sourceTree = "<group>"; };
 		06F065D226528ED000032BDA /* Summer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Summer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F065D526528ED000032BDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06F065D726528ED000032BDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,11 +134,27 @@
 			path = SolanaModule;
 			sourceTree = "<group>";
 		};
+		064F84F42657D09500D45DF2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				064F84F22657D06600D45DF2 /* UpsellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		064F84F52657D0A200D45DF2 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				064F84F62657D0B600D45DF2 /* UpsellViewCoordinator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
 		0667675A265535D000108D21 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				06676756265535CD00108D21 /* UpsellViewViewController.swift */,
-				06676757265535CD00108D21 /* UpsellViewViewController.xib */,
+				06676756265535CD00108D21 /* UpsellViewController.swift */,
+				06676757265535CD00108D21 /* UpsellViewController.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -249,6 +269,8 @@
 		06F0661526529D5100032BDA /* UpsellView */ = {
 			isa = PBXGroup;
 			children = (
+				064F84F52657D0A200D45DF2 /* Navigator */,
+				064F84F42657D09500D45DF2 /* ViewModel */,
 				0667675A265535D000108D21 /* UI */,
 			);
 			path = UpsellView;
@@ -385,7 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06676759265535CD00108D21 /* UpsellViewViewController.xib in Resources */,
+				06676759265535CD00108D21 /* UpsellViewController.xib in Resources */,
 				06F065E226528ED300032BDA /* LaunchScreen.storyboard in Resources */,
 				06F065DF26528ED300032BDA /* Assets.xcassets in Resources */,
 				06F0660D2652941200032BDA /* StartViewController.xib in Resources */,
@@ -516,11 +538,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				064F84F72657D0B600D45DF2 /* UpsellViewCoordinator.swift in Sources */,
 				06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */,
+				064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */,
 				06F0660C2652941200032BDA /* StartViewController.swift in Sources */,
 				06F066102652945000032BDA /* StartViewModel.swift in Sources */,
 				06F06607265292DA00032BDA /* Coordinator.swift in Sources */,
-				06676758265535CD00108D21 /* UpsellViewViewController.swift in Sources */,
+				06676758265535CD00108D21 /* UpsellViewController.swift in Sources */,
 				0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */,
 				0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */,
 				06F065D626528ED000032BDA /* AppDelegate.swift in Sources */,

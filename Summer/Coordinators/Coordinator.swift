@@ -37,4 +37,10 @@ class Coordinator {
         coordinator.start()
         childCoordinators.append(coordinator)
     }
+    
+    func showUpsell() {
+        let coordinator = UpsellViewCoordinator(navigationController: navigationController)
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
 }
