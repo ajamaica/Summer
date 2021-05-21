@@ -38,7 +38,7 @@
     <resources>
         <image name="Purples-Horizon" width="3840" height="2160"/>
         <namedColor name="Primary">
-            <color red="0.11886625739999999" green="0.39844644070000002" blue="0.65885156389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.11900000274181366" green="0.39800000190734863" blue="0.6589999794960022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

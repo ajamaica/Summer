@@ -21,5 +21,7 @@ final class StartViewCoordinator: Coordinator {
 }
 
 extension StartViewCoordinator: StartViewControllerDelegate {
-
+    func goToStartUpsell() {
+        
+    }
 }

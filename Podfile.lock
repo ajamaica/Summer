@@ -5,6 +5,7 @@ PODS:
   - Ed25519HDKeySwift (1.2.0):
     - CryptoSwift
     - TweetNacl
+  - KeychainSwift (19.0.0)
   - RxAlamofire (6.1.1):
     - RxAlamofire/Core (= 6.1.1)
   - RxAlamofire/Core (6.1.1):
@@ -27,6 +28,7 @@ PODS:
   - TweetNacl (1.0.2)
 
 DEPENDENCIES:
+  - KeychainSwift (~> 19.0)
   - SolanaSwift (from `https://github.com/p2p-org/solana-swift.git`, commit `53d1a5b8fb04d060cebcfe04835f34c7cd14b43d`)
 
 SPEC REPOS:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - ASKSecp256k1
     - CryptoSwift
     - Ed25519HDKeySwift
+    - KeychainSwift
     - RxAlamofire
     - RxCocoa
     - RxRelay
@@ -57,6 +60,7 @@ SPEC CHECKSUMS:
   ASKSecp256k1: 58eb44dfa57f9d29ac0b02fe5de5a312064517f2
   CryptoSwift: 7cc902df1784de3b389a387756c7d710f197730c
   Ed25519HDKeySwift: 68d37145dc6d58ff47033e273829f01648afce58
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
@@ -65,6 +69,6 @@ SPEC CHECKSUMS:
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
 
-PODFILE CHECKSUM: f67a1a83baecd4a85ce69e464a64c6febed63aa2
+PODFILE CHECKSUM: 47fb4d17214a74023d5a818ae96f90b209a33065
 
 COCOAPODS: 1.10.1
