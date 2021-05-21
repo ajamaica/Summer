@@ -7,20 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */; };
+		0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4C2655400D005EAE15 /* SolanaModule.swift */; };
+		06676758265535CD00108D21 /* UpsellViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06676756265535CD00108D21 /* UpsellViewViewController.swift */; };
+		06676759265535CD00108D21 /* UpsellViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06676757265535CD00108D21 /* UpsellViewViewController.xib */; };
 		06F065D626528ED000032BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D526528ED000032BDA /* AppDelegate.swift */; };
 		06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D726528ED000032BDA /* SceneDelegate.swift */; };
 		06F065DF26528ED300032BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F065DE26528ED300032BDA /* Assets.xcassets */; };
 		06F065E226528ED300032BDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F065E026528ED300032BDA /* LaunchScreen.storyboard */; };
-		06F065ED26528ED300032BDA /* SolemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065EC26528ED300032BDA /* SolemTests.swift */; };
-		06F065F826528ED300032BDA /* SolemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065F726528ED300032BDA /* SolemUITests.swift */; };
+		06F065ED26528ED300032BDA /* SummerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065EC26528ED300032BDA /* SummerTests.swift */; };
+		06F065F826528ED300032BDA /* SummerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065F726528ED300032BDA /* SummerUITests.swift */; };
 		06F06607265292DA00032BDA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F06606265292DA00032BDA /* Coordinator.swift */; };
 		06F0660C2652941200032BDA /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F0660A2652941200032BDA /* StartViewController.swift */; };
 		06F0660D2652941200032BDA /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F0660B2652941200032BDA /* StartViewController.xib */; };
 		06F066102652945000032BDA /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F0660F2652945000032BDA /* StartViewModel.swift */; };
 		06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F06613265294DB00032BDA /* StartViewCoordinator.swift */; };
-		387584B681A28936A6AA6394 /* Pods_SolemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C13E1095954D5F1C60AA09F /* Pods_SolemTests.framework */; };
-		CF6298B1325318A629EF02DE /* Pods_Solem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2992D04AEF60D15E4079590 /* Pods_Solem.framework */; };
-		DE39740136B37770922890F1 /* Pods_Solem_SolemUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E94EB10036D21EC474B0E7 /* Pods_Solem_SolemUITests.framework */; };
+		387584B681A28936A6AA6394 /* Pods_SummerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C13E1095954D5F1C60AA09F /* Pods_SummerTests.framework */; };
+		CF6298B1325318A629EF02DE /* Pods_Summer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2992D04AEF60D15E4079590 /* Pods_Summer.framework */; };
+		DE39740136B37770922890F1 /* Pods_Summer_SummerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E94EB10036D21EC474B0E7 /* Pods_Summer_SummerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,18 +33,22 @@
 			containerPortal = 06F065CA26528ED000032BDA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 06F065D126528ED000032BDA;
-			remoteInfo = Solem;
+			remoteInfo = Summer;
 		};
 		06F065F426528ED300032BDA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 06F065CA26528ED000032BDA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 06F065D126528ED000032BDA;
-			remoteInfo = Solem;
+			remoteInfo = Summer;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccountStorage.swift; sourceTree = "<group>"; };
+		0648DA4C2655400D005EAE15 /* SolanaModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaModule.swift; sourceTree = "<group>"; };
+		06676756265535CD00108D21 /* UpsellViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewViewController.swift; sourceTree = "<group>"; };
+		06676757265535CD00108D21 /* UpsellViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpsellViewViewController.xib; sourceTree = "<group>"; };
 		06F065D226528ED000032BDA /* Summer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Summer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F065D526528ED000032BDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06F065D726528ED000032BDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,25 +56,25 @@
 		06F065E126528ED300032BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06F065E326528ED300032BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F065E826528ED300032BDA /* SummerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SummerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		06F065EC26528ED300032BDA /* SolemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolemTests.swift; sourceTree = "<group>"; };
+		06F065EC26528ED300032BDA /* SummerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerTests.swift; sourceTree = "<group>"; };
 		06F065EE26528ED300032BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F065F326528ED300032BDA /* SummerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SummerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		06F065F726528ED300032BDA /* SolemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolemUITests.swift; sourceTree = "<group>"; };
+		06F065F726528ED300032BDA /* SummerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerUITests.swift; sourceTree = "<group>"; };
 		06F065F926528ED300032BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F06606265292DA00032BDA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		06F0660A2652941200032BDA /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		06F0660B2652941200032BDA /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		06F0660F2652945000032BDA /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		06F06613265294DB00032BDA /* StartViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewCoordinator.swift; sourceTree = "<group>"; };
-		0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Solem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solem.debug.xcconfig"; path = "Target Support Files/Pods-Solem/Pods-Solem.debug.xcconfig"; sourceTree = "<group>"; };
-		0F1B93634E52E96A24B0D517 /* Pods-Solem-SolemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solem-SolemUITests.debug.xcconfig"; path = "Target Support Files/Pods-Solem-SolemUITests/Pods-Solem-SolemUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		217ED3484008182CBE5AB1DA /* Pods-Solem-SolemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solem-SolemUITests.release.xcconfig"; path = "Target Support Files/Pods-Solem-SolemUITests/Pods-Solem-SolemUITests.release.xcconfig"; sourceTree = "<group>"; };
-		332972D988648C52A04B9BD5 /* Pods-Solem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solem.release.xcconfig"; path = "Target Support Files/Pods-Solem/Pods-Solem.release.xcconfig"; sourceTree = "<group>"; };
-		6C13E1095954D5F1C60AA09F /* Pods_SolemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SolemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		942470114EFD538CFDF434D3 /* Pods-SolemTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolemTests.release.xcconfig"; path = "Target Support Files/Pods-SolemTests/Pods-SolemTests.release.xcconfig"; sourceTree = "<group>"; };
-		A28F2919EDCCCFD4845B2F1C /* Pods-SolemTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolemTests.debug.xcconfig"; path = "Target Support Files/Pods-SolemTests/Pods-SolemTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C2992D04AEF60D15E4079590 /* Pods_Solem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1E94EB10036D21EC474B0E7 /* Pods_Solem_SolemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solem_SolemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Summer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer.debug.xcconfig"; path = "Target Support Files/Pods-Summer/Pods-Summer.debug.xcconfig"; sourceTree = "<group>"; };
+		0F1B93634E52E96A24B0D517 /* Pods-Summer-SummerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer-SummerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		217ED3484008182CBE5AB1DA /* Pods-Summer-SummerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer-SummerUITests.release.xcconfig"; path = "Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		332972D988648C52A04B9BD5 /* Pods-Summer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer.release.xcconfig"; path = "Target Support Files/Pods-Summer/Pods-Summer.release.xcconfig"; sourceTree = "<group>"; };
+		6C13E1095954D5F1C60AA09F /* Pods_SummerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		942470114EFD538CFDF434D3 /* Pods-SummerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerTests.release.xcconfig"; path = "Target Support Files/Pods-SummerTests/Pods-SummerTests.release.xcconfig"; sourceTree = "<group>"; };
+		A28F2919EDCCCFD4845B2F1C /* Pods-SummerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerTests.debug.xcconfig"; path = "Target Support Files/Pods-SummerTests/Pods-SummerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C2992D04AEF60D15E4079590 /* Pods_Summer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Summer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1E94EB10036D21EC474B0E7 /* Pods_Summer_SummerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Summer_SummerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF6298B1325318A629EF02DE /* Pods_Solem.framework in Frameworks */,
+				CF6298B1325318A629EF02DE /* Pods_Summer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				387584B681A28936A6AA6394 /* Pods_SolemTests.framework in Frameworks */,
+				387584B681A28936A6AA6394 /* Pods_SummerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,13 +98,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE39740136B37770922890F1 /* Pods_Solem_SolemUITests.framework in Frameworks */,
+				DE39740136B37770922890F1 /* Pods_Summer_SummerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0648DA4726553EA3005EAE15 /* Dependencys */ = {
+			isa = PBXGroup;
+			children = (
+				0648DA4B26554004005EAE15 /* SolanaModule */,
+				0648DA4826553EBA005EAE15 /* KeychainAccountStorage */,
+			);
+			path = Dependencys;
+			sourceTree = "<group>";
+		};
+		0648DA4826553EBA005EAE15 /* KeychainAccountStorage */ = {
+			isa = PBXGroup;
+			children = (
+				0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */,
+			);
+			path = KeychainAccountStorage;
+			sourceTree = "<group>";
+		};
+		0648DA4B26554004005EAE15 /* SolanaModule */ = {
+			isa = PBXGroup;
+			children = (
+				0648DA4C2655400D005EAE15 /* SolanaModule.swift */,
+			);
+			path = SolanaModule;
+			sourceTree = "<group>";
+		};
+		0667675A265535D000108D21 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				06676756265535CD00108D21 /* UpsellViewViewController.swift */,
+				06676757265535CD00108D21 /* UpsellViewViewController.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		06F065C926528ED000032BDA = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +164,7 @@
 		06F065D426528ED000032BDA /* Summer */ = {
 			isa = PBXGroup;
 			children = (
+				0648DA4726553EA3005EAE15 /* Dependencys */,
 				06F06605265292C600032BDA /* Coordinators */,
 				06F066082652935E00032BDA /* Views */,
 				06F065D526528ED000032BDA /* AppDelegate.swift */,
@@ -136,7 +179,7 @@
 		06F065EB26528ED300032BDA /* SummerTests */ = {
 			isa = PBXGroup;
 			children = (
-				06F065EC26528ED300032BDA /* SolemTests.swift */,
+				06F065EC26528ED300032BDA /* SummerTests.swift */,
 				06F065EE26528ED300032BDA /* Info.plist */,
 			);
 			path = SummerTests;
@@ -145,7 +188,7 @@
 		06F065F626528ED300032BDA /* SummerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				06F065F726528ED300032BDA /* SolemUITests.swift */,
+				06F065F726528ED300032BDA /* SummerUITests.swift */,
 				06F065F926528ED300032BDA /* Info.plist */,
 			);
 			path = SummerUITests;
@@ -206,6 +249,7 @@
 		06F0661526529D5100032BDA /* UpsellView */ = {
 			isa = PBXGroup;
 			children = (
+				0667675A265535D000108D21 /* UI */,
 			);
 			path = UpsellView;
 			sourceTree = "<group>";
@@ -213,12 +257,12 @@
 		E439B1155BDDEEBB0DABE11B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Solem.debug.xcconfig */,
-				332972D988648C52A04B9BD5 /* Pods-Solem.release.xcconfig */,
-				0F1B93634E52E96A24B0D517 /* Pods-Solem-SolemUITests.debug.xcconfig */,
-				217ED3484008182CBE5AB1DA /* Pods-Solem-SolemUITests.release.xcconfig */,
-				A28F2919EDCCCFD4845B2F1C /* Pods-SolemTests.debug.xcconfig */,
-				942470114EFD538CFDF434D3 /* Pods-SolemTests.release.xcconfig */,
+				0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Summer.debug.xcconfig */,
+				332972D988648C52A04B9BD5 /* Pods-Summer.release.xcconfig */,
+				0F1B93634E52E96A24B0D517 /* Pods-Summer-SummerUITests.debug.xcconfig */,
+				217ED3484008182CBE5AB1DA /* Pods-Summer-SummerUITests.release.xcconfig */,
+				A28F2919EDCCCFD4845B2F1C /* Pods-SummerTests.debug.xcconfig */,
+				942470114EFD538CFDF434D3 /* Pods-SummerTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -226,9 +270,9 @@
 		EEF8B4D443649CF34016E6F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C2992D04AEF60D15E4079590 /* Pods_Solem.framework */,
-				D1E94EB10036D21EC474B0E7 /* Pods_Solem_SolemUITests.framework */,
-				6C13E1095954D5F1C60AA09F /* Pods_SolemTests.framework */,
+				C2992D04AEF60D15E4079590 /* Pods_Summer.framework */,
+				D1E94EB10036D21EC474B0E7 /* Pods_Summer_SummerUITests.framework */,
+				6C13E1095954D5F1C60AA09F /* Pods_SummerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -251,7 +295,7 @@
 			dependencies = (
 			);
 			name = Summer;
-			productName = Solem;
+			productName = Summer;
 			productReference = 06F065D226528ED000032BDA /* Summer.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -270,7 +314,7 @@
 				06F065EA26528ED300032BDA /* PBXTargetDependency */,
 			);
 			name = SummerTests;
-			productName = SolemTests;
+			productName = SummerTests;
 			productReference = 06F065E826528ED300032BDA /* SummerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -290,7 +334,7 @@
 				06F065F526528ED300032BDA /* PBXTargetDependency */,
 			);
 			name = SummerUITests;
-			productName = SolemUITests;
+			productName = SummerUITests;
 			productReference = 06F065F326528ED300032BDA /* SummerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -341,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06676759265535CD00108D21 /* UpsellViewViewController.xib in Resources */,
 				06F065E226528ED300032BDA /* LaunchScreen.storyboard in Resources */,
 				06F065DF26528ED300032BDA /* Assets.xcassets in Resources */,
 				06F0660D2652941200032BDA /* StartViewController.xib in Resources */,
@@ -379,7 +424,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Solem-SolemUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Summer-SummerUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -392,15 +437,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Solem/Pods-Solem-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Summer/Pods-Summer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Solem/Pods-Solem-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Summer/Pods-Summer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Solem/Pods-Solem-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summer/Pods-Summer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7A78ECB356241F661DB8C8A6 /* [CP] Check Pods Manifest.lock */ = {
@@ -418,7 +463,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SolemTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SummerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -440,7 +485,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Solem-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Summer-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -453,15 +498,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Solem-SolemUITests/Pods-Solem-SolemUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Solem-SolemUITests/Pods-Solem-SolemUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Solem-SolemUITests/Pods-Solem-SolemUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -475,6 +520,9 @@
 				06F0660C2652941200032BDA /* StartViewController.swift in Sources */,
 				06F066102652945000032BDA /* StartViewModel.swift in Sources */,
 				06F06607265292DA00032BDA /* Coordinator.swift in Sources */,
+				06676758265535CD00108D21 /* UpsellViewViewController.swift in Sources */,
+				0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */,
+				0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */,
 				06F065D626528ED000032BDA /* AppDelegate.swift in Sources */,
 				06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */,
 			);
@@ -484,7 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06F065ED26528ED300032BDA /* SolemTests.swift in Sources */,
+				06F065ED26528ED300032BDA /* SummerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06F065F826528ED300032BDA /* SolemUITests.swift in Sources */,
+				06F065F826528ED300032BDA /* SummerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +689,7 @@
 		};
 		06F065FD26528ED300032BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Solem.debug.xcconfig */;
+			baseConfigurationReference = 0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Summer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -661,7 +709,7 @@
 		};
 		06F065FE26528ED300032BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 332972D988648C52A04B9BD5 /* Pods-Solem.release.xcconfig */;
+			baseConfigurationReference = 332972D988648C52A04B9BD5 /* Pods-Summer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -681,53 +729,53 @@
 		};
 		06F0660026528ED300032BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A28F2919EDCCCFD4845B2F1C /* Pods-SolemTests.debug.xcconfig */;
+			baseConfigurationReference = A28F2919EDCCCFD4845B2F1C /* Pods-SummerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
-				INFOPLIST_FILE = SolemTests/Info.plist;
+				INFOPLIST_FILE = SummerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.SolemTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.SummerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solem.app/Solem";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Summer.app/Summer";
 			};
 			name = Debug;
 		};
 		06F0660126528ED300032BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 942470114EFD538CFDF434D3 /* Pods-SolemTests.release.xcconfig */;
+			baseConfigurationReference = 942470114EFD538CFDF434D3 /* Pods-SummerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
-				INFOPLIST_FILE = SolemTests/Info.plist;
+				INFOPLIST_FILE = SummerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.SolemTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.SummerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solem.app/Solem";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Summer.app/Summer";
 			};
 			name = Release;
 		};
 		06F0660326528ED300032BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F1B93634E52E96A24B0D517 /* Pods-Solem-SolemUITests.debug.xcconfig */;
+			baseConfigurationReference = 0F1B93634E52E96A24B0D517 /* Pods-Summer-SummerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
@@ -738,7 +786,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.SolemUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.SummerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -748,7 +796,7 @@
 		};
 		06F0660426528ED300032BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 217ED3484008182CBE5AB1DA /* Pods-Solem-SolemUITests.release.xcconfig */;
+			baseConfigurationReference = 217ED3484008182CBE5AB1DA /* Pods-Summer-SummerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
@@ -759,7 +807,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.SolemUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.SummerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

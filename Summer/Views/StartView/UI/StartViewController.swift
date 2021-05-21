@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol StartViewControllerDelegate: AnyObject { }
+protocol StartViewControllerDelegate: AnyObject {
+    func goToStartUpsell()
+}
 class StartViewController: UIViewController {
 
     let viewModel: StartViewModel
@@ -24,6 +26,11 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            self.delegate?.goToStartUpsell()
+        }
     }
 
 }
