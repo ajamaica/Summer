@@ -11,12 +11,7 @@ import SolanaSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var appComponent: AppComponent!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let accountStorage = KeychainAccountStorageModule()
-        let solana = SolanaModule(endpoint: .testnet, accountStorage: accountStorage)
-        appComponent = AppComponent(solanaModule: solana)
 
         return true
     }

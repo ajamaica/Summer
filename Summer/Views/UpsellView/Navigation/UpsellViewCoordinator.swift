@@ -21,5 +21,11 @@ final class UpsellViewCoordinator: Coordinator {
 }
 
 extension UpsellViewCoordinator: UpsellViewControllerDelegate {
+    func goToCreateWallet() {
+        showCreateWallet()
+    }
     
+    func goToRecoverWallet() {
+        
+    }
 }

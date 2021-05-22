@@ -7,23 +7,74 @@
 
 import Foundation
 import SolanaSwift
+import RxSwift
+
+protocol SolanaClient {
+    func createAccount(withPhrase: SeedPhraseCollection, completition: @escaping((Result<(), Error>)-> ()))
+    func getBalance(completition: @escaping(Result<UInt64, Error>) -> ())
+}
 
 class SolanaModule  {
-    private let accountStorage: KeychainAccountStorageModule
-
-    private let endpoint: SolanaEnpoint
-    
-    var solana: SolanaSDK {
-        SolanaSDK(endpoint: SolanaSDK.APIEndPoint(url: endpoint.rawValue, network: .mainnetBeta), accountStorage: self.accountStorage) }
-    
-    init(endpoint: SolanaEnpoint, accountStorage: KeychainAccountStorageModule) {
-        self.accountStorage = accountStorage
-        self.endpoint = endpoint
+    let solana: SolanaClient
+    init(solana: SolanaClient){
+        self.solana = solana
     }
+}
+
+enum SolanaClientError: Error {
+    case accountNotSet
 }
 
 enum SolanaEnpoint: String {
     case mainnetBeta = "https://api.mainnet-beta.solana.com"
     case devnet = "https://api.devnet.solana.com"
     case testnet = "https://api.testnet.solana.com"
+}
+
+class ConcreteSolanaClient: SolanaClient {
+    private let accountStorage: KeychainAccountStorageModule
+    private let endpoint: SolanaEnpoint
+    private let disposeBag =  DisposeBag()
+    
+    let network: SolanaSDK.Network
+    
+    var solana: SolanaSDK {
+        SolanaSDK(endpoint: SolanaSDK.APIEndPoint(url: self.endpoint.rawValue, network: self.network), accountStorage: self.accountStorage) }
+    
+    init(endpoint: SolanaEnpoint, network: SolanaSDK.Network, accountStorage: KeychainAccountStorageModule) {
+        self.network = network
+        self.accountStorage = accountStorage
+        self.endpoint = endpoint
+    }
+    
+    func createAccount(withPhrase: SeedPhraseCollection, completition: @escaping((Result<(), Error>)-> ())) {
+        do {
+            let account = try SolanaSDK.Account(phrase: withPhrase, network: .testnet)
+            try self.solana.accountStorage.save(account)
+            return completition(.success(()))
+        } catch let e {
+            return completition(.failure(e))
+        }
+    }
+    
+    func getBalance(completition: @escaping(Result<UInt64, Error>) -> ()) {
+        do{
+            let account = try getAccount().get()
+            self.solana.getBalance(account: account.publicKey.base58EncodedString, commitment: "recent")
+                .subscribe { balance in
+                    completition(.success(balance))
+            }
+            .disposed(by: disposeBag)
+        } catch let e {
+            completition(.failure(e))
+        }
+    }
+    
+    private func getAccount() -> Result<SolanaSDK.Account, SolanaClientError> {
+        if let account = self.solana.accountStorage.account {
+            return .success(account)
+        } else {
+            return .failure(.accountNotSet)
+        }
+    }
 }

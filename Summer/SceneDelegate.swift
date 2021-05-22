@@ -17,7 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let coordinator = Coordinator(navigationController: navigationController)
+        let accountStorage = KeychainAccountStorageModule()
+        let solanaClient = ConcreteSolanaClient(endpoint: .devnet, network: .devnet, accountStorage: accountStorage)
+        let applicationComponent = AppComponent(solanaModule: SolanaModule(solana: solanaClient))
+        
+        let coordinator = Coordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         self.window = coordinator.boot(windowScene: windowScene)
         mainCoordinator = coordinator
     }

@@ -11,6 +11,13 @@
 		0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4C2655400D005EAE15 /* SolanaModule.swift */; };
 		064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F22657D06600D45DF2 /* UpsellViewModel.swift */; };
 		064F84F72657D0B600D45DF2 /* UpsellViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F62657D0B600D45DF2 /* UpsellViewCoordinator.swift */; };
+		064F84FB2658A7B300D45DF2 /* CreateWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F92658A7B300D45DF2 /* CreateWalletViewController.swift */; };
+		064F84FC2658A7B300D45DF2 /* CreateWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F84FA2658A7B300D45DF2 /* CreateWalletViewController.xib */; };
+		064F84FE2658A7D100D45DF2 /* CreateWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84FD2658A7D100D45DF2 /* CreateWalletViewModel.swift */; };
+		064F85032658A8D200D45DF2 /* CreateWalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F85022658A8D200D45DF2 /* CreateWalletCoordinator.swift */; };
+		064F85062658AF2D00D45DF2 /* SeedPhraseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F85052658AF2D00D45DF2 /* SeedPhraseGenerator.swift */; };
+		064F850A2658B17700D45DF2 /* SeedPhaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F85082658B17700D45DF2 /* SeedPhaseCollectionViewCell.swift */; };
+		064F850B2658B17700D45DF2 /* SeedPhaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F85092658B17700D45DF2 /* SeedPhaseCollectionViewCell.xib */; };
 		06676758265535CD00108D21 /* UpsellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06676756265535CD00108D21 /* UpsellViewController.swift */; };
 		06676759265535CD00108D21 /* UpsellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06676757265535CD00108D21 /* UpsellViewController.xib */; };
 		06F065D626528ED000032BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D526528ED000032BDA /* AppDelegate.swift */; };
@@ -51,6 +58,13 @@
 		0648DA4C2655400D005EAE15 /* SolanaModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaModule.swift; sourceTree = "<group>"; };
 		064F84F22657D06600D45DF2 /* UpsellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewModel.swift; sourceTree = "<group>"; };
 		064F84F62657D0B600D45DF2 /* UpsellViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewCoordinator.swift; sourceTree = "<group>"; };
+		064F84F92658A7B300D45DF2 /* CreateWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewController.swift; sourceTree = "<group>"; };
+		064F84FA2658A7B300D45DF2 /* CreateWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateWalletViewController.xib; sourceTree = "<group>"; };
+		064F84FD2658A7D100D45DF2 /* CreateWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewModel.swift; sourceTree = "<group>"; };
+		064F85022658A8D200D45DF2 /* CreateWalletCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletCoordinator.swift; sourceTree = "<group>"; };
+		064F85052658AF2D00D45DF2 /* SeedPhraseGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedPhraseGenerator.swift; sourceTree = "<group>"; };
+		064F85082658B17700D45DF2 /* SeedPhaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedPhaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		064F85092658B17700D45DF2 /* SeedPhaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeedPhaseCollectionViewCell.xib; sourceTree = "<group>"; };
 		06676756265535CD00108D21 /* UpsellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewController.swift; sourceTree = "<group>"; };
 		06676757265535CD00108D21 /* UpsellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpsellViewController.xib; sourceTree = "<group>"; };
 		06F065D226528ED000032BDA /* Summer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Summer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +126,7 @@
 		0648DA4726553EA3005EAE15 /* Dependencys */ = {
 			isa = PBXGroup;
 			children = (
+				064F85042658AF2200D45DF2 /* SeedPhraseGenerator */,
 				0648DA4B26554004005EAE15 /* SolanaModule */,
 				0648DA4826553EBA005EAE15 /* KeychainAccountStorage */,
 			);
@@ -142,12 +157,64 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		064F84F52657D0A200D45DF2 /* Navigator */ = {
+		064F84F52657D0A200D45DF2 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
 				064F84F62657D0B600D45DF2 /* UpsellViewCoordinator.swift */,
 			);
-			path = Navigator;
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		064F84F82658A7A200D45DF2 /* CreateWallet */ = {
+			isa = PBXGroup;
+			children = (
+				064F85002658A80B00D45DF2 /* ViewModel */,
+				064F84FF2658A80300D45DF2 /* UI */,
+			);
+			path = CreateWallet;
+			sourceTree = "<group>";
+		};
+		064F84FF2658A80300D45DF2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				064F85072658B15300D45DF2 /* SeedPhaseCollectionViewCell */,
+				064F84F92658A7B300D45DF2 /* CreateWalletViewController.swift */,
+				064F84FA2658A7B300D45DF2 /* CreateWalletViewController.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		064F85002658A80B00D45DF2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				064F84FD2658A7D100D45DF2 /* CreateWalletViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		064F85012658A8B400D45DF2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				064F85022658A8D200D45DF2 /* CreateWalletCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		064F85042658AF2200D45DF2 /* SeedPhraseGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				064F85052658AF2D00D45DF2 /* SeedPhraseGenerator.swift */,
+			);
+			path = SeedPhraseGenerator;
+			sourceTree = "<group>";
+		};
+		064F85072658B15300D45DF2 /* SeedPhaseCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				064F85082658B17700D45DF2 /* SeedPhaseCollectionViewCell.swift */,
+				064F85092658B17700D45DF2 /* SeedPhaseCollectionViewCell.xib */,
+			);
+			path = SeedPhaseCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		0667675A265535D000108D21 /* UI */ = {
@@ -225,6 +292,8 @@
 		06F066082652935E00032BDA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				064F85012658A8B400D45DF2 /* Navigation */,
+				064F84F82658A7A200D45DF2 /* CreateWallet */,
 				06F0661526529D5100032BDA /* UpsellView */,
 				06F06609265293DB00032BDA /* StartView */,
 			);
@@ -234,7 +303,7 @@
 		06F06609265293DB00032BDA /* StartView */ = {
 			isa = PBXGroup;
 			children = (
-				06F06612265294C500032BDA /* Navigator */,
+				06F06612265294C500032BDA /* Navigation */,
 				06F066112652947200032BDA /* UI */,
 				06F0660E2652943800032BDA /* ViewModel */,
 			);
@@ -258,18 +327,18 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		06F06612265294C500032BDA /* Navigator */ = {
+		06F06612265294C500032BDA /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
 				06F06613265294DB00032BDA /* StartViewCoordinator.swift */,
 			);
-			path = Navigator;
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		06F0661526529D5100032BDA /* UpsellView */ = {
 			isa = PBXGroup;
 			children = (
-				064F84F52657D0A200D45DF2 /* Navigator */,
+				064F84F52657D0A200D45DF2 /* Navigation */,
 				064F84F42657D09500D45DF2 /* ViewModel */,
 				0667675A265535D000108D21 /* UI */,
 			);
@@ -408,6 +477,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				06676759265535CD00108D21 /* UpsellViewController.xib in Resources */,
+				064F850B2658B17700D45DF2 /* SeedPhaseCollectionViewCell.xib in Resources */,
+				064F84FC2658A7B300D45DF2 /* CreateWalletViewController.xib in Resources */,
 				06F065E226528ED300032BDA /* LaunchScreen.storyboard in Resources */,
 				06F065DF26528ED300032BDA /* Assets.xcassets in Resources */,
 				06F0660D2652941200032BDA /* StartViewController.xib in Resources */,
@@ -541,14 +612,19 @@
 				064F84F72657D0B600D45DF2 /* UpsellViewCoordinator.swift in Sources */,
 				06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */,
 				064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */,
+				064F84FE2658A7D100D45DF2 /* CreateWalletViewModel.swift in Sources */,
 				06F0660C2652941200032BDA /* StartViewController.swift in Sources */,
+				064F85062658AF2D00D45DF2 /* SeedPhraseGenerator.swift in Sources */,
 				06F066102652945000032BDA /* StartViewModel.swift in Sources */,
 				06F06607265292DA00032BDA /* Coordinator.swift in Sources */,
+				064F84FB2658A7B300D45DF2 /* CreateWalletViewController.swift in Sources */,
 				06676758265535CD00108D21 /* UpsellViewController.swift in Sources */,
 				0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */,
 				0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */,
 				06F065D626528ED000032BDA /* AppDelegate.swift in Sources */,
 				06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */,
+				064F85032658A8D200D45DF2 /* CreateWalletCoordinator.swift in Sources */,
+				064F850A2658B17700D45DF2 /* SeedPhaseCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
