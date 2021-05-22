@@ -51,4 +51,10 @@ class Coordinator {
         coordinator.start()
         childCoordinators.append(coordinator)
     }
+    
+    func showWallet() {
+        let coordinator = WalletCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
 }

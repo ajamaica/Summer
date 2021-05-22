@@ -21,5 +21,7 @@ final class CreateWalletCoordinator: Coordinator {
 }
 
 extension CreateWalletCoordinator: CreateWalletViewControllerDelegate {
-
+    func goToWallet() {
+        showWallet()
+    }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 protocol StartViewControllerDelegate: AnyObject {
     func goToStartUpsell()
+    func goToWallet()
 }
 class StartViewController: UIViewController {
 
@@ -27,9 +28,13 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
-        let seconds = 2.0
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            self.delegate?.goToStartUpsell()
+        self.viewModel.hasAccount { result in
+            switch result {
+            case .success():
+                self.delegate?.goToWallet()
+            case .failure:
+                self.delegate?.goToStartUpsell()
+            }
         }
     }
 

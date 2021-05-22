@@ -13,7 +13,7 @@ final class StartViewCoordinator: Coordinator {
     weak var delegate: StartViewControllerDelegate?
     func start() {
         guard let navigationController = navigationController else { return }
-        let viewModel = StartViewModel()
+        let viewModel = StartViewModel(solana: applicationComponent.solanaModule.solana)
         let viewController = StartViewController(viewModel: viewModel)
         viewController.delegate = self
         navigationController.pushViewController(viewController, animated: true)
@@ -21,6 +21,10 @@ final class StartViewCoordinator: Coordinator {
 }
 
 extension StartViewCoordinator: StartViewControllerDelegate {
+    func goToWallet() {
+        showWallet()
+    }
+    
     func goToStartUpsell() {
         showUpsell()
     }

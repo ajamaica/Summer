@@ -17,7 +17,7 @@ class CreateWalletViewModel {
         seedPhrase.getSeedPhrase()
     }
     
-    func createWallet() -> Result<Void, Error> {
-        solana.createAccount(withPhrase: getSeedPhrase())
+    func createWallet(completition: @escaping((Result<(), Error>)-> ())){
+        solana.createAccount(withPhrase: getSeedPhrase(), completition: completition)
     }
 }
