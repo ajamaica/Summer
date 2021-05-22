@@ -12,6 +12,8 @@ import RxSwift
 protocol SolanaClient {
     func createAccount(withPhrase: SeedPhraseCollection, completition: @escaping((Result<(), Error>)-> ()))
     func getBalance(completition: @escaping(Result<UInt64, Error>) -> ())
+    func getPublicKey(completition: @escaping(Result<String, Error>) -> ())
+    func sendSPL(mintAddress: String, decimals: UInt8, amount: UInt64, to: String, from: String, completition: @escaping(Result<String, Error>) -> ())
 }
 
 class SolanaModule  {
@@ -75,6 +77,44 @@ class ConcreteSolanaClient: SolanaClient {
             return .success(account)
         } else {
             return .failure(.accountNotSet)
+        }
+    }
+    
+    func getPublicKey(completition: @escaping(Result<String, Error>) -> ()){
+        do{
+            let account = try getAccount().get()
+            return completition(.success(account.publicKey.base58EncodedString))
+        } catch let e {
+            completition(.failure(e))
+        }
+    }
+    
+    func sendSOL(to: String, amount: UInt64, completition: @escaping(Result<String, Error>) -> ()){
+        do{
+            let _ = try getAccount().get()
+            self.solana.sendSOL(to: to, amount: amount).subscribe { balance in
+                completition(.success(balance))
+            }
+            .disposed(by: disposeBag)
+        } catch let e {
+            completition(.failure(e))
+        }
+    }
+    
+    func sendSPL(mintAddress: String,
+                 decimals: UInt8,
+                 from: String,
+                 to: String,
+                 amount: UInt64,
+                 completition: @escaping(Result<String, Error>) -> ()){
+        do{
+            let _ = try getAccount().get()
+            self.solana.sendSPLTokens(mintAddress: mintAddress, decimals: decimals, from: from, to: to, amount: amount).subscribe { balance in
+                completition(.success(balance))
+            }
+            .disposed(by: disposeBag)
+        } catch let e {
+            completition(.failure(e))
         }
     }
 }
