@@ -10,7 +10,7 @@ import SolanaSwift
 import RxSwift
 
 protocol SolanaClient {
-    func createAccount(withPhrase: SeedPhraseCollection) -> Result<(), Error>
+    func createAccount(withPhrase: SeedPhraseCollection, completition: @escaping((Result<(), Error>)-> ()))
     func getBalance(completition: @escaping(Result<UInt64, Error>) -> ())
 }
 
@@ -23,6 +23,12 @@ class SolanaModule  {
 
 enum SolanaClientError: Error {
     case accountNotSet
+}
+
+enum SolanaEnpoint: String {
+    case mainnetBeta = "https://api.mainnet-beta.solana.com"
+    case devnet = "https://api.devnet.solana.com"
+    case testnet = "https://api.testnet.solana.com"
 }
 
 class ConcreteSolanaClient: SolanaClient {
@@ -41,13 +47,13 @@ class ConcreteSolanaClient: SolanaClient {
         self.endpoint = endpoint
     }
     
-    func createAccount(withPhrase: SeedPhraseCollection) -> Result<(), Error> {
+    func createAccount(withPhrase: SeedPhraseCollection, completition: @escaping((Result<(), Error>)-> ())) {
         do {
             let account = try SolanaSDK.Account(phrase: withPhrase, network: .testnet)
             try self.solana.accountStorage.save(account)
-            return .success(())
+            return completition(.success(()))
         } catch let e {
-            return .failure(e)
+            return completition(.failure(e))
         }
     }
     
@@ -71,10 +77,4 @@ class ConcreteSolanaClient: SolanaClient {
             return .failure(.accountNotSet)
         }
     }
-}
-
-enum SolanaEnpoint: String {
-    case mainnetBeta = "https://api.mainnet-beta.solana.com"
-    case devnet = "https://api.devnet.solana.com"
-    case testnet = "https://api.testnet.solana.com"
 }
