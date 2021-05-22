@@ -13,7 +13,7 @@ protocol SolanaClient {
     func createAccount(withPhrase: SeedPhraseCollection, completition: @escaping((Result<(), Error>)-> ()))
     func getBalance(completition: @escaping(Result<UInt64, Error>) -> ())
     func getPublicKey(completition: @escaping(Result<String, Error>) -> ())
-    func sendSPL(mintAddress: String, decimals: UInt8, amount: UInt64, to: String, from: String, completition: @escaping(Result<String, Error>) -> ())
+    func sendSPL(mintAddress: String, decimals: UInt8, from: String, to: String, amount: UInt64, completition: @escaping(Result<String, Error>) -> ())
 }
 
 class SolanaModule  {
