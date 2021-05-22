@@ -8,7 +8,8 @@
 import UIKit
 
 protocol UpsellViewControllerDelegate: AnyObject {
-    
+    func goToCreateWallet()
+    func goToRecoverWallet()
 }
 
 class UpsellViewController: UIViewController {
@@ -26,7 +27,13 @@ class UpsellViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func recoverAccount(_ sender: Any) {
+        delegate?.goToRecoverWallet()
+    }
+    
+    @IBAction func createNewWallet(_ sender: Any) {
+        delegate?.goToCreateWallet()
     }
 }

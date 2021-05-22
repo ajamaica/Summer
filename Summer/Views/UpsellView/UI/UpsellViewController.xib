@@ -45,6 +45,9 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="I already have an wallet"/>
+                            <connections>
+                                <action selector="recoverAccount:" destination="-1" eventType="touchUpInside" id="pp1-8m-K8b"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeF-Or-UBm">
                             <rect key="frame" x="0.0" y="60" width="354" height="56"/>
@@ -56,6 +59,9 @@
                             <state key="normal" title="CREATE A NEW WALLET">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="createNewWallet:" destination="-1" eventType="touchUpInside" id="WB7-XL-p65"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -88,10 +94,10 @@
     </objects>
     <resources>
         <namedColor name="Primary">
-            <color red="0.1218988225" green="0.11271969229999999" blue="0.16863363980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.12200000137090683" green="0.11299999803304672" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Secondary">
-            <color red="0.2407196164" green="0.279771775" blue="0.41570144889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.24099999666213989" green="0.2800000011920929" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

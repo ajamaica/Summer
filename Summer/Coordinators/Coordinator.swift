@@ -9,10 +9,12 @@ import Foundation
 import UIKit
 
 class Coordinator {
+    let applicationComponent: AppComponent
     var childCoordinators: [Coordinator] = []
     weak var navigationController: UINavigationController?
-    init(navigationController: UINavigationController?) {
+    init(applicationComponent: AppComponent, navigationController: UINavigationController?) {
         self.navigationController = navigationController
+        self.applicationComponent = applicationComponent
     }
 
     func popViewController() {
@@ -33,13 +35,19 @@ class Coordinator {
     }
     
     func showStart() {
-        let coordinator = StartViewCoordinator(navigationController: navigationController)
+        let coordinator = StartViewCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
     
     func showUpsell() {
-        let coordinator = UpsellViewCoordinator(navigationController: navigationController)
+        let coordinator = UpsellViewCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
+    
+    func showCreateWallet() {
+        let coordinator = CreateWalletCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }

@@ -29,7 +29,7 @@ PODS:
 
 DEPENDENCIES:
   - KeychainSwift (~> 19.0)
-  - SolanaSwift (from `https://github.com/p2p-org/solana-swift.git`, commit `53d1a5b8fb04d060cebcfe04835f34c7cd14b43d`)
+  - "SolanaSwift (from `git@github.com:ajamaica/solana-swift-1.git`, commit `26e37ce898ea683a801fd35d18807ed15b9c665f`)"
 
 SPEC REPOS:
   trunk:
@@ -47,13 +47,13 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   SolanaSwift:
-    :commit: 53d1a5b8fb04d060cebcfe04835f34c7cd14b43d
-    :git: https://github.com/p2p-org/solana-swift.git
+    :commit: 26e37ce898ea683a801fd35d18807ed15b9c665f
+    :git: "git@github.com:ajamaica/solana-swift-1.git"
 
 CHECKOUT OPTIONS:
   SolanaSwift:
-    :commit: 53d1a5b8fb04d060cebcfe04835f34c7cd14b43d
-    :git: https://github.com/p2p-org/solana-swift.git
+    :commit: 26e37ce898ea683a801fd35d18807ed15b9c665f
+    :git: "git@github.com:ajamaica/solana-swift-1.git"
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -69,6 +69,6 @@ SPEC CHECKSUMS:
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
 
-PODFILE CHECKSUM: 47fb4d17214a74023d5a818ae96f90b209a33065
+PODFILE CHECKSUM: 2303a3b66134989ffeb5403bbbca65979fbd960f
 
 COCOAPODS: 1.10.1

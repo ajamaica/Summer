@@ -6,7 +6,7 @@ target 'Summer' do
   use_frameworks!
 
   # Pods for Summer
-  pod 'SolanaSwift', :git => 'https://github.com/p2p-org/solana-swift.git', :commit => '53d1a5b8fb04d060cebcfe04835f34c7cd14b43d'
+  pod 'SolanaSwift', :git => 'git@github.com:ajamaica/solana-swift-1.git', :commit => '26e37ce898ea683a801fd35d18807ed15b9c665f'
   pod 'KeychainSwift', '~> 19.0'
   target 'SummerTests' do
     inherit! :search_paths
