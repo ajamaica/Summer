@@ -28,6 +28,10 @@
 		064F85212658E5B700D45DF2 /* WalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F851F2658E5B700D45DF2 /* WalletTableViewCell.xib */; };
 		064F8524265A0B7B00D45DF2 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8523265A0B7B00D45DF2 /* FooterView.swift */; };
 		064F8526265A0B8700D45DF2 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F8525265A0B8700D45DF2 /* FooterView.xib */; };
+		064F852A265A2F4400D45DF2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8528265A2F4300D45DF2 /* SettingsViewController.swift */; };
+		064F852B265A2F4400D45DF2 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F8529265A2F4300D45DF2 /* SettingsViewController.xib */; };
+		064F8530265A309500D45DF2 /* SettingsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F852F265A309500D45DF2 /* SettingsViewCoordinator.swift */; };
+		064F8532265A30A100D45DF2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8531265A30A100D45DF2 /* SettingsViewModel.swift */; };
 		06676758265535CD00108D21 /* UpsellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06676756265535CD00108D21 /* UpsellViewController.swift */; };
 		06676759265535CD00108D21 /* UpsellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06676757265535CD00108D21 /* UpsellViewController.xib */; };
 		06F065D626528ED000032BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D526528ED000032BDA /* AppDelegate.swift */; };
@@ -85,6 +89,10 @@
 		064F851F2658E5B700D45DF2 /* WalletTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTableViewCell.xib; sourceTree = "<group>"; };
 		064F8523265A0B7B00D45DF2 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		064F8525265A0B8700D45DF2 /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
+		064F8528265A2F4300D45DF2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		064F8529265A2F4300D45DF2 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		064F852F265A309500D45DF2 /* SettingsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinator.swift; sourceTree = "<group>"; };
+		064F8531265A30A100D45DF2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		06676756265535CD00108D21 /* UpsellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewController.swift; sourceTree = "<group>"; };
 		06676757265535CD00108D21 /* UpsellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpsellViewController.xib; sourceTree = "<group>"; };
 		06F065D226528ED000032BDA /* Summer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Summer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -303,6 +311,41 @@
 			path = Footer;
 			sourceTree = "<group>";
 		};
+		064F8527265A2F2E00D45DF2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				064F852E265A308400D45DF2 /* Navigation */,
+				064F852D265A307C00D45DF2 /* ViewModel */,
+				064F852C265A307500D45DF2 /* UI */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		064F852C265A307500D45DF2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				064F8528265A2F4300D45DF2 /* SettingsViewController.swift */,
+				064F8529265A2F4300D45DF2 /* SettingsViewController.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		064F852D265A307C00D45DF2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				064F8531265A30A100D45DF2 /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		064F852E265A308400D45DF2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				064F852F265A309500D45DF2 /* SettingsViewCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		0667675A265535D000108D21 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +421,7 @@
 		06F066082652935E00032BDA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				064F8527265A2F2E00D45DF2 /* Settings */,
 				064F850C2658D42300D45DF2 /* Wallet */,
 				064F84F82658A7A200D45DF2 /* CreateWallet */,
 				06F0661526529D5100032BDA /* UpsellView */,
@@ -564,6 +608,7 @@
 			files = (
 				06676759265535CD00108D21 /* UpsellViewController.xib in Resources */,
 				064F85112658D43D00D45DF2 /* WalletViewController.xib in Resources */,
+				064F852B265A2F4400D45DF2 /* SettingsViewController.xib in Resources */,
 				064F851C2658DEC300D45DF2 /* WalletHeaderView.xib in Resources */,
 				064F850B2658B17700D45DF2 /* SeedPhaseCollectionViewCell.xib in Resources */,
 				064F84FC2658A7B300D45DF2 /* CreateWalletViewController.xib in Resources */,
@@ -699,6 +744,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				064F8530265A309500D45DF2 /* SettingsViewCoordinator.swift in Sources */,
 				064F85202658E5B700D45DF2 /* WalletTableViewCell.swift in Sources */,
 				064F8524265A0B7B00D45DF2 /* FooterView.swift in Sources */,
 				064F84F72657D0B600D45DF2 /* UpsellViewCoordinator.swift in Sources */,
@@ -708,12 +754,14 @@
 				06F0660C2652941200032BDA /* StartViewController.swift in Sources */,
 				064F85062658AF2D00D45DF2 /* SeedPhraseGenerator.swift in Sources */,
 				06F066102652945000032BDA /* StartViewModel.swift in Sources */,
+				064F8532265A30A100D45DF2 /* SettingsViewModel.swift in Sources */,
 				064F851A2658DEAD00D45DF2 /* WalletHeaderView.swift in Sources */,
 				06F06607265292DA00032BDA /* Coordinator.swift in Sources */,
 				064F84FB2658A7B300D45DF2 /* CreateWalletViewController.swift in Sources */,
 				06676758265535CD00108D21 /* UpsellViewController.swift in Sources */,
 				0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */,
 				064F85172658D4CD00D45DF2 /* WalletCoordinatior.swift in Sources */,
+				064F852A265A2F4400D45DF2 /* SettingsViewController.swift in Sources */,
 				0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */,
 				06F065D626528ED000032BDA /* AppDelegate.swift in Sources */,
 				064F85102658D43D00D45DF2 /* WalletViewController.swift in Sources */,

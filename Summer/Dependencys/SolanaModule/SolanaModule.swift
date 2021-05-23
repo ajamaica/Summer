@@ -10,6 +10,7 @@ import SolanaSwift
 import RxSwift
 
 protocol SolanaClient {
+    func deleteAccount(completition: @escaping((Result<(), Error>)-> ()))
     func createAccount(withPhrase: SeedPhraseCollection, completition: @escaping((Result<(), Error>)-> ()))
     func getBalance(completition: @escaping(Result<UInt64, Error>) -> ())
     func getPublicKey(completition: @escaping(Result<String, Error>) -> ())
@@ -52,9 +53,28 @@ class ConcreteSolanaClient: SolanaClient {
         self.endpoint = endpoint
     }
     
+    func deleteAccount(completition: @escaping((Result<(), Error>)-> ())) {
+        do {
+            let _ = try getAccount().get()
+            self.solana.accountStorage.clear()
+            return completition(.success(()))
+        } catch let e {
+            return completition(.failure(e))
+        }
+    }
+    
     func createAccount(withPhrase: SeedPhraseCollection, completition: @escaping((Result<(), Error>)-> ())) {
         do {
-            let account = try SolanaSDK.Account(phrase: withPhrase, network: .testnet)
+            var network: SolanaSDK.Network!
+            switch endpoint {
+            case .mainnetBeta:
+                network = .mainnetBeta
+            case .devnet:
+                network = .devnet
+            case .testnet:
+                network = .testnet
+            }
+            let account = try SolanaSDK.Account(phrase: withPhrase, network: network, derivablePath: .default)
             try self.solana.accountStorage.save(account)
             return completition(.success(()))
         } catch let e {
