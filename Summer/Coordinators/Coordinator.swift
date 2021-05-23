@@ -35,9 +35,10 @@ class Coordinator {
     }
     
     func showStart() {
+        self.navigationController?.popToRootViewController(animated: false)
         let coordinator = StartViewCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()
-        childCoordinators.append(coordinator)
+        childCoordinators = [coordinator]
     }
     
     func showUpsell() {
@@ -54,6 +55,12 @@ class Coordinator {
     
     func showWallet() {
         let coordinator = WalletCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
+    
+    func showSettings() {
+        let coordinator = SettingsViewCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }

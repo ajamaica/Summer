@@ -8,6 +8,7 @@
 import UIKit
 
 protocol WalletViewControllerDelegate: AnyObject {
+    func goToSettings()
     
 }
 let WalletTableViewCellIdentifier = "WalletTableViewCell"
@@ -53,6 +54,7 @@ class WalletViewController: UIViewController {
         super.viewDidLoad()
         headerView = .fromNib()
         footerView = .fromNib()
+        headerView.settingsButton.addTarget(self, action: #selector(settingsAction(sender:)), for: .touchUpInside)
         walletTableView.tableHeaderView = headerView
         walletTableView.tableFooterView = footerView
         walletTableView.delegate = self
@@ -64,6 +66,11 @@ class WalletViewController: UIViewController {
         self.viewModel.getWallets { result in
             
         }
+    }
+    
+    @objc
+    func settingsAction(sender: UIButton){
+        delegate?.goToSettings()
     }
 }
 

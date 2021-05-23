@@ -21,5 +21,7 @@ final class WalletCoordinator: Coordinator {
 }
 
 extension WalletCoordinator: WalletViewControllerDelegate {
-
+    func goToSettings() {
+        showSettings()
+    }
 }
