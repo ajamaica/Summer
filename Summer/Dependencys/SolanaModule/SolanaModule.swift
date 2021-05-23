@@ -14,6 +14,9 @@ protocol SolanaClient {
     func getBalance(completition: @escaping(Result<UInt64, Error>) -> ())
     func getPublicKey(completition: @escaping(Result<String, Error>) -> ())
     func sendSPL(mintAddress: String, decimals: UInt8, from: String, to: String, amount: UInt64, completition: @escaping(Result<String, Error>) -> ())
+    func getSPLTokens(completition: @escaping(Result<[SolanaSDK.Wallet], Error>) -> ())
+    func addSPLToken(mintAddress: String, completition: @escaping(Result<(signature: String, newPubkey: String), Error>) -> ())
+
 }
 
 class SolanaModule  {
@@ -109,8 +112,35 @@ class ConcreteSolanaClient: SolanaClient {
                  completition: @escaping(Result<String, Error>) -> ()){
         do{
             let _ = try getAccount().get()
-            self.solana.sendSPLTokens(mintAddress: mintAddress, decimals: decimals, from: from, to: to, amount: amount).subscribe { balance in
+            self.solana.sendSPLTokens(mintAddress: mintAddress, decimals: decimals, from: from, to: to, amount: amount)
+                .subscribe { balance in
                 completition(.success(balance))
+            }
+            .disposed(by: disposeBag)
+        } catch let e {
+            completition(.failure(e))
+        }
+    }
+    
+    func getSPLTokens(completition: @escaping(Result<[SolanaSDK.Wallet], Error>) -> ()) {
+        do{
+            let account = try getAccount().get()
+            self.solana.getTokenWallets(account: account.publicKey.base58EncodedString)
+                .subscribe { wallets in
+                completition(.success(wallets))
+            }
+            .disposed(by: disposeBag)
+        } catch let e {
+            completition(.failure(e))
+        }
+    }
+    
+    func addSPLToken(mintAddress: String, completition: @escaping(Result<(signature: String, newPubkey: String), Error>) -> ()) {
+        do{
+            let _ = try getAccount().get()
+            self.solana.createTokenAccount(mintAddress: mintAddress)
+                .subscribe { result in
+                completition(.success(result))
             }
             .disposed(by: disposeBag)
         } catch let e {

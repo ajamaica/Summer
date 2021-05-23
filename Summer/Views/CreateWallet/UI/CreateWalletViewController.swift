@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CreateWalletViewControllerDelegate: AnyObject {
-    
+    func goToWallet()
 }
 
 
@@ -34,7 +34,14 @@ class CreateWalletViewController: UIViewController {
     }
     
     @IBAction func doneAction(_ sender: Any) {
-        self.viewModel.createWallet()
+        self.viewModel.createWallet { result in
+            switch result {
+            case .success():
+                self.delegate?.goToWallet()
+            case .failure(_):
+                break
+            }
+        }
     }
 }
 
