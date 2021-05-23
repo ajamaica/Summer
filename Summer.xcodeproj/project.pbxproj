@@ -32,6 +32,10 @@
 		064F852B265A2F4400D45DF2 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F8529265A2F4300D45DF2 /* SettingsViewController.xib */; };
 		064F8530265A309500D45DF2 /* SettingsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F852F265A309500D45DF2 /* SettingsViewCoordinator.swift */; };
 		064F8532265A30A100D45DF2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8531265A30A100D45DF2 /* SettingsViewModel.swift */; };
+		064F8538265A37E200D45DF2 /* RestoreWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8536265A37E200D45DF2 /* RestoreWalletViewController.swift */; };
+		064F8539265A37E200D45DF2 /* RestoreWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F8537265A37E200D45DF2 /* RestoreWalletViewController.xib */; };
+		064F853D265A381300D45DF2 /* RestoreWalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F853C265A381300D45DF2 /* RestoreWalletCoordinator.swift */; };
+		064F8540265A382E00D45DF2 /* RestoreWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F853F265A382E00D45DF2 /* RestoreWalletViewModel.swift */; };
 		06676758265535CD00108D21 /* UpsellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06676756265535CD00108D21 /* UpsellViewController.swift */; };
 		06676759265535CD00108D21 /* UpsellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06676757265535CD00108D21 /* UpsellViewController.xib */; };
 		06F065D626528ED000032BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D526528ED000032BDA /* AppDelegate.swift */; };
@@ -93,6 +97,10 @@
 		064F8529265A2F4300D45DF2 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		064F852F265A309500D45DF2 /* SettingsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinator.swift; sourceTree = "<group>"; };
 		064F8531265A30A100D45DF2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		064F8536265A37E200D45DF2 /* RestoreWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWalletViewController.swift; sourceTree = "<group>"; };
+		064F8537265A37E200D45DF2 /* RestoreWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestoreWalletViewController.xib; sourceTree = "<group>"; };
+		064F853C265A381300D45DF2 /* RestoreWalletCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWalletCoordinator.swift; sourceTree = "<group>"; };
+		064F853F265A382E00D45DF2 /* RestoreWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWalletViewModel.swift; sourceTree = "<group>"; };
 		06676756265535CD00108D21 /* UpsellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewController.swift; sourceTree = "<group>"; };
 		06676757265535CD00108D21 /* UpsellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpsellViewController.xib; sourceTree = "<group>"; };
 		06F065D226528ED000032BDA /* Summer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Summer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -346,6 +354,41 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		064F8533265A37C000D45DF2 /* RestoreWallet */ = {
+			isa = PBXGroup;
+			children = (
+				064F853E265A381F00D45DF2 /* ViewModel */,
+				064F853B265A37EC00D45DF2 /* Navigation */,
+				064F853A265A37E500D45DF2 /* UI */,
+			);
+			path = RestoreWallet;
+			sourceTree = "<group>";
+		};
+		064F853A265A37E500D45DF2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				064F8536265A37E200D45DF2 /* RestoreWalletViewController.swift */,
+				064F8537265A37E200D45DF2 /* RestoreWalletViewController.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		064F853B265A37EC00D45DF2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				064F853C265A381300D45DF2 /* RestoreWalletCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		064F853E265A381F00D45DF2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				064F853F265A382E00D45DF2 /* RestoreWalletViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0667675A265535D000108D21 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +464,7 @@
 		06F066082652935E00032BDA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				064F8533265A37C000D45DF2 /* RestoreWallet */,
 				064F8527265A2F2E00D45DF2 /* Settings */,
 				064F850C2658D42300D45DF2 /* Wallet */,
 				064F84F82658A7A200D45DF2 /* CreateWallet */,
@@ -610,6 +654,7 @@
 				064F85112658D43D00D45DF2 /* WalletViewController.xib in Resources */,
 				064F852B265A2F4400D45DF2 /* SettingsViewController.xib in Resources */,
 				064F851C2658DEC300D45DF2 /* WalletHeaderView.xib in Resources */,
+				064F8539265A37E200D45DF2 /* RestoreWalletViewController.xib in Resources */,
 				064F850B2658B17700D45DF2 /* SeedPhaseCollectionViewCell.xib in Resources */,
 				064F84FC2658A7B300D45DF2 /* CreateWalletViewController.xib in Resources */,
 				06F065E226528ED300032BDA /* LaunchScreen.storyboard in Resources */,
@@ -760,12 +805,15 @@
 				064F84FB2658A7B300D45DF2 /* CreateWalletViewController.swift in Sources */,
 				06676758265535CD00108D21 /* UpsellViewController.swift in Sources */,
 				0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */,
+				064F8540265A382E00D45DF2 /* RestoreWalletViewModel.swift in Sources */,
+				064F8538265A37E200D45DF2 /* RestoreWalletViewController.swift in Sources */,
 				064F85172658D4CD00D45DF2 /* WalletCoordinatior.swift in Sources */,
 				064F852A265A2F4400D45DF2 /* SettingsViewController.swift in Sources */,
 				0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */,
 				06F065D626528ED000032BDA /* AppDelegate.swift in Sources */,
 				064F85102658D43D00D45DF2 /* WalletViewController.swift in Sources */,
 				06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */,
+				064F853D265A381300D45DF2 /* RestoreWalletCoordinator.swift in Sources */,
 				064F85132658D46800D45DF2 /* WalletViewModel.swift in Sources */,
 				064F85032658A8D200D45DF2 /* CreateWalletCoordinator.swift in Sources */,
 				064F850A2658B17700D45DF2 /* SeedPhaseCollectionViewCell.swift in Sources */,

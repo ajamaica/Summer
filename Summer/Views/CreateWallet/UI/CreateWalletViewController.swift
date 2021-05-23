@@ -28,9 +28,21 @@ class CreateWalletViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Seed Phrase"
+
         seedPhaseCollection.delegate = self
         seedPhaseCollection.dataSource = self
         seedPhaseCollection.register(UINib(nibName: SeedPhaseCollectionViewCellIndentifier, bundle: nil), forCellWithReuseIdentifier: SeedPhaseCollectionViewCellIndentifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func doneAction(_ sender: Any) {

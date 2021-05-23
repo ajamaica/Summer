@@ -19,36 +19,28 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="azc-3D-9b0">
-                    <rect key="frame" x="125" y="425.5" width="164.5" height="43.5"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnG-he-Klz">
-                            <rect key="frame" x="0.0" y="0.0" width="22.5" height="43.5"/>
-                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="37"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6J-WW-7JF">
-                            <rect key="frame" x="30.5" y="0.0" width="134" height="43.5"/>
-                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="37"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flamingo" translatesAutoresizingMaskIntoConstraints="NO" id="OYD-4R-FnI">
+                    <rect key="frame" x="10" y="330.5" width="394" height="235"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="235" id="Q4g-1Y-1i7"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="Primary"/>
             <constraints>
-                <constraint firstItem="azc-3D-9b0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HCn-Vw-coF"/>
-                <constraint firstItem="azc-3D-9b0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-1" id="JF9-8l-QRt"/>
+                <constraint firstItem="OYD-4R-FnI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="C2n-RV-WnT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OYD-4R-FnI" secondAttribute="trailing" constant="10" id="E5l-x9-fVh"/>
+                <constraint firstItem="OYD-4R-FnI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OOt-Li-cql"/>
+                <constraint firstItem="OYD-4R-FnI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="zYx-lW-EiW"/>
             </constraints>
             <point key="canvasLocation" x="95.652173913043484" y="108.48214285714285"/>
         </view>
     </objects>
     <resources>
+        <image name="flamingo" width="1033.5" height="876"/>
         <namedColor name="Primary">
-            <color red="0.12200000137090683" green="0.11299999803304672" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.12156862745098039" green="0.11372549019607843" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

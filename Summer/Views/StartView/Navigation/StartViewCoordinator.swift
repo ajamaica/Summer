@@ -16,7 +16,7 @@ final class StartViewCoordinator: Coordinator {
         let viewModel = StartViewModel(solana: applicationComponent.solanaModule.solana)
         let viewController = StartViewController(viewModel: viewModel)
         viewController.delegate = self
-        navigationController.pushViewController(viewController, animated: true)
+        navigationController.pushViewController(viewController, animated: false)
     }
 }
 

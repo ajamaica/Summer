@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestoreWalletViewController" customModule="Summer" customModuleProvider="target">
+            <connections>
+                <outlet property="seedPhraseTextField" destination="Cet-HH-5Sw" id="gyG-gX-D30"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Cet-HH-5Sw">
+                    <rect key="frame" x="20" y="174" width="374" height="140"/>
+                    <color key="backgroundColor" name="Secondary"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="PNw-Hf-sDW"/>
+                    </constraints>
+                    <color key="textColor" name="FontPrimary"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFW-Oi-6nf">
+                    <rect key="frame" x="20" y="64" width="374" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="E0x-Ks-2do"/>
+                    </constraints>
+                    <string key="text">Restore your wallet using your twelve or twenty-four seed words.   Note that this will delete any existing wallet on this device.</string>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                    <color key="textColor" name="FontPrimary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-YC-0le">
+                    <rect key="frame" x="20" y="334" width="374" height="56"/>
+                    <color key="backgroundColor" name="Accent"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="SUQ-7A-Kls"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="RESTORE WALLET">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="restoreWallet:" destination="-1" eventType="touchUpInside" id="CA6-qP-2hz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="Primary"/>
+            <constraints>
+                <constraint firstItem="hmb-YC-0le" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1cr-c6-Imv"/>
+                <constraint firstAttribute="trailing" secondItem="UFW-Oi-6nf" secondAttribute="trailing" constant="20" id="3vQ-5t-gBp"/>
+                <constraint firstItem="Cet-HH-5Sw" firstAttribute="top" secondItem="UFW-Oi-6nf" secondAttribute="bottom" constant="10" id="4Sc-gN-Ir3"/>
+                <constraint firstItem="UFW-Oi-6nf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="4hO-Xu-GaE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hmb-YC-0le" secondAttribute="trailing" constant="20" id="OHV-c7-6a2"/>
+                <constraint firstItem="UFW-Oi-6nf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Pqh-8p-Ed6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Cet-HH-5Sw" secondAttribute="trailing" constant="20" id="hf0-SP-M6L"/>
+                <constraint firstItem="Cet-HH-5Sw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="lvO-e2-rd0"/>
+                <constraint firstItem="hmb-YC-0le" firstAttribute="top" secondItem="Cet-HH-5Sw" secondAttribute="bottom" constant="20" id="qcH-yA-NfR"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Accent">
+            <color red="0.93333333333333335" green="0.47843137254901957" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="FontPrimary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.12156862745098039" green="0.11372549019607843" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Secondary">
+            <color red="0.24099999666213989" green="0.2800000011920929" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

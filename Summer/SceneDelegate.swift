@@ -10,7 +10,11 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let navigationController = UINavigationController()
+    var navigationController: UINavigationController! {
+        let nav = UINavigationController()
+        nav.navigationBar.tintColor = UIColor(named: "Accent")
+        return nav
+    }
     
     fileprivate var mainCoordinator: Coordinator?
 

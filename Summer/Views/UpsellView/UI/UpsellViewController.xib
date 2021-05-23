@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,23 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fwR-oC-PSe">
-                    <rect key="frame" x="125" y="366.5" width="164.5" height="43.5"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hu-CW-8CK">
-                            <rect key="frame" x="0.0" y="0.0" width="22.5" height="43.5"/>
-                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="37"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5r-q5-hIZ">
-                            <rect key="frame" x="30.5" y="0.0" width="134" height="43.5"/>
-                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="37"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HPa-5o-17W">
                     <rect key="frame" x="30" y="706" width="354" height="116"/>
                     <subviews>
@@ -44,14 +28,16 @@
                                 <constraint firstAttribute="height" constant="30" id="ek2-at-Qxx"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="I already have an wallet"/>
+                            <state key="normal" title="I already have an wallet">
+                                <color key="titleColor" name="Accent"/>
+                            </state>
                             <connections>
                                 <action selector="recoverAccount:" destination="-1" eventType="touchUpInside" id="pp1-8m-K8b"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeF-Or-UBm">
                             <rect key="frame" x="0.0" y="60" width="354" height="56"/>
-                            <color key="backgroundColor" name="Secondary"/>
+                            <color key="backgroundColor" name="Accent"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="5wi-6V-bIg"/>
                             </constraints>
@@ -72,32 +58,40 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Self custodial Solana Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3et-31-Gr2">
-                    <rect key="frame" x="102.5" y="425" width="209.5" height="20.5"/>
+                    <rect key="frame" x="102.5" y="485.5" width="209.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flamingo" translatesAutoresizingMaskIntoConstraints="NO" id="0h4-uX-5is">
+                    <rect key="frame" x="10" y="230.5" width="394" height="235"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="235" id="q6f-Yk-UAL"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="Primary"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0h4-uX-5is" secondAttribute="trailing" constant="10" id="2LP-FG-bHc"/>
+                <constraint firstItem="0h4-uX-5is" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="3g9-9z-geP"/>
                 <constraint firstItem="3et-31-Gr2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IAo-b4-bKY"/>
-                <constraint firstItem="3et-31-Gr2" firstAttribute="top" secondItem="fwR-oC-PSe" secondAttribute="bottom" constant="15" id="Jw6-I0-Fkd"/>
-                <constraint firstItem="fwR-oC-PSe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-60" id="MRU-GG-slk"/>
-                <constraint firstItem="fwR-oC-PSe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QWt-EA-a16"/>
+                <constraint firstItem="0h4-uX-5is" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="MYc-kj-pqG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="HPa-5o-17W" secondAttribute="bottom" constant="40" id="UU3-vL-ChD"/>
                 <constraint firstItem="HPa-5o-17W" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="h8A-WK-xhC"/>
+                <constraint firstItem="3et-31-Gr2" firstAttribute="top" secondItem="0h4-uX-5is" secondAttribute="bottom" constant="20" id="jOQ-Qu-FKq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HPa-5o-17W" secondAttribute="trailing" constant="30" id="qSw-bR-eRW"/>
             </constraints>
             <point key="canvasLocation" x="95.652173913043484" y="108.48214285714285"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="Primary">
-            <color red="0.12200000137090683" green="0.11299999803304672" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <image name="flamingo" width="1033.5" height="876"/>
+        <namedColor name="Accent">
+            <color red="0.93333333333333335" green="0.47843137254901957" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="Secondary">
-            <color red="0.24099999666213989" green="0.2800000011920929" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="Primary">
+            <color red="0.12156862745098039" green="0.11372549019607843" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
