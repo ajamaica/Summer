@@ -139,6 +139,7 @@
 		B3DE8B19265CD30000D6744A /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE8B16265CD30000D6744A /* secp256k1.framework */; };
 		B3DE8B1A265CD30000D6744A /* CKSecp256k1.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8B17265CD30000D6744A /* CKSecp256k1.m */; };
 		B3DE8B30265CD4CF00D6744A /* TweetNacl in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B2F265CD4CF00D6744A /* TweetNacl */; };
+		B3DE8B3F265CD67000D6744A /* ContResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8B3E265CD67000D6744A /* ContResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,6 +292,7 @@
 		B3DE8B15265CD30000D6744A /* CKSecp256k1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSecp256k1.h; sourceTree = "<group>"; };
 		B3DE8B16265CD30000D6744A /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = secp256k1.framework; sourceTree = "<group>"; };
 		B3DE8B17265CD30000D6744A /* CKSecp256k1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKSecp256k1.m; sourceTree = "<group>"; };
+		B3DE8B3E265CD67000D6744A /* ContResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 		0648DA4726553EA3005EAE15 /* Dependencys */ = {
 			isa = PBXGroup;
 			children = (
+				B3DE8B3D265CD66700D6744A /* ContResult */,
 				B3DE8B11265CD2EC00D6744A /* CKSecp256k1 */,
 				B3DE8A52265CCAE900D6744A /* Ed25519HD */,
 				064B931F265C991A00474F15 /* Solana */,
@@ -970,6 +973,14 @@
 			path = CKSecp256k1;
 			sourceTree = "<group>";
 		};
+		B3DE8B3D265CD66700D6744A /* ContResult */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE8B3E265CD67000D6744A /* ContResult.swift */,
+			);
+			path = ContResult;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1160,6 +1171,7 @@
 				064F84FE2658A7D100D45DF2 /* CreateWalletViewModel.swift in Sources */,
 				06F0660C2652941200032BDA /* StartViewController.swift in Sources */,
 				064B9373265C992B00474F15 /* SolanaSDK+Swap.swift in Sources */,
+				B3DE8B3F265CD67000D6744A /* ContResult.swift in Sources */,
 				064B9388265C992B00474F15 /* ParsedTransaction.swift in Sources */,
 				064B93AA265C992B00474F15 /* Decimals+Extensions.swift in Sources */,
 				B3DE8A59265CCAF400D6744A /* Ed25519HDKey.swift in Sources */,
