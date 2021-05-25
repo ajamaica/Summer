@@ -24,7 +24,7 @@ extension WalletCoordinator: WalletViewControllerDelegate {
     func goToToken() {
         showToken()
     }
-    
+
     func goToSettings() {
         showSettings()
     }

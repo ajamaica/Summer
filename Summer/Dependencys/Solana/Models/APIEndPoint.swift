@@ -7,18 +7,18 @@
 
 import Foundation
 
-extension SolanaSDK {
+extension Solana {
     public struct APIEndPoint: Hashable, Codable {
-        public init(url: String, network: SolanaSDK.Network, socketUrl: String? = nil) {
+        public init(url: String, network: Solana.Network, socketUrl: String? = nil) {
             self.url = url
             self.network = network
             self.socketUrl = socketUrl ?? url.replacingOccurrences(of: "http", with: "ws")
         }
-        
+
         public let url: String
         public var network: Network
         public var socketUrl: String
-        
+
         public static var definedEndpoints: [Self] {
             [
                 .init(url: "https://solana-api.projectserum.com", network: .mainnetBeta),

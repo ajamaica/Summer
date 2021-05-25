@@ -7,9 +7,9 @@
 
 import Foundation
 
-public protocol Token: Hashable, Decodable  {
-    associatedtype TT : TokenTag
-    associatedtype TE : TokenExtensions
+public protocol Token: Hashable, Decodable {
+    associatedtype TT: TokenTag
+    associatedtype TE: TokenExtensions
     var chainId: Int { get }
     var address: String { get }
     var symbol: String { get }
@@ -21,7 +21,7 @@ public protocol Token: Hashable, Decodable  {
 }
 
 struct SummerToken: Token {
-    
+
     let _tags: [String]
     let chainId: Int
     let address: String
@@ -31,7 +31,7 @@ struct SummerToken: Token {
     let logoURI: String?
     var tags: [SummerTokenTag] = []
     let extensions: SummerTokenExtensions?
-    
+
     public init(_tags: [String], chainId: Int, address: String, symbol: String, name: String, decimals: UInt8, logoURI: String?, tags: [SummerTokenTag] = [], extensions: SummerTokenExtensions?) {
         self._tags = _tags
         self.chainId = chainId
@@ -43,25 +43,21 @@ struct SummerToken: Token {
         self.tags = tags
         self.extensions = extensions
     }
-    
-    
-    
+
     enum CodingKeys: String, CodingKey {
         case chainId, address, symbol, name, decimals, logoURI, extensions, _tags = "tags"
     }
-    
-    
+
     public var wrappedBy: WrappingToken? {
         if tags.contains(where: {$0.name == "wrapped-sollet"}) {
             return .sollet
         }
-        
+
         if tags.contains(where: {$0.name == "wrapped"}) &&
-            tags.contains(where: {$0.name == "wormhole"})
-        {
+            tags.contains(where: {$0.name == "wormhole"}) {
             return .wormhole
         }
-        
+
         return nil
     }
 }

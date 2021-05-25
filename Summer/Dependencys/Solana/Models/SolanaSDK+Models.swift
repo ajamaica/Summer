@@ -7,18 +7,18 @@
 import Foundation
 import RxSwift
 
-public extension SolanaSDK {
+public extension Solana {
     typealias TransactionID = String
     typealias Lamports = UInt64
     typealias Decimals = UInt8
-    
+
 	struct Response<T: Decodable>: Decodable {
 		public let jsonrpc: String
 		public let id: String?
 		public let result: T?
 		public let error: ResponseError?
         public let method: String?
-        
+
         // socket
         public let params: SocketParams<T>?
 	}
@@ -121,7 +121,7 @@ public extension SolanaSDK {
         public let account: BufferInfo<T>
 		public let pubkey: String
 	}
-    
+
     struct BufferInfo<T: BufferLayout>: Decodable {
         public let lamports: Lamports
         public let owner: String
@@ -129,7 +129,7 @@ public extension SolanaSDK {
         public let executable: Bool
         public let rentEpoch: UInt64
     }
-    
+
 	struct PerformanceSample: Decodable {
 		public let numSlots: UInt64
 		public let numTransactions: UInt64
@@ -141,7 +141,7 @@ public extension SolanaSDK {
         public let slot: UInt64?
         public let err: TransactionError?
         public let memo: String?
-        
+
         public init(signature: String) {
             self.signature = signature
             self.slot = nil
@@ -157,7 +157,7 @@ public extension SolanaSDK {
     struct TransactionInfo: Decodable {
         public let blockTime: UInt64?
         public let meta: TransactionMeta?
-        public let transaction: SolanaSDK.ConfirmedTransaction
+        public let transaction: Solana.ConfirmedTransaction
         public let slot: UInt64?
     }
     struct TransactionMeta: Decodable {
@@ -171,7 +171,7 @@ public extension SolanaSDK {
         public let preTokenBalances: [TokenBalance]?
     }
     struct TransactionError: Decodable, Hashable {
-        
+
     }
     struct InnerInstruction: Decodable {
         let index: UInt32
@@ -204,12 +204,12 @@ public extension SolanaSDK {
             self.decimals = decimals
             self.uiAmountString = uiAmountString
         }
-        
+
 		public let uiAmount: Float64?
 		public let amount: String
 		public let decimals: UInt8?
         public let uiAmountString: String?
-        
+
         public var amountInUInt64: UInt64? {
             return UInt64(amount)
         }
@@ -227,7 +227,7 @@ public extension SolanaSDK {
 	struct Version: Decodable {
 		public let solanaCore: String
 
-		private enum CodingKeys : String, CodingKey {
+		private enum CodingKeys: String, CodingKey {
 			case solanaCore = "solana-core"
 		}
 	}

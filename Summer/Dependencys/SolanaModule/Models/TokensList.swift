@@ -8,8 +8,8 @@
 import Foundation
 
 protocol TokensList: Decodable {
-    associatedtype T : Token
-    associatedtype TT : TokenTag
+    associatedtype T: Token
+    associatedtype TT: TokenTag
     var name: String { get }
     var logoURI: String { get }
     var keywords: [String] { get }

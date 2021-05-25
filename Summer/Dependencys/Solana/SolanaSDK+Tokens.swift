@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-extension SolanaSDK {
+extension Solana {
     public func getTokenWallets(account: String? = nil) -> Single<[Wallet]> {
         guard let account = account ?? accountStorage.account?.publicKey.base58EncodedString else {
             return .error(Error.unauthorized)
@@ -35,7 +35,7 @@ extension SolanaSDK {
                 $0.map { (pubkey, accountInfo) in
                     let mintAddress = accountInfo.mint.base58EncodedString
                     let token = self.supportedTokens.first(where: {$0.address == mintAddress}) ?? .unsupported(mint: mintAddress)
-                    
+
                     return Wallet(
                         pubkey: pubkey,
                         lamports: accountInfo.lamports,
@@ -45,6 +45,5 @@ extension SolanaSDK {
                 }
             }
     }
-    
-    
+
 }

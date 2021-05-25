@@ -9,7 +9,7 @@ import Foundation
 
 class TokenViewModel {
     private let solana: SolanaClient
-    init(solana: SolanaClient){
+    init(solana: SolanaClient) {
         self.solana = solana
     }
 }

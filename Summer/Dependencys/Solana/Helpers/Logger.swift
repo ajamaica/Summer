@@ -27,42 +27,41 @@ public class Logger {
     // MARK: - Properties
     static var showEvents: [LogEvent]?
     static var shownApiMethods: [String]?
-    
+
     static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS"
-    
+
     static var dateFormatter: DateFormatter {
         let formatter           =   DateFormatter()
         formatter.dateFormat    =   dateFormat
         formatter.locale        =   Locale.current
         formatter.timeZone      =   TimeZone.current
-        
+
         return formatter
     }
     private static var isOn = true
-    
+
     // MARK: - Class Functions
     public static func on() {
         isOn = true
     }
-    
+
     public static func off() {
         isOn = false
     }
-    
+
     private class func sourceFileName(filePath: String) -> String {
         let components = filePath.components(separatedBy: "/")
-        
+
         return components.isEmpty ? "" : components.last!
     }
-    
+
     // message:     This will be the debug message to appear on the debug console.
     // event:       Type of event as cases of LogEvent enum.
     // fileName:    The file name from where the log will appear.
     // line:        The line number of the log message.
     // column:      The same will happen for this parameter too.
     // funcName:    The default value of this parameter is the signature of the function from where the log function is getting called.
-    public class func log(message: String, event: LogEvent, fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function, apiMethod: String? = nil)
-    {
+    public class func log(message: String, event: LogEvent, fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function, apiMethod: String? = nil) {
         if !isOn {return}
         if showEvents?.contains(event) == false {return}
         if let method = apiMethod, shownApiMethods?.contains(method) == false {return}

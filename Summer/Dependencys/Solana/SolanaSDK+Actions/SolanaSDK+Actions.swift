@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-extension SolanaSDK {
+extension Solana {
     /// Traditional sending without FeeRelayer
     /// - Parameters:
     ///   - instructions: transaction's instructions
@@ -44,8 +44,7 @@ extension SolanaSDK {
             }
             .catch {error in
                 if numberOfTries <= maxAttemps,
-                   let error = error as? SolanaSDK.Error
-                {
+                   let error = error as? Solana.Error {
                     var shouldRetry = false
                     switch error {
                     case .other(let message) where message == "Blockhash not found":
@@ -55,7 +54,7 @@ extension SolanaSDK {
                     default:
                         break
                     }
-                    
+
                     if shouldRetry {
                         numberOfTries += 1
                         return self.serializeAndSendWithFee(instructions: instructions, signers: signers, isSimulation: isSimulation)
@@ -64,7 +63,7 @@ extension SolanaSDK {
                 throw error
             }
     }
-    
+
     private func serializeTransaction(
         instructions: [TransactionInstruction],
         recentBlockhash: String? = nil,
@@ -78,11 +77,11 @@ extension SolanaSDK {
         } else {
             getRecentBlockhashRequest = getRecentBlockhash()
         }
-        
+
         guard let feePayer = feePayer ?? accountStorage.account?.publicKey else {
             return .error(Error.invalidRequest(reason: "Fee-payer not found"))
         }
-        
+
         // serialize transaction
         return getRecentBlockhashRequest
             .map {recentBlockhash -> String in

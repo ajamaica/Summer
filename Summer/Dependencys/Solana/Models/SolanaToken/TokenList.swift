@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension SolanaSDK {
+extension Solana {
     struct TokensList: Decodable {
         let name: String
         let logoURI: String
@@ -21,7 +21,7 @@ extension SolanaSDK {
         public var name: String
         public var description: String
     }
-    
+
     public enum WrappingToken: String {
         case sollet, wormhole
     }
@@ -38,9 +38,9 @@ extension SolanaSDK {
             self.tags = tags
             self.extensions = extensions
         }
-        
+
         let _tags: [String]
-        
+
         public let chainId: Int
         public let address: String
         public let symbol: String
@@ -49,11 +49,11 @@ extension SolanaSDK {
         public let logoURI: String?
         public var tags: [TokenTag] = []
         public let extensions: TokenExtensions?
-        
+
         enum CodingKeys: String, CodingKey {
             case chainId, address, symbol, name, decimals, logoURI, extensions, _tags = "tags"
         }
-        
+
         public static func unsupported(
             mint: String?
         ) -> Token {
@@ -69,18 +69,17 @@ extension SolanaSDK {
                 extensions: nil
             )
         }
-        
+
         public var wrappedBy: WrappingToken? {
             if tags.contains(where: {$0.name == "wrapped-sollet"}) {
                 return .sollet
             }
-            
+
             if tags.contains(where: {$0.name == "wrapped"}) &&
-                tags.contains(where: {$0.name == "wormhole"})
-            {
+                tags.contains(where: {$0.name == "wormhole"}) {
                 return .wormhole
             }
-            
+
             return nil
         }
     }

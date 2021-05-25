@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-extension SolanaSDK {
+extension Solana {
     public func swap(
         account: Account? = nil,
         pool: Pool? = nil,
@@ -23,10 +23,10 @@ extension SolanaSDK {
         // verify account
         guard let owner = account ?? accountStorage.account
         else {return .error(Error.unauthorized)}
-        
+
         // reuse variables
         var pool = pool
-        
+
         // reduce pools
         var getPoolRequest: Single<Pool>
         if let pool = pool {
@@ -45,7 +45,7 @@ extension SolanaSDK {
                     throw Error.other("Unsupported swapping tokens")
                 }
         }
-        
+
         // get pool
         return getPoolRequest
             .flatMap { pool -> Single<[Any]> in
@@ -55,7 +55,7 @@ extension SolanaSDK {
                         tokenProgramId: .tokenProgramId
                     )
                         .map {$0 as Any},
-                    
+
                     self.getMinimumBalanceForRentExemption(dataLength: UInt64(AccountInfo.BUFFER_LENGTH))
                         .map {$0 as Any}
                 ])
@@ -70,23 +70,23 @@ extension SolanaSDK {
                 let tokenAInfo      = params[0] as! AccountInfo
                 let minimumBalanceForRentExemption
                                     = params[1] as! UInt64
-                
+
                 let minAmountIn = pool.minimumReceiveAmount(estimatedAmount: estimatedAmount, slippage: slippage)
-                
+
                 // find account
                 var source = source
                 var destination = destination
-                
+
                 // add userTransferAuthority
                 let userTransferAuthority = try Account(network: self.endpoint.network)
-                
+
                 // form signers
                 var signers = [owner, userTransferAuthority]
-                
+
                 // form instructions
                 var instructions = [TransactionInstruction]()
                 var cleanupInstructions = [TransactionInstruction]()
-                
+
                 // create fromToken if it is native
                 if tokenAInfo.isNative {
                     let newAccount = try self.createWrappedSolAccount(
@@ -98,10 +98,10 @@ extension SolanaSDK {
                         signers: &signers,
                         minimumBalanceForRentExemption: minimumBalanceForRentExemption
                     )
-                    
+
                     source = newAccount.publicKey
                 }
-                
+
                 // check toToken
                 let isMintBWSOL = destinationMint == .wrappedSOLMint
                 if destination == nil || isMintBWSOL {
@@ -114,10 +114,10 @@ extension SolanaSDK {
                         signers: &signers,
                         minimumBalanceForRentExemption: minimumBalanceForRentExemption
                     )
-                    
+
                     destination = newAccount.publicKey
                 }
-                
+
                 // approve
                 instructions.append(
                     TokenProgram.approveInstruction(
@@ -128,7 +128,7 @@ extension SolanaSDK {
                         amount: amount
                     )
                 )
-                
+
                 // TODO: - Host fee
 //                let hostFeeAccount = try self.createAccountByMint(
 //                    owner: .swapHostFeeAddress,
@@ -138,7 +138,7 @@ extension SolanaSDK {
 //                    signers: &signers,
 //                    minimumBalanceForRentExemption: minimumBalanceForRentExemption
 //                )
-                
+
                 // swap
                 instructions.append(
                     TokenSwapProgram.swapInstruction(
@@ -158,7 +158,7 @@ extension SolanaSDK {
                         minimumAmountOut: minAmountIn
                     )
                 )
-                
+
                 return self.serializeAndSendWithFee(
                     instructions: instructions + cleanupInstructions,
                     signers: signers,
@@ -166,7 +166,7 @@ extension SolanaSDK {
                 )
             }
     }
-    
+
     // MARK: - Helpers
     private func getAccountInfoData(account: String, tokenProgramId: PublicKey) -> Single<AccountInfo> {
         getAccountInfo(account: account, decodedTo: AccountInfo.self)
@@ -180,7 +180,7 @@ extension SolanaSDK {
                 throw Error.other("Invalid data")
             }
     }
-    
+
     private func createWrappedSolAccount(
         fromAccount: PublicKey,
         amount: UInt64,
@@ -191,7 +191,7 @@ extension SolanaSDK {
         minimumBalanceForRentExemption: UInt64
     ) throws -> Account {
         let newAccount = try Account(network: endpoint.network)
-        
+
         instructions.append(
             SystemProgram.createAccountInstruction(
                 from: fromAccount,
@@ -199,7 +199,7 @@ extension SolanaSDK {
                 lamports: amount + minimumBalanceForRentExemption
             )
         )
-        
+
         instructions.append(
             TokenProgram.initializeAccountInstruction(
                 account: newAccount.publicKey,
@@ -207,7 +207,7 @@ extension SolanaSDK {
                 owner: payer
             )
         )
-        
+
         cleanupInstructions.append(
             TokenProgram.closeAccountInstruction(
                 account: newAccount.publicKey,
@@ -215,12 +215,12 @@ extension SolanaSDK {
                 owner: payer
             )
         )
-        
+
         signers.append(newAccount)
-        
+
         return newAccount
     }
-    
+
     private func createAccountByMint(
         owner: PublicKey,
         mint: PublicKey,
@@ -230,7 +230,7 @@ extension SolanaSDK {
         minimumBalanceForRentExemption: UInt64
     ) throws -> Account {
         let newAccount = try Account(network: endpoint.network)
-        
+
         instructions.append(
             SystemProgram.createAccountInstruction(
                 from: owner,
@@ -238,7 +238,7 @@ extension SolanaSDK {
                 lamports: minimumBalanceForRentExemption
             )
         )
-        
+
         instructions.append(
             TokenProgram.initializeAccountInstruction(
                 account: newAccount.publicKey,
@@ -246,7 +246,7 @@ extension SolanaSDK {
                 owner: owner
             )
         )
-        
+
         if mint == .wrappedSOLMint {
             cleanupInstructions.append(
                 TokenProgram.closeAccountInstruction(
@@ -256,7 +256,7 @@ extension SolanaSDK {
                 )
             )
         }
-        
+
         signers.append(newAccount)
         return newAccount
     }

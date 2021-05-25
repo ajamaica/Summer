@@ -13,11 +13,11 @@ enum RestoreWalletViewModelError: Error {
 class RestoreWalletViewModel {
     private let solana: SolanaClient
     private var seedPhrase = ConcreteSeedPhrase()
-    init(solana: SolanaClient){
+    init(solana: SolanaClient) {
         self.solana = solana
     }
-    
-    func restoreWallet(wordlist: [String], completition: @escaping ((Result<(), Error>) -> ())){
+
+    func restoreWallet(wordlist: [String], completition: @escaping ((Result<(), Error>) -> Void)) {
         guard seedPhrase.isValid(wordlist: wordlist) == true else {
             return completition(.failure(RestoreWalletViewModelError.invalidSeed))
         }

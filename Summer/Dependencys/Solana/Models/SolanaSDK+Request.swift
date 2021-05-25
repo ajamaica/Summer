@@ -7,11 +7,11 @@
 
 import Foundation
 
-extension SolanaSDK {
+extension Solana {
     // MARK: - Private
     public struct EncodableWrapper: Encodable {
         let wrapped: Encodable
-        
+
         public func encode(to encoder: Encoder) throws {
             try self.wrapped.encode(to: encoder)
         }
@@ -22,19 +22,19 @@ extension SolanaSDK {
             self.method = method
             self.params = params
         }
-        
+
         public let id = UUID().uuidString
         public let method: String
         public let jsonrpc: String = "2.0"
         public let params: [Encodable]
-        
+
         enum CodingKeys: String, CodingKey {
             case id
             case method
             case jsonrpc
             case params
         }
-        
+
         public func encode(to encoder: Encoder) throws {
             var container = encoder.container(keyedBy: CodingKeys.self)
             try container.encode(id, forKey: .id)
@@ -44,7 +44,7 @@ extension SolanaSDK {
             try container.encode(wrappedDict, forKey: .params)
         }
     }
-    
+
     // MARK: - Transfer
     public struct Transfer {
         public static func compile() -> Data {
@@ -54,19 +54,19 @@ extension SolanaSDK {
             result.append(Data.encodeLength(keyIndeces.count)) // key size
             result.append(contentsOf: keyIndeces) // keyIndeces
             result.append(UInt8(12))   // FIXME transfer data size
-            
+
             result += UInt32(2).bytes // Program Index
-            
+
             let lamports = 3000
             result += UInt64(lamports).bytes
-            
+
             return result
         }
     }
-    
+
     // MARK: - Public
     public typealias Commitment = String
-    
+
     public struct RequestConfiguration: Encodable {
         public let commitment: Commitment?
         public let encoding: String?
@@ -75,9 +75,8 @@ extension SolanaSDK {
         public let limit: Int?
         public let before: String?
         public let until: String?
-        
-        public init?(commitment: Commitment? = nil, encoding: String? = nil, dataSlice: DataSlice? = nil, filters: [[String: EncodableWrapper]]? = nil, limit: Int? = nil, before: String? = nil, until: String? = nil)
-        {
+
+        public init?(commitment: Commitment? = nil, encoding: String? = nil, dataSlice: DataSlice? = nil, filters: [[String: EncodableWrapper]]? = nil, limit: Int? = nil, before: String? = nil, until: String? = nil) {
             if commitment == nil && encoding == nil && dataSlice == nil && filters == nil && limit == nil && before == nil && until == nil {
                 return nil
             }
@@ -90,7 +89,7 @@ extension SolanaSDK {
             self.until = until
         }
     }
-    
+
     public struct DataSlice: Encodable {
         public let offset: Int
         public let length: Int

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol TokenTag: Hashable, Decodable  {
+public protocol TokenTag: Hashable, Decodable {
     var name: String { get }
     var description: String { get }
 }

@@ -24,7 +24,7 @@ extension UpsellViewCoordinator: UpsellViewControllerDelegate {
     func goToCreateWallet() {
         showCreateWallet()
     }
-    
+
     func goToRecoverWallet() {
         showRestoreWallet()
     }

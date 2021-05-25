@@ -7,14 +7,13 @@
 
 import Foundation
 
-extension SolanaSDK {
+extension Solana {
     public struct TransactionInstruction: Decodable {
-        public let keys: [SolanaSDK.Account.Meta]
-        public let programId: SolanaSDK.PublicKey
+        public let keys: [Solana.Account.Meta]
+        public let programId: Solana.PublicKey
         public let data: [UInt8]
-        
-        init(keys: [SolanaSDK.Account.Meta], programId: SolanaSDK.PublicKey, data: [BytesEncodable])
-        {
+
+        init(keys: [Solana.Account.Meta], programId: Solana.PublicKey, data: [BytesEncodable]) {
             self.keys = keys
             self.programId = programId
             self.data = data.bytes

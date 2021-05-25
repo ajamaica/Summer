@@ -7,9 +7,9 @@
 
 import Foundation
 
-extension SolanaSDK {
+extension Solana {
     public struct TokenSwapInfo: BufferLayout, Equatable, Hashable, Encodable {
-        init(version: UInt8, isInitialized: Bool, nonce: UInt8, tokenProgramId: SolanaSDK.PublicKey, tokenAccountA: SolanaSDK.PublicKey, tokenAccountB: SolanaSDK.PublicKey, tokenPool: SolanaSDK.PublicKey, mintA: SolanaSDK.PublicKey, mintB: SolanaSDK.PublicKey, feeAccount: SolanaSDK.PublicKey, tradeFeeNumerator: UInt64, tradeFeeDenominator: UInt64, ownerTradeFeeNumerator: UInt64, ownerTradeFeeDenominator: UInt64, ownerWithdrawFeeNumerator: UInt64, ownerWithdrawFeeDenominator: UInt64, hostFeeNumerator: UInt64, hostFeeDenominator: UInt64, curveType: UInt8, payer: SolanaSDK.PublicKey) {
+        init(version: UInt8, isInitialized: Bool, nonce: UInt8, tokenProgramId: Solana.PublicKey, tokenAccountA: Solana.PublicKey, tokenAccountB: Solana.PublicKey, tokenPool: Solana.PublicKey, mintA: Solana.PublicKey, mintB: Solana.PublicKey, feeAccount: Solana.PublicKey, tradeFeeNumerator: UInt64, tradeFeeDenominator: UInt64, ownerTradeFeeNumerator: UInt64, ownerTradeFeeDenominator: UInt64, ownerWithdrawFeeNumerator: UInt64, ownerWithdrawFeeDenominator: UInt64, hostFeeNumerator: UInt64, hostFeeDenominator: UInt64, curveType: UInt8, payer: Solana.PublicKey) {
             self.version = version
             self.isInitialized = isInitialized
             self.nonce = nonce
@@ -31,7 +31,7 @@ extension SolanaSDK {
             self.curveType = curveType
             self.payer = payer
         }
-        
+
         // MARK: - Properties
         public let version: UInt8
         public let isInitialized: Bool
@@ -53,8 +53,7 @@ extension SolanaSDK {
         public let hostFeeDenominator: UInt64
         public let curveType: UInt8
         public let payer: PublicKey
-        
-        
+
         // MARK: - Initializer
         public init?(_ keys: [String: [UInt8]]) {
             guard let version = keys["version"]?.first,
@@ -101,7 +100,7 @@ extension SolanaSDK {
             self.curveType = curveType
             self.payer = payer
         }
-        
+
         // MARK: - Layout
         public static func layout()  -> [(key: String?, length: Int)] {
             [
@@ -124,7 +123,7 @@ extension SolanaSDK {
                 (key: "hostFeeNumerator", length: 8),
                 (key: "hostFeeDenominator", length: 8),
                 (key: "curveType", length: 1),
-                (key: "payer", length: PublicKey.LENGTH),
+                (key: "payer", length: PublicKey.LENGTH)
             ]
         }
     }

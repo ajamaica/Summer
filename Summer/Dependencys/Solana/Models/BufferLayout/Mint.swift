@@ -7,9 +7,9 @@
 
 import Foundation
 
-extension SolanaSDK {
+extension Solana {
     public struct Mint: BufferLayout, Equatable, Hashable, Encodable {
-        init(mintAuthorityOption: UInt32, mintAuthority: SolanaSDK.PublicKey?, supply: UInt64, decimals: UInt8, isInitialized: Bool, freezeAuthorityOption: UInt32, freezeAuthority: SolanaSDK.PublicKey?) {
+        init(mintAuthorityOption: UInt32, mintAuthority: Solana.PublicKey?, supply: UInt64, decimals: UInt8, isInitialized: Bool, freezeAuthorityOption: UInt32, freezeAuthority: Solana.PublicKey?) {
             self.mintAuthorityOption = mintAuthorityOption
             self.mintAuthority = mintAuthority
             self.supply = supply
@@ -18,7 +18,7 @@ extension SolanaSDK {
             self.freezeAuthorityOption = freezeAuthorityOption
             self.freezeAuthority = freezeAuthority
         }
-        
+
         public let mintAuthorityOption: UInt32
         public let mintAuthority: PublicKey?
         public let supply: UInt64
@@ -41,7 +41,7 @@ extension SolanaSDK {
             } else {
                 self.mintAuthority = mintAuthority
             }
-            
+
             self.supply = supply
             self.decimals = decimals
             self.isInitialized = isInitialized != 0
@@ -52,7 +52,7 @@ extension SolanaSDK {
                 self.freezeAuthority = freezeAuthority
             }
         }
-        
+
         public static func layout()  -> [(key: String?, length: Int)] {
             [
                 (key: "mintAuthorityOption", length: 4),

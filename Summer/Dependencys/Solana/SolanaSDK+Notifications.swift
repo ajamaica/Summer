@@ -7,9 +7,9 @@
 
 import Foundation
 
-public extension SolanaSDK {
+public extension Solana {
     struct Notification {
-        public typealias Account = Rpc<SolanaSDK.BufferInfo<AccountInfo>>
+        public typealias Account = Rpc<Solana.BufferInfo<AccountInfo>>
         public struct Signature: Decodable {
             let err: ResponseError?
         }

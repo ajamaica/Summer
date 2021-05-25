@@ -15,16 +15,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         nav.navigationBar.tintColor = UIColor(named: "Accent")
         return nav
     }
-    
+
     fileprivate var mainCoordinator: Coordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+
         let accountStorage = KeychainAccountStorageModule()
         let solanaClient = ConcreteSolanaClient(endpoint: .devnet, network: .devnet, accountStorage: accountStorage)
         let applicationComponent = AppComponent(solanaModule: SolanaModule(solana: solanaClient))
-        
+
         let coordinator = Coordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         self.window = coordinator.boot(windowScene: windowScene)
         mainCoordinator = coordinator
@@ -58,6 +58,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
-

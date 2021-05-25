@@ -9,11 +9,11 @@ import Foundation
 
 class SettingsViewModel {
     private let solana: SolanaClient
-    init(solana: SolanaClient){
+    init(solana: SolanaClient) {
         self.solana = solana
     }
-    
-    func logout(completition: @escaping ((Result<(), Error>) -> ())){
+
+    func logout(completition: @escaping ((Result<(), Error>) -> Void)) {
         self.solana.deleteAccount(completition: completition)
     }
 }

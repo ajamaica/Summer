@@ -11,9 +11,7 @@ import Foundation
 /// Bignum compatibility alias for BInt
 public typealias Bignum = BInt
 
-
-public extension Bignum
-{
+public extension Bignum {
 	/// Representation as Data
 	public var data: Data {
 		let n = limbs.count

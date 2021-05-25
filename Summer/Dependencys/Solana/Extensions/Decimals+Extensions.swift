@@ -7,12 +7,12 @@
 
 import Foundation
 
-extension SolanaSDK.Decimals {
-    static var SOL: SolanaSDK.Decimals { 9 }
+extension Solana.Decimals {
+    static var SOL: Solana.Decimals { 9 }
 }
 
-extension SolanaSDK {
-    public var solDecimals: SolanaSDK.Decimals {
+extension Solana {
+    public var solDecimals: Solana.Decimals {
         supportedTokens.first(where: {$0.symbol == "SOL"})?.decimals ?? 9
     }
 }

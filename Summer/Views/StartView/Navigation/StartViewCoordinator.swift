@@ -24,7 +24,7 @@ extension StartViewCoordinator: StartViewControllerDelegate {
     func goToWallet() {
         showWallet()
     }
-    
+
     func goToStartUpsell() {
         showUpsell()
     }

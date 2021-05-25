@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol TokenExtensions: Hashable, Decodable  {
+public protocol TokenExtensions: Hashable, Decodable {
     var website: String? { get }
     var bridgeContract: String? { get }
 }

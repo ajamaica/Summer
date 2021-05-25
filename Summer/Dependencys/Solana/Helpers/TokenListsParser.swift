@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension SolanaSDK {
+public extension Solana {
     class TokensListParser {
         public init() {}
         public func parse(network: String) throws -> [Token] {
@@ -15,10 +15,10 @@ public extension SolanaSDK {
             let bundle = Bundle(for: TokensListParser.self)
             let path = bundle.path(forResource: network + ".tokens", ofType: "json")
             let jsonData = try Data(contentsOf: URL(fileURLWithPath: path!))
-            
+
             // parse json
             var list = try JSONDecoder().decode(TokensList.self, from: jsonData)
-            
+
             // map tags
             list.tokens = list.tokens.map {
                 var item = $0
@@ -27,7 +27,7 @@ public extension SolanaSDK {
                 }
                 return item
             }
-            
+
             // return list with mapped tags
             return list.tokens.reduce([Token]()) { (result, token) -> [Token] in
                 var result = result

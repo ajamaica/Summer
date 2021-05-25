@@ -7,9 +7,9 @@
 
 import Foundation
 
-public extension SolanaSDK {
+public extension Solana {
     enum Error: Swift.Error, Equatable {
-        public static func == (lhs: SolanaSDK.Error, rhs: SolanaSDK.Error) -> Bool {
+        public static func == (lhs: Solana.Error, rhs: Solana.Error) -> Bool {
             switch (lhs, rhs) {
             case (.unauthorized, .unauthorized):
                 return true
@@ -29,19 +29,19 @@ public extension SolanaSDK {
                 return false
             }
         }
-        
+
         case unauthorized
         case notFound
-        
+
         // Invalid Requests
         case invalidRequest(reason: String? = nil)
-        
+
         // Invalid responses
         case invalidResponse(ResponseError)
-        
+
         // Socket error
         case socket(Swift.Error)
-        
+
         // Other
         case other(String)
         case unknown

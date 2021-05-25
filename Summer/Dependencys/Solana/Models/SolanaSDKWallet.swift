@@ -7,37 +7,37 @@
 
 import Foundation
 
-extension SolanaSDK {
+extension Solana {
     public struct Wallet: Hashable {
         // MARK: - Properties
         public var pubkey: String?
         public var lamports: UInt64?
         public var token: Token
         public var userInfo: AnyHashable?
-        
+
         let liquidity: Bool?
         public var isLiquidity: Bool {
             liquidity == true
         }
-        
+
         // MARK: - Initializer
-        public init(pubkey: String? = nil, lamports: UInt64? = nil, token: SolanaSDK.Token, liquidity: Bool? = false) {
+        public init(pubkey: String? = nil, lamports: UInt64? = nil, token: Solana.Token, liquidity: Bool? = false) {
             self.pubkey = pubkey
             self.lamports = lamports
             self.token = token
             self.liquidity = liquidity
         }
-        
+
         // MARK: - Computed properties
         public var amount: Double? {
             lamports?.convertToBalance(decimals: token.decimals)
         }
-        
+
         public func shortPubkey(numOfSymbolsRevealed: Int = 4) -> String {
             guard let pubkey = pubkey else {return ""}
             return pubkey.prefix(numOfSymbolsRevealed) + "..." + pubkey.suffix(numOfSymbolsRevealed)
         }
-        
+
         // MARK: - Fabric methods
         public static func nativeSolana(
             pubkey: String?,

@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-extension SolanaSDK {
+extension Solana {
     public func getSwapPools() -> Single<[Pool]> {
         if let pools = _swapPool {return .just(pools)}
         return getPools(swapProgramId: endpoint.network.swapProgramId.base58EncodedString)
@@ -20,7 +20,7 @@ extension SolanaSDK {
             }
             .do(onSuccess: {self._swapPool = $0})
     }
-    
+
     func getPools(swapProgramId: String) -> Single<[Pool]> {
         getProgramAccounts(publicKey: swapProgramId, decodedTo: TokenSwapInfo.self)
             .map { programs -> [(address: String, swapData: TokenSwapInfo)] in
@@ -51,7 +51,7 @@ extension SolanaSDK {
                 )
             }
     }
-    
+
     func getPoolInfo(address: PublicKey, swapData: TokenSwapInfo) -> Single<Pool> {
         Single.zip([
             self.getMintData(mintAddress: swapData.mintA)
@@ -63,7 +63,7 @@ extension SolanaSDK {
             self.getTokenAccountBalance(pubkey: swapData.tokenAccountA.base58EncodedString)
                 .map {$0 as Any},
             self.getTokenAccountBalance(pubkey: swapData.tokenAccountB.base58EncodedString)
-                .map {$0 as Any},
+                .map {$0 as Any}
         ])
             .map { mintDatas in
                 guard let tokenAInfo = mintDatas[0] as? Mint,

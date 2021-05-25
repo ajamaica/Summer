@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-extension SolanaSDK {
+extension Solana {
     public func getOrCreateAssociatedTokenAccount(
         owner: PublicKey,
         tokenMint: PublicKey,
@@ -20,7 +20,7 @@ extension SolanaSDK {
         ) else {
             return .error(Error.other("Could not create associated token account"))
         }
-        
+
         // check if token account exists
         return getAccountInfo(
             account: associatedAddress.base58EncodedString,
@@ -31,11 +31,10 @@ extension SolanaSDK {
             .flatMap {info in
                 // if associated token account has been created
                 if info?.owner == PublicKey.tokenProgramId.base58EncodedString &&
-                    info?.data.value != nil
-                {
+                    info?.data.value != nil {
                     return .just((transactionId: nil, associatedTokenAddress: associatedAddress))
                 }
-                
+
                 // if not, create one
                 return self.createAssociatedTokenAccount(
                     for: owner,
@@ -45,7 +44,7 @@ extension SolanaSDK {
                     .map {(transactionId: $0, associatedTokenAddress: associatedAddress)}
             }
     }
-    
+
     func createAssociatedTokenAccount(
         for owner: PublicKey,
         tokenMint: PublicKey,
@@ -56,14 +55,14 @@ extension SolanaSDK {
         guard let payer = payer ?? accountStorage.account else {
             return .error(Error.unauthorized)
         }
-        
+
         // generate address
         do {
             let associatedAddress = try PublicKey.associatedTokenAddress(
                 walletAddress: owner,
                 tokenMintAddress: tokenMint
             )
-            
+
             // create instruction
             let instruction = AssociatedTokenProgram
                 .createAssociatedTokenAccountInstruction(
@@ -72,14 +71,14 @@ extension SolanaSDK {
                     owner: owner,
                     payer: payer.publicKey
                 )
-            
+
             // send transaction
             return serializeAndSendWithFee(
                 instructions: [instruction],
                 signers: [payer],
                 isSimulation: isSimulation
             )
-            
+
         } catch {
             return .error(error)
         }

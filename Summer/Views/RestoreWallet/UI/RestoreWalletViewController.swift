@@ -12,7 +12,7 @@ protocol RestoreWalletViewControllerDelegate: AnyObject {
 }
 
 class RestoreWalletViewController: UIViewController {
-    
+
     @IBOutlet weak var seedPhraseTextField: UITextView!
     let viewModel: RestoreWalletViewModel
     weak var delegate: RestoreWalletViewControllerDelegate?
@@ -20,20 +20,20 @@ class RestoreWalletViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     fileprivate func customizeMNemonicTextview() {
         seedPhraseTextField.placeholder = "Input Your twelve or twenty-four seed."
         seedPhraseTextField.layer.cornerRadius = 8.7
-        
+
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Restore Seed Phrase"
@@ -44,14 +44,14 @@ class RestoreWalletViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = true
     }
-    
+
     @IBAction func restoreWallet(_ sender: Any) {
-        self.viewModel.restoreWallet(wordlist: self.seedPhraseTextField.text.split{ $0 == " " }.map(String.init)) { result in
+        self.viewModel.restoreWallet(wordlist: self.seedPhraseTextField.text.split { $0 == " " }.map(String.init)) { result in
             switch result {
             case .success():
                 self.delegate?.goToWallet()
@@ -62,13 +62,12 @@ class RestoreWalletViewController: UIViewController {
     }
 }
 
-
 extension UITextView {
 
     private class PlaceholderLabel: UILabel { }
 
     private var placeholderLabel: PlaceholderLabel {
-        if let label = subviews.compactMap( { $0 as? PlaceholderLabel }).first {
+        if let label = subviews.compactMap({ $0 as? PlaceholderLabel }).first {
             return label
         } else {
             let label = PlaceholderLabel(frame: .zero)
@@ -81,7 +80,7 @@ extension UITextView {
     @IBInspectable
     var placeholder: String {
         get {
-            return subviews.compactMap( { $0 as? PlaceholderLabel }).first?.text ?? ""
+            return subviews.compactMap({ $0 as? PlaceholderLabel }).first?.text ?? ""
         }
         set {
             let placeholderLabel = self.placeholderLabel

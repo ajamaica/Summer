@@ -7,13 +7,13 @@
 
 import Foundation
 
-extension SolanaSDK {
+extension Solana {
     public struct AccountInfo: BufferLayout {
         public let mint: PublicKey
         public let owner: PublicKey
         public let lamports: UInt64
         public let delegateOption: UInt32
-        public var delegate: PublicKey?
+        public weak var delegate: PublicKey?
         public let isInitialized: Bool
         public let isFrozen: Bool
         public let state: UInt8
@@ -24,8 +24,8 @@ extension SolanaSDK {
         public var delegatedAmount: UInt64
         public let closeAuthorityOption: UInt32
         public var closeAuthority: PublicKey?
-        
-        public init?(_ keys: [String : [UInt8]]) {
+
+        public init?(_ keys: [String: [UInt8]]) {
             guard let mint = try? PublicKey(bytes: keys["mint"]),
                   let owner = try? PublicKey(bytes: keys["owner"]),
                   let amount = keys["lamports"]?.toUInt64(),
@@ -40,7 +40,7 @@ extension SolanaSDK {
             else {
                 return nil
             }
-            
+
             self.mint = mint
             self.owner = owner
             self.lamports = amount
@@ -52,15 +52,15 @@ extension SolanaSDK {
             self.delegatedAmount = delegatedAmount
             self.closeAuthorityOption = closeAuthorityOption
             self.closeAuthority = closeAuthority
-            
+
             if delegateOption == 0 {
                 self.delegate = nil
                 self.delegatedAmount = 0
             }
-            
+
             self.isInitialized = state != 0
             self.isFrozen = state == 2
-            
+
             if isNativeOption == 1 {
                 self.rentExemptReserve = isNativeRaw
                 self.isNative = true
@@ -68,12 +68,12 @@ extension SolanaSDK {
                 self.rentExemptReserve = nil
                 isNative = false
             }
-            
+
             if closeAuthorityOption == 0 {
                 self.closeAuthority = nil
             }
         }
-        
+
         public static func layout() -> [(key: String?, length: Int)] {
             [
                 (key: "mint", length: PublicKey.LENGTH),
@@ -86,9 +86,8 @@ extension SolanaSDK {
                 (key: "isNativeRaw", length: 8),
                 (key: "delegatedAmount", length: 8),
                 (key: "closeAuthorityOption", length: 4),
-                (key: "closeAuthority", length: PublicKey.LENGTH),
+                (key: "closeAuthority", length: PublicKey.LENGTH)
             ]
         }
     }
 }
-

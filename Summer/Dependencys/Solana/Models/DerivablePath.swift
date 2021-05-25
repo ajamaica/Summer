@@ -7,14 +7,14 @@
 
 import Foundation
 
-extension SolanaSDK {
+extension Solana {
     public struct DerivablePath: Hashable {
         // MARK: - Nested type
         public enum DerivableType: String, CaseIterable {
             case bip44Change
             case bip44
             case deprecated
-            
+
             var prefix: String {
                 switch self {
                 case .deprecated:
@@ -24,18 +24,18 @@ extension SolanaSDK {
                 }
             }
         }
-        
+
         // MARK: - Properties
         public let type: DerivableType
         public let walletIndex: Int
         public let accountIndex: Int?
-        
-        public init(type: SolanaSDK.DerivablePath.DerivableType, walletIndex: Int, accountIndex: Int? = nil) {
+
+        public init(type: Solana.DerivablePath.DerivableType, walletIndex: Int, accountIndex: Int? = nil) {
             self.type = type
             self.walletIndex = walletIndex
             self.accountIndex = accountIndex
         }
-        
+
         public static var `default`: Self {
             .init(
                 type: .bip44Change,
@@ -43,7 +43,7 @@ extension SolanaSDK {
                 accountIndex: 0
             )
         }
-        
+
         public var rawValue: String {
             var value = type.prefix
             switch type {

@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-extension SolanaSDK {
+extension Solana {
     public func getCreatingTokenAccountFee() -> Single<UInt64> {
         getMinimumBalanceForRentExemption(dataLength: AccountInfo.span)
     }
@@ -24,31 +24,31 @@ extension SolanaSDK {
         var newAccount: Account!
         return Single.zip(getRecentBlockhash(), getCreatingTokenAccountFee())
             .flatMap { (recentBlockhash, minBalance) in
-                
+
                 let mintAddress = try PublicKey(string: mintAddress)
-                
+
                 // create new account for token
                 newAccount = try Account(network: self.endpoint.network)
-                
+
                 // instructions
                 let createAccountInstruction = SystemProgram.createAccountInstruction(
                     from: payer.publicKey,
                     toNewPubkey: newAccount.publicKey,
                     lamports: minBalance
                 )
-                
+
                 let initializeAccountInstruction = TokenProgram.initializeAccountInstruction(
                     account: newAccount.publicKey,
                     mint: mintAddress,
                     owner: payer.publicKey
                 )
-                
+
                 // forming transaction
                 let instructions = [
                     createAccountInstruction,
                     initializeAccountInstruction
                 ]
-                
+
                 // serialize transaction
                 return self.serializeAndSendWithFee(
                     instructions: instructions,

@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public extension SolanaSDK {
+public extension Solana {
     func getAccountInfo<T: BufferLayout>(account: String, decodedTo: T.Type) -> Single<BufferInfo<T>> {
         let configs = RequestConfiguration(encoding: "base64")
 		return (request(parameters: [account, configs]) as Single<Rpc<BufferInfo<T>?>>)
@@ -23,7 +23,7 @@ public extension SolanaSDK {
 	func getBalance(account: String? = nil, commitment: Commitment? = nil) -> Single<UInt64> {
         guard let account = account ?? accountStorage.account?.publicKey.base58EncodedString
         else {return .error(Error.unauthorized)}
-        
+
 		return (request(parameters: [account, RequestConfiguration(commitment: commitment)]) as Single<Rpc<UInt64>>)
 			.map {$0.value}
 	}
@@ -105,8 +105,7 @@ public extension SolanaSDK {
 		(request(parameters: [pubkeys, configs]) as Single<Rpc<[BufferInfo<AccountInfo>]?>>)
 			.map {$0.value}
 	}
-    func getProgramAccounts<T: BufferLayout>(publicKey: String, configs: RequestConfiguration? = RequestConfiguration(encoding: "base64"), decodedTo: T.Type) -> Single<[ProgramAccount<T>]>
-    {
+    func getProgramAccounts<T: BufferLayout>(publicKey: String, configs: RequestConfiguration? = RequestConfiguration(encoding: "base64"), decodedTo: T.Type) -> Single<[ProgramAccount<T>]> {
         request(parameters: [publicKey, configs])
     }
 	func getRecentBlockhash(commitment: Commitment? = nil) -> Single<String> {
@@ -191,16 +190,14 @@ public extension SolanaSDK {
                         if let readableMessage = response.data?.logs
                             .first(where: {$0.contains("Error:")})?
                             .components(separatedBy: "Error: ")
-                            .last
-                        {
+                            .last {
                             message = readableMessage
                         } else if let readableMessage = response.message?
                             .components(separatedBy: "Transaction simulation failed: ")
-                            .last
-                        {
+                            .last {
                             message = readableMessage
                         }
-                        
+
                         return .error(Error.invalidResponse(ResponseError(code: response.code, message: message, data: response.data)))
                     default:
                         break
@@ -219,7 +216,7 @@ public extension SolanaSDK {
 	func validatorExit() -> Single<Bool> {
 		request()
 	}
-    
+
     // MARK: - Additional methods
     func getMintData(
         mintAddress: PublicKey,
@@ -230,11 +227,11 @@ public extension SolanaSDK {
                 if $0.owner != programId.base58EncodedString {
                     throw Error.other("Invalid mint owner")
                 }
-                
+
                 if let data = $0.data.value {
                     return data
                 }
-                
+
                 throw Error.other("Invalid data")
             }
     }

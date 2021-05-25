@@ -10,14 +10,14 @@ import RxSwift
 import Starscream
 import RxCocoa
 
-extension SolanaSDK {
+extension Solana {
     public class Socket {
         // MARK: - Properties
         let disposeBag = DisposeBag()
         let socket: WebSocket
         let account: PublicKey?
         var wsHeartBeat: Timer!
-        
+
         // MARK: - Subjects
         public let status = BehaviorRelay<Status>(value: .initializing)
         let textSubject = PublishSubject<String>()
@@ -30,23 +30,23 @@ extension SolanaSDK {
             account = publicKey
             defer {socket.delegate = self}
         }
-        
+
         deinit {
             disconnect()
         }
-        
+
         // MARK: - Public methods
         public func connect() {
             status.accept(.connecting)
             socket.connect()
         }
-        
+
         public func disconnect() {
             status.accept(.disconnected)
             socket.disconnect()
             write(method: "accountUnsubscribe", params: [account?.base58EncodedString])
         }
-        
+
         @discardableResult
         public func write(method: String, params: [Encodable]) -> String {
             let requestAPI = RequestAPI(
@@ -56,15 +56,14 @@ extension SolanaSDK {
             write(requestAPI: requestAPI)
             return requestAPI.id
         }
-        
+
         public func observeAccountNotification() -> Observable<Notification.Account> {
             observe(method: "accountNotification", decodedTo: Notification.Account.self)
         }
-        
-        public func observeSignatureNotification(signature: String) -> Completable
-        {
+
+        public func observeSignatureNotification(signature: String) -> Completable {
             let id = write(method: "signatureSubscribe", params: [signature, ["commitment": "max"]])
-            
+
             return subscribe(id: id)
                 .flatMap {
                     self.observe(method: "signatureNotification", decodedTo: Rpc<Notification.Signature>.self, subscription: $0)
@@ -73,16 +72,16 @@ extension SolanaSDK {
                 }
                 .asCompletable()
         }
-        
+
         // MARK: - Handlers
         func updateSubscriptions() {
-            write(method: "accountSubscribe", params: [account?.base58EncodedString, ["encoding":"jsonParsed"]])
+            write(method: "accountSubscribe", params: [account?.base58EncodedString, ["encoding": "jsonParsed"]])
         }
-        
+
         func resetSubscriptions() {
             // TODO: - resetSubscriptions
         }
-        
+
         func onOpen() {
             status.accept(.connected)
             wsHeartBeat?.invalidate()
@@ -97,21 +96,21 @@ extension SolanaSDK {
             status.accept(.error(error))
             Logger.log(message: "Socket error: \(error.localizedDescription)", event: .error)
         }
-        
+
         func onClose(_ code: Int) {
             wsHeartBeat?.invalidate()
             wsHeartBeat = nil
-            
+
             if code == 1000 {
                 // explicit close, check if any subscriptions have been made since close
                 updateSubscriptions()
                 return
             }
-            
+
             // implicit close, prepare subscriptions for auto-reconnect
             resetSubscriptions()
         }
-        
+
         // MARK: - Helpers
         private func subscribe(id: String) -> Single<UInt64> {
             textSubject
@@ -127,7 +126,7 @@ extension SolanaSDK {
                     guard let data = $0.data(using: .utf8) else {
                         throw Error.other("The response is not valid")
                     }
-                    
+
                     guard let subscription = try JSONDecoder().decode(Response<UInt64>.self, from: data).result
                     else {
                         throw Error.other("Subscription is not valid")
@@ -137,7 +136,7 @@ extension SolanaSDK {
                 .take(1)
                 .asSingle()
         }
-        
+
         private func observe<T: Decodable>(method: String, decodedTo type: T.Type, subscription: UInt64? = nil) -> Observable<T> {
             textSubject
                 .filter { string in
@@ -163,8 +162,8 @@ extension SolanaSDK {
                     return result
                 }
         }
-        
-        private func write(requestAPI: RequestAPI, completion: (() -> ())? = nil) {
+
+        private func write(requestAPI: RequestAPI, completion: (() -> Void)? = nil) {
             // closure for writing
             let writeAndLog: () -> Void = { [weak self] in
                 do {
@@ -180,7 +179,7 @@ extension SolanaSDK {
                     Logger.log(message: "\(requestAPI.method) failed: \(error)", event: .event)
                 }
             }
-            
+
             // auto reconnect
             if status.value != .connected {
                 socket.connect()
@@ -197,7 +196,7 @@ extension SolanaSDK {
     }
 }
 
-extension SolanaSDK.Socket: WebSocketDelegate {
+extension Solana.Socket: WebSocketDelegate {
     public func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {
         case .connected(let headers):
@@ -232,7 +231,7 @@ extension SolanaSDK.Socket: WebSocketDelegate {
                 status.accept(.error(error))
                 Logger.log(message: "Socket error: \(error)", event: .error)
                 onError(.socket(error))
-                
+
                 // reconnect
                 socket.connect()
             }
@@ -240,14 +239,14 @@ extension SolanaSDK.Socket: WebSocketDelegate {
     }
 }
 
-extension SolanaSDK.Socket {
+extension Solana.Socket {
     public enum Status: Equatable {
         case initializing
         case connecting
         case connected
         case disconnected
         case error(Error)
-        
+
         public static func == (rhs: Self, lhs: Self) -> Bool {
             switch (lhs, rhs) {
             case (.initializing, .initializing), (.connected, .connected), (.disconnected, .disconnected):

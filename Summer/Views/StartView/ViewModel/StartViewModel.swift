@@ -9,11 +9,11 @@ import Foundation
 
 class StartViewModel {
     private let solana: SolanaClient
-    init(solana: SolanaClient){
+    init(solana: SolanaClient) {
         self.solana = solana
     }
-    
-    func hasAccount(completition: @escaping(Result<Void, Error>) -> ()){
+
+    func hasAccount(completition: @escaping(Result<Void, Error>) -> Void) {
         self.solana.getPublicKey { result in
             switch result {
             case .success:
