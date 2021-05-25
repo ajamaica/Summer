@@ -3,12 +3,78 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */; };
 		0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4C2655400D005EAE15 /* SolanaModule.swift */; };
+		064B9373265C992B00474F15 /* SolanaSDK+Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9322265C992900474F15 /* SolanaSDK+Swap.swift */; };
+		064B9374265C992B00474F15 /* SolanaSDK+Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9323265C992900474F15 /* SolanaSDK+Pool.swift */; };
+		064B9375265C992B00474F15 /* SolanaSDK+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9324265C992900474F15 /* SolanaSDK+Actions.swift */; };
+		064B9376265C992B00474F15 /* SolanaSDK+Send.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9325265C992900474F15 /* SolanaSDK+Send.swift */; };
+		064B9377265C992B00474F15 /* SolanaSDK+Close.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9326265C992900474F15 /* SolanaSDK+Close.swift */; };
+		064B9378265C992B00474F15 /* SolanaSDK+AssociatedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9327265C992900474F15 /* SolanaSDK+AssociatedAccount.swift */; };
+		064B9379265C992B00474F15 /* SolanaSDK+CreateTokenAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9328265C992900474F15 /* SolanaSDK+CreateTokenAccount.swift */; };
+		064B937A265C992B00474F15 /* FeeRelayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932A265C992900474F15 /* FeeRelayer.swift */; };
+		064B937B265C992B00474F15 /* FeeRelayer+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932B265C992900474F15 /* FeeRelayer+Models.swift */; };
+		064B937C265C992B00474F15 /* SolanaSDK+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932C265C992900474F15 /* SolanaSDK+Notifications.swift */; };
+		064B937D265C992B00474F15 /* SolanaSDK+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932D265C992900474F15 /* SolanaSDK+Methods.swift */; };
+		064B937E265C992B00474F15 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932F265C992A00474F15 /* PublicKey.swift */; };
+		064B937F265C992B00474F15 /* TokenSwapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9331265C992A00474F15 /* TokenSwapInfo.swift */; };
+		064B9380265C992B00474F15 /* EmptyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9332265C992A00474F15 /* EmptyInfo.swift */; };
+		064B9381265C992B00474F15 /* Mint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9333265C992A00474F15 /* Mint.swift */; };
+		064B9382265C992B00474F15 /* BufferLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9334265C992A00474F15 /* BufferLayout.swift */; };
+		064B9383265C992B00474F15 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9335265C992A00474F15 /* AccountInfo.swift */; };
+		064B9384265C992B00474F15 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9336265C992A00474F15 /* Error.swift */; };
+		064B9385265C992B00474F15 /* ConfirmedTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9337265C992A00474F15 /* ConfirmedTransaction.swift */; };
+		064B9386265C992B00474F15 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9338265C992A00474F15 /* Network.swift */; };
+		064B9387265C992B00474F15 /* SolanaSDK+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9339265C992A00474F15 /* SolanaSDK+Models.swift */; };
+		064B9388265C992B00474F15 /* ParsedTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B933A265C992A00474F15 /* ParsedTransaction.swift */; };
+		064B9389265C992B00474F15 /* DerivablePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B933B265C992A00474F15 /* DerivablePath.swift */; };
+		064B938A265C992B00474F15 /* Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B933C265C992A00474F15 /* Pool.swift */; };
+		064B938B265C992B00474F15 /* TransactionInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B933D265C992A00474F15 /* TransactionInstruction.swift */; };
+		064B938C265C992B00474F15 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B933F265C992A00474F15 /* Message.swift */; };
+		064B938D265C992B00474F15 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9340265C992A00474F15 /* Transaction.swift */; };
+		064B938E265C992B00474F15 /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9341265C992A00474F15 /* APIEndPoint.swift */; };
+		064B938F265C992B00474F15 /* TokenList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9343265C992A00474F15 /* TokenList.swift */; };
+		064B9390265C992B00474F15 /* SolanaSDK+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9344265C992A00474F15 /* SolanaSDK+Request.swift */; };
+		064B9391265C992B00474F15 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9345265C992A00474F15 /* Account.swift */; };
+		064B9392265C992B00474F15 /* SolanaSDKWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9346265C992A00474F15 /* SolanaSDKWallet.swift */; };
+		064B9393265C992B00474F15 /* SolanaSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9347265C992A00474F15 /* SolanaSDK.swift */; };
+		064B9394265C992B00474F15 /* SolanaSDK+Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9348265C992A00474F15 /* SolanaSDK+Tokens.swift */; };
+		064B9395265C992B00474F15 /* TokenSwapProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B934A265C992A00474F15 /* TokenSwapProgram.swift */; };
+		064B9396265C992B00474F15 /* TokenProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B934B265C992A00474F15 /* TokenProgram.swift */; };
+		064B9397265C992B00474F15 /* AssociatedTokenProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B934C265C992A00474F15 /* AssociatedTokenProgram.swift */; };
+		064B9398265C992B00474F15 /* SystemProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B934D265C992A00474F15 /* SystemProgram.swift */; };
+		064B9399265C992B00474F15 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B934F265C992A00474F15 /* Socket.swift */; };
+		064B939A265C992B00474F15 /* TokenListsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9351265C992B00474F15 /* TokenListsParser.swift */; };
+		064B939B265C992B00474F15 /* NaclLowLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9352265C992B00474F15 /* NaclLowLevel.swift */; };
+		064B939C265C992B00474F15 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9353265C992B00474F15 /* Logger.swift */; };
+		064B939D265C992B00474F15 /* Wordlists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9355265C992B00474F15 /* Wordlists.swift */; };
+		064B939E265C992B00474F15 /* Mnemonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9356265C992B00474F15 /* Mnemonic.swift */; };
+		064B939F265C992B00474F15 /* Base58.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9357265C992B00474F15 /* Base58.swift */; };
+		064B93A0265C992B00474F15 /* ASKHDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9359265C992B00474F15 /* ASKHDUtils.swift */; };
+		064B93A1265C992B00474F15 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B935A265C992B00474F15 /* Keychain.swift */; };
+		064B93A2265C992B00474F15 /* SMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B935C265C992B00474F15 /* SMP.swift */; };
+		064B93A3265C992B00474F15 /* SMP Bignum Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B935D265C992B00474F15 /* SMP Bignum Extensions.swift */; };
+		064B93A4265C992B00474F15 /* UInt32+CircularShift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B935F265C992B00474F15 /* UInt32+CircularShift.swift */; };
+		064B93A5265C992B00474F15 /* RIPEMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9360265C992B00474F15 /* RIPEMD.swift */; };
+		064B93A6265C992B00474F15 /* RIPEMD+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9361265C992B00474F15 /* RIPEMD+Block.swift */; };
+		064B93A7265C992B00474F15 /* TransactionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9362265C992B00474F15 /* TransactionParser.swift */; };
+		064B93A8265C992B00474F15 /* PublicKey+AssociatedTokenProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9365265C992B00474F15 /* PublicKey+AssociatedTokenProgram.swift */; };
+		064B93A9265C992B00474F15 /* PublicKey+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9366265C992B00474F15 /* PublicKey+Extensions.swift */; };
+		064B93AA265C992B00474F15 /* Decimals+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9367265C992B00474F15 /* Decimals+Extensions.swift */; };
+		064B93AB265C992B00474F15 /* NSRegularExpression+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9368265C992B00474F15 /* NSRegularExpression+Extensions.swift */; };
+		064B93AC265C992B00474F15 /* AccountMeta+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9369265C992B00474F15 /* AccountMeta+Extensions.swift */; };
+		064B93AD265C992B00474F15 /* BytesEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B936A265C992B00474F15 /* BytesEncodable.swift */; };
+		064B93AE265C992C00474F15 /* Bytes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B936B265C992B00474F15 /* Bytes+Extensions.swift */; };
+		064B93AF265C992C00474F15 /* Number+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B936C265C992B00474F15 /* Number+Extensions.swift */; };
+		064B93B0265C992C00474F15 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B936D265C992B00474F15 /* Data+Extensions.swift */; };
+		064B93B1265C992C00474F15 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B936E265C992B00474F15 /* Error+Extensions.swift */; };
+		064B93B2265C992C00474F15 /* mainnet-beta.tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = 064B9370265C992B00474F15 /* mainnet-beta.tokens.json */; };
+		064B93B3265C992C00474F15 /* testnet.tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = 064B9371265C992B00474F15 /* testnet.tokens.json */; };
+		064B93B4265C992C00474F15 /* devnet.tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = 064B9372265C992B00474F15 /* devnet.tokens.json */; };
 		064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F22657D06600D45DF2 /* UpsellViewModel.swift */; };
 		064F84F72657D0B600D45DF2 /* UpsellViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F62657D0B600D45DF2 /* UpsellViewCoordinator.swift */; };
 		064F84FB2658A7B300D45DF2 /* CreateWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F92658A7B300D45DF2 /* CreateWalletViewController.swift */; };
@@ -36,6 +102,15 @@
 		064F8539265A37E200D45DF2 /* RestoreWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F8537265A37E200D45DF2 /* RestoreWalletViewController.xib */; };
 		064F853D265A381300D45DF2 /* RestoreWalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F853C265A381300D45DF2 /* RestoreWalletCoordinator.swift */; };
 		064F8540265A382E00D45DF2 /* RestoreWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F853F265A382E00D45DF2 /* RestoreWalletViewModel.swift */; };
+		064F8545265A6DCC00D45DF2 /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8543265A6DCC00D45DF2 /* TokenViewController.swift */; };
+		064F8546265A6DCC00D45DF2 /* TokenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F8544265A6DCC00D45DF2 /* TokenViewController.xib */; };
+		064F854A265A6DED00D45DF2 /* TokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8549265A6DED00D45DF2 /* TokenViewModel.swift */; };
+		064F854D265A6E4A00D45DF2 /* TokenViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F854C265A6E4A00D45DF2 /* TokenViewCoordinator.swift */; };
+		064F854F265A76A700D45DF2 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F854E265A76A600D45DF2 /* Wallet.swift */; };
+		064F8552265A7A5200D45DF2 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8551265A7A5200D45DF2 /* Token.swift */; };
+		064F8554265A7AA200D45DF2 /* TokensList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8553265A7AA200D45DF2 /* TokensList.swift */; };
+		064F8556265A7ABF00D45DF2 /* TokenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8555265A7ABF00D45DF2 /* TokenExtensions.swift */; };
+		064F8558265A7ADF00D45DF2 /* TokenTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8557265A7ADF00D45DF2 /* TokenTag.swift */; };
 		06676758265535CD00108D21 /* UpsellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06676756265535CD00108D21 /* UpsellViewController.swift */; };
 		06676759265535CD00108D21 /* UpsellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06676757265535CD00108D21 /* UpsellViewController.xib */; };
 		06F065D626528ED000032BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D526528ED000032BDA /* AppDelegate.swift */; };
@@ -49,9 +124,22 @@
 		06F0660D2652941200032BDA /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F0660B2652941200032BDA /* StartViewController.xib */; };
 		06F066102652945000032BDA /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F0660F2652945000032BDA /* StartViewModel.swift */; };
 		06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F06613265294DB00032BDA /* StartViewCoordinator.swift */; };
-		387584B681A28936A6AA6394 /* Pods_SummerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C13E1095954D5F1C60AA09F /* Pods_SummerTests.framework */; };
-		CF6298B1325318A629EF02DE /* Pods_Summer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2992D04AEF60D15E4079590 /* Pods_Summer.framework */; };
-		DE39740136B37770922890F1 /* Pods_Summer_SummerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E94EB10036D21EC474B0E7 /* Pods_Summer_SummerUITests.framework */; };
+		B3DE8A59265CCAF400D6744A /* Ed25519HDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8A53265CCAF400D6744A /* Ed25519HDKey.swift */; };
+		B3DE8A5A265CCAF400D6744A /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8A57265CCAF400D6744A /* Keys.swift */; };
+		B3DE8A5B265CCAF400D6744A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8A58265CCAF400D6744A /* Extensions.swift */; };
+		B3DE8ACE265CCFDF00D6744A /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8ACD265CCFDF00D6744A /* KeychainSwift */; };
+		B3DE8AD4265CD05E00D6744A /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AD3265CD05E00D6744A /* CryptoSwift */; };
+		B3DE8AE8265CD0EA00D6744A /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AE7265CD0EA00D6744A /* Starscream */; };
+		B3DE8AEE265CD15900D6744A /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AED265CD15900D6744A /* RxAlamofire */; };
+		B3DE8AFF265CD1C600D6744A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AFE265CD1C600D6744A /* RxSwift */; };
+		B3DE8B01265CD1C600D6744A /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B00265CD1C600D6744A /* RxRelay */; };
+		B3DE8B03265CD1C600D6744A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B02265CD1C600D6744A /* RxCocoa */; };
+		B3DE8B05265CD1C600D6744A /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B04265CD1C600D6744A /* RxBlocking */; };
+		B3DE8B18265CD30000D6744A /* NSData+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8B13265CD2FF00D6744A /* NSData+HexString.m */; };
+		B3DE8B19265CD30000D6744A /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE8B16265CD30000D6744A /* secp256k1.framework */; };
+		B3DE8B1A265CD30000D6744A /* CKSecp256k1.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8B17265CD30000D6744A /* CKSecp256k1.m */; };
+		B3DE8B30265CD4CF00D6744A /* TweetNacl in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B2F265CD4CF00D6744A /* TweetNacl */; };
+		B3DE8B3F265CD67000D6744A /* ContResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8B3E265CD67000D6744A /* ContResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +162,72 @@
 /* Begin PBXFileReference section */
 		0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccountStorage.swift; sourceTree = "<group>"; };
 		0648DA4C2655400D005EAE15 /* SolanaModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaModule.swift; sourceTree = "<group>"; };
+		064B9322265C992900474F15 /* SolanaSDK+Swap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Swap.swift"; sourceTree = "<group>"; };
+		064B9323265C992900474F15 /* SolanaSDK+Pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Pool.swift"; sourceTree = "<group>"; };
+		064B9324265C992900474F15 /* SolanaSDK+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Actions.swift"; sourceTree = "<group>"; };
+		064B9325265C992900474F15 /* SolanaSDK+Send.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Send.swift"; sourceTree = "<group>"; };
+		064B9326265C992900474F15 /* SolanaSDK+Close.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Close.swift"; sourceTree = "<group>"; };
+		064B9327265C992900474F15 /* SolanaSDK+AssociatedAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+AssociatedAccount.swift"; sourceTree = "<group>"; };
+		064B9328265C992900474F15 /* SolanaSDK+CreateTokenAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+CreateTokenAccount.swift"; sourceTree = "<group>"; };
+		064B932A265C992900474F15 /* FeeRelayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeeRelayer.swift; sourceTree = "<group>"; };
+		064B932B265C992900474F15 /* FeeRelayer+Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeeRelayer+Models.swift"; sourceTree = "<group>"; };
+		064B932C265C992900474F15 /* SolanaSDK+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Notifications.swift"; sourceTree = "<group>"; };
+		064B932D265C992900474F15 /* SolanaSDK+Methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Methods.swift"; sourceTree = "<group>"; };
+		064B932F265C992A00474F15 /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
+		064B9331265C992A00474F15 /* TokenSwapInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenSwapInfo.swift; sourceTree = "<group>"; };
+		064B9332265C992A00474F15 /* EmptyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyInfo.swift; sourceTree = "<group>"; };
+		064B9333265C992A00474F15 /* Mint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mint.swift; sourceTree = "<group>"; };
+		064B9334265C992A00474F15 /* BufferLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferLayout.swift; sourceTree = "<group>"; };
+		064B9335265C992A00474F15 /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
+		064B9336265C992A00474F15 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		064B9337265C992A00474F15 /* ConfirmedTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedTransaction.swift; sourceTree = "<group>"; };
+		064B9338265C992A00474F15 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		064B9339265C992A00474F15 /* SolanaSDK+Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Models.swift"; sourceTree = "<group>"; };
+		064B933A265C992A00474F15 /* ParsedTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTransaction.swift; sourceTree = "<group>"; };
+		064B933B265C992A00474F15 /* DerivablePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DerivablePath.swift; sourceTree = "<group>"; };
+		064B933C265C992A00474F15 /* Pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pool.swift; sourceTree = "<group>"; };
+		064B933D265C992A00474F15 /* TransactionInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionInstruction.swift; sourceTree = "<group>"; };
+		064B933F265C992A00474F15 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		064B9340265C992A00474F15 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		064B9341265C992A00474F15 /* APIEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
+		064B9343265C992A00474F15 /* TokenList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenList.swift; sourceTree = "<group>"; };
+		064B9344265C992A00474F15 /* SolanaSDK+Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Request.swift"; sourceTree = "<group>"; };
+		064B9345265C992A00474F15 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		064B9346265C992A00474F15 /* SolanaSDKWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolanaSDKWallet.swift; sourceTree = "<group>"; };
+		064B9347265C992A00474F15 /* SolanaSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolanaSDK.swift; sourceTree = "<group>"; };
+		064B9348265C992A00474F15 /* SolanaSDK+Tokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Tokens.swift"; sourceTree = "<group>"; };
+		064B934A265C992A00474F15 /* TokenSwapProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenSwapProgram.swift; sourceTree = "<group>"; };
+		064B934B265C992A00474F15 /* TokenProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenProgram.swift; sourceTree = "<group>"; };
+		064B934C265C992A00474F15 /* AssociatedTokenProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedTokenProgram.swift; sourceTree = "<group>"; };
+		064B934D265C992A00474F15 /* SystemProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemProgram.swift; sourceTree = "<group>"; };
+		064B934F265C992A00474F15 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		064B9351265C992B00474F15 /* TokenListsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenListsParser.swift; sourceTree = "<group>"; };
+		064B9352265C992B00474F15 /* NaclLowLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaclLowLevel.swift; sourceTree = "<group>"; };
+		064B9353265C992B00474F15 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		064B9355265C992B00474F15 /* Wordlists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wordlists.swift; sourceTree = "<group>"; };
+		064B9356265C992B00474F15 /* Mnemonic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mnemonic.swift; sourceTree = "<group>"; };
+		064B9357265C992B00474F15 /* Base58.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base58.swift; sourceTree = "<group>"; };
+		064B9359265C992B00474F15 /* ASKHDUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASKHDUtils.swift; sourceTree = "<group>"; };
+		064B935A265C992B00474F15 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		064B935C265C992B00474F15 /* SMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMP.swift; sourceTree = "<group>"; };
+		064B935D265C992B00474F15 /* SMP Bignum Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SMP Bignum Extensions.swift"; sourceTree = "<group>"; };
+		064B935F265C992B00474F15 /* UInt32+CircularShift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt32+CircularShift.swift"; sourceTree = "<group>"; };
+		064B9360265C992B00474F15 /* RIPEMD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RIPEMD.swift; sourceTree = "<group>"; };
+		064B9361265C992B00474F15 /* RIPEMD+Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RIPEMD+Block.swift"; sourceTree = "<group>"; };
+		064B9362265C992B00474F15 /* TransactionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionParser.swift; sourceTree = "<group>"; };
+		064B9365265C992B00474F15 /* PublicKey+AssociatedTokenProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PublicKey+AssociatedTokenProgram.swift"; sourceTree = "<group>"; };
+		064B9366265C992B00474F15 /* PublicKey+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PublicKey+Extensions.swift"; sourceTree = "<group>"; };
+		064B9367265C992B00474F15 /* Decimals+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Decimals+Extensions.swift"; sourceTree = "<group>"; };
+		064B9368265C992B00474F15 /* NSRegularExpression+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Extensions.swift"; sourceTree = "<group>"; };
+		064B9369265C992B00474F15 /* AccountMeta+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountMeta+Extensions.swift"; sourceTree = "<group>"; };
+		064B936A265C992B00474F15 /* BytesEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BytesEncodable.swift; sourceTree = "<group>"; };
+		064B936B265C992B00474F15 /* Bytes+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bytes+Extensions.swift"; sourceTree = "<group>"; };
+		064B936C265C992B00474F15 /* Number+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+Extensions.swift"; sourceTree = "<group>"; };
+		064B936D265C992B00474F15 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		064B936E265C992B00474F15 /* Error+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
+		064B9370265C992B00474F15 /* mainnet-beta.tokens.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mainnet-beta.tokens.json"; sourceTree = "<group>"; };
+		064B9371265C992B00474F15 /* testnet.tokens.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testnet.tokens.json; sourceTree = "<group>"; };
+		064B9372265C992B00474F15 /* devnet.tokens.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = devnet.tokens.json; sourceTree = "<group>"; };
 		064F84F22657D06600D45DF2 /* UpsellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewModel.swift; sourceTree = "<group>"; };
 		064F84F62657D0B600D45DF2 /* UpsellViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewCoordinator.swift; sourceTree = "<group>"; };
 		064F84F92658A7B300D45DF2 /* CreateWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +255,15 @@
 		064F8537265A37E200D45DF2 /* RestoreWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestoreWalletViewController.xib; sourceTree = "<group>"; };
 		064F853C265A381300D45DF2 /* RestoreWalletCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWalletCoordinator.swift; sourceTree = "<group>"; };
 		064F853F265A382E00D45DF2 /* RestoreWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWalletViewModel.swift; sourceTree = "<group>"; };
+		064F8543265A6DCC00D45DF2 /* TokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenViewController.swift; sourceTree = "<group>"; };
+		064F8544265A6DCC00D45DF2 /* TokenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TokenViewController.xib; sourceTree = "<group>"; };
+		064F8549265A6DED00D45DF2 /* TokenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenViewModel.swift; sourceTree = "<group>"; };
+		064F854C265A6E4A00D45DF2 /* TokenViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenViewCoordinator.swift; sourceTree = "<group>"; };
+		064F854E265A76A600D45DF2 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		064F8551265A7A5200D45DF2 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		064F8553265A7AA200D45DF2 /* TokensList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensList.swift; sourceTree = "<group>"; };
+		064F8555265A7ABF00D45DF2 /* TokenExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenExtensions.swift; sourceTree = "<group>"; };
+		064F8557265A7ADF00D45DF2 /* TokenTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTag.swift; sourceTree = "<group>"; };
 		06676756265535CD00108D21 /* UpsellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewController.swift; sourceTree = "<group>"; };
 		06676757265535CD00108D21 /* UpsellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpsellViewController.xib; sourceTree = "<group>"; };
 		06F065D226528ED000032BDA /* Summer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Summer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,15 +283,16 @@
 		06F0660B2652941200032BDA /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		06F0660F2652945000032BDA /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		06F06613265294DB00032BDA /* StartViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewCoordinator.swift; sourceTree = "<group>"; };
-		0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Summer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer.debug.xcconfig"; path = "Target Support Files/Pods-Summer/Pods-Summer.debug.xcconfig"; sourceTree = "<group>"; };
-		0F1B93634E52E96A24B0D517 /* Pods-Summer-SummerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer-SummerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		217ED3484008182CBE5AB1DA /* Pods-Summer-SummerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer-SummerUITests.release.xcconfig"; path = "Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		332972D988648C52A04B9BD5 /* Pods-Summer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer.release.xcconfig"; path = "Target Support Files/Pods-Summer/Pods-Summer.release.xcconfig"; sourceTree = "<group>"; };
-		6C13E1095954D5F1C60AA09F /* Pods_SummerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		942470114EFD538CFDF434D3 /* Pods-SummerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerTests.release.xcconfig"; path = "Target Support Files/Pods-SummerTests/Pods-SummerTests.release.xcconfig"; sourceTree = "<group>"; };
-		A28F2919EDCCCFD4845B2F1C /* Pods-SummerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerTests.debug.xcconfig"; path = "Target Support Files/Pods-SummerTests/Pods-SummerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C2992D04AEF60D15E4079590 /* Pods_Summer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Summer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1E94EB10036D21EC474B0E7 /* Pods_Summer_SummerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Summer_SummerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3DE8A53265CCAF400D6744A /* Ed25519HDKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ed25519HDKey.swift; sourceTree = "<group>"; };
+		B3DE8A57265CCAF400D6744A /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		B3DE8A58265CCAF400D6744A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B3DE8B12265CD2FF00D6744A /* Summer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Summer-Bridging-Header.h"; sourceTree = "<group>"; };
+		B3DE8B13265CD2FF00D6744A /* NSData+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+HexString.m"; sourceTree = "<group>"; };
+		B3DE8B14265CD2FF00D6744A /* NSData+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+HexString.h"; sourceTree = "<group>"; };
+		B3DE8B15265CD30000D6744A /* CKSecp256k1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSecp256k1.h; sourceTree = "<group>"; };
+		B3DE8B16265CD30000D6744A /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = secp256k1.framework; sourceTree = "<group>"; };
+		B3DE8B17265CD30000D6744A /* CKSecp256k1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKSecp256k1.m; sourceTree = "<group>"; };
+		B3DE8B3E265CD67000D6744A /* ContResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +300,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF6298B1325318A629EF02DE /* Pods_Summer.framework in Frameworks */,
+				B3DE8AFF265CD1C600D6744A /* RxSwift in Frameworks */,
+				B3DE8B19265CD30000D6744A /* secp256k1.framework in Frameworks */,
+				B3DE8B05265CD1C600D6744A /* RxBlocking in Frameworks */,
+				B3DE8ACE265CCFDF00D6744A /* KeychainSwift in Frameworks */,
+				B3DE8B01265CD1C600D6744A /* RxRelay in Frameworks */,
+				B3DE8AD4265CD05E00D6744A /* CryptoSwift in Frameworks */,
+				B3DE8AEE265CD15900D6744A /* RxAlamofire in Frameworks */,
+				B3DE8B03265CD1C600D6744A /* RxCocoa in Frameworks */,
+				B3DE8B30265CD4CF00D6744A /* TweetNacl in Frameworks */,
+				B3DE8AE8265CD0EA00D6744A /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +317,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				387584B681A28936A6AA6394 /* Pods_SummerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +324,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE39740136B37770922890F1 /* Pods_Summer_SummerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +333,10 @@
 		0648DA4726553EA3005EAE15 /* Dependencys */ = {
 			isa = PBXGroup;
 			children = (
+				B3DE8B3D265CD66700D6744A /* ContResult */,
+				B3DE8B11265CD2EC00D6744A /* CKSecp256k1 */,
+				B3DE8A52265CCAE900D6744A /* Ed25519HD */,
+				064B931F265C991A00474F15 /* Solana */,
 				064F85042658AF2200D45DF2 /* SeedPhraseGenerator */,
 				0648DA4B26554004005EAE15 /* SolanaModule */,
 				0648DA4826553EBA005EAE15 /* KeychainAccountStorage */,
@@ -180,9 +355,219 @@
 		0648DA4B26554004005EAE15 /* SolanaModule */ = {
 			isa = PBXGroup;
 			children = (
+				064F8550265A7A4100D45DF2 /* Models */,
 				0648DA4C2655400D005EAE15 /* SolanaModule.swift */,
 			);
 			path = SolanaModule;
+			sourceTree = "<group>";
+		};
+		064B931F265C991A00474F15 /* Solana */ = {
+			isa = PBXGroup;
+			children = (
+				064B9363265C992B00474F15 /* Extensions */,
+				064B9329265C992900474F15 /* FeeRelayer */,
+				064B9350265C992B00474F15 /* Helpers */,
+				064B932E265C992A00474F15 /* Models */,
+				064B9349265C992A00474F15 /* Programs */,
+				064B936F265C992B00474F15 /* Resources */,
+				064B934E265C992A00474F15 /* Socket */,
+				064B9347265C992A00474F15 /* SolanaSDK.swift */,
+				064B9320265C992900474F15 /* SolanaSDK+Actions */,
+				064B932D265C992900474F15 /* SolanaSDK+Methods.swift */,
+				064B932C265C992900474F15 /* SolanaSDK+Notifications.swift */,
+				064B9348265C992A00474F15 /* SolanaSDK+Tokens.swift */,
+			);
+			path = Solana;
+			sourceTree = "<group>";
+		};
+		064B9320265C992900474F15 /* SolanaSDK+Actions */ = {
+			isa = PBXGroup;
+			children = (
+				064B9321265C992900474F15 /* Swap */,
+				064B9324265C992900474F15 /* SolanaSDK+Actions.swift */,
+				064B9325265C992900474F15 /* SolanaSDK+Send.swift */,
+				064B9326265C992900474F15 /* SolanaSDK+Close.swift */,
+				064B9327265C992900474F15 /* SolanaSDK+AssociatedAccount.swift */,
+				064B9328265C992900474F15 /* SolanaSDK+CreateTokenAccount.swift */,
+			);
+			path = "SolanaSDK+Actions";
+			sourceTree = "<group>";
+		};
+		064B9321265C992900474F15 /* Swap */ = {
+			isa = PBXGroup;
+			children = (
+				064B9322265C992900474F15 /* SolanaSDK+Swap.swift */,
+				064B9323265C992900474F15 /* SolanaSDK+Pool.swift */,
+			);
+			path = Swap;
+			sourceTree = "<group>";
+		};
+		064B9329265C992900474F15 /* FeeRelayer */ = {
+			isa = PBXGroup;
+			children = (
+				064B932A265C992900474F15 /* FeeRelayer.swift */,
+				064B932B265C992900474F15 /* FeeRelayer+Models.swift */,
+			);
+			path = FeeRelayer;
+			sourceTree = "<group>";
+		};
+		064B932E265C992A00474F15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				064B932F265C992A00474F15 /* PublicKey.swift */,
+				064B9330265C992A00474F15 /* BufferLayout */,
+				064B9336265C992A00474F15 /* Error.swift */,
+				064B9337265C992A00474F15 /* ConfirmedTransaction.swift */,
+				064B9338265C992A00474F15 /* Network.swift */,
+				064B9339265C992A00474F15 /* SolanaSDK+Models.swift */,
+				064B933A265C992A00474F15 /* ParsedTransaction.swift */,
+				064B933B265C992A00474F15 /* DerivablePath.swift */,
+				064B933C265C992A00474F15 /* Pool.swift */,
+				064B933D265C992A00474F15 /* TransactionInstruction.swift */,
+				064B933E265C992A00474F15 /* SendingTransaction */,
+				064B9341265C992A00474F15 /* APIEndPoint.swift */,
+				064B9342265C992A00474F15 /* SolanaToken */,
+				064B9344265C992A00474F15 /* SolanaSDK+Request.swift */,
+				064B9345265C992A00474F15 /* Account.swift */,
+				064B9346265C992A00474F15 /* SolanaSDKWallet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		064B9330265C992A00474F15 /* BufferLayout */ = {
+			isa = PBXGroup;
+			children = (
+				064B9331265C992A00474F15 /* TokenSwapInfo.swift */,
+				064B9332265C992A00474F15 /* EmptyInfo.swift */,
+				064B9333265C992A00474F15 /* Mint.swift */,
+				064B9334265C992A00474F15 /* BufferLayout.swift */,
+				064B9335265C992A00474F15 /* AccountInfo.swift */,
+			);
+			path = BufferLayout;
+			sourceTree = "<group>";
+		};
+		064B933E265C992A00474F15 /* SendingTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				064B933F265C992A00474F15 /* Message.swift */,
+				064B9340265C992A00474F15 /* Transaction.swift */,
+			);
+			path = SendingTransaction;
+			sourceTree = "<group>";
+		};
+		064B9342265C992A00474F15 /* SolanaToken */ = {
+			isa = PBXGroup;
+			children = (
+				064B9343265C992A00474F15 /* TokenList.swift */,
+			);
+			path = SolanaToken;
+			sourceTree = "<group>";
+		};
+		064B9349265C992A00474F15 /* Programs */ = {
+			isa = PBXGroup;
+			children = (
+				064B934A265C992A00474F15 /* TokenSwapProgram.swift */,
+				064B934B265C992A00474F15 /* TokenProgram.swift */,
+				064B934C265C992A00474F15 /* AssociatedTokenProgram.swift */,
+				064B934D265C992A00474F15 /* SystemProgram.swift */,
+			);
+			path = Programs;
+			sourceTree = "<group>";
+		};
+		064B934E265C992A00474F15 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				064B934F265C992A00474F15 /* Socket.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		064B9350265C992B00474F15 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				064B9351265C992B00474F15 /* TokenListsParser.swift */,
+				064B9352265C992B00474F15 /* NaclLowLevel.swift */,
+				064B9353265C992B00474F15 /* Logger.swift */,
+				064B9354265C992B00474F15 /* BIP39 */,
+				064B9357265C992B00474F15 /* Base58.swift */,
+				064B9358265C992B00474F15 /* AskCoin-HD */,
+				064B9362265C992B00474F15 /* TransactionParser.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		064B9354265C992B00474F15 /* BIP39 */ = {
+			isa = PBXGroup;
+			children = (
+				064B9355265C992B00474F15 /* Wordlists.swift */,
+				064B9356265C992B00474F15 /* Mnemonic.swift */,
+			);
+			path = BIP39;
+			sourceTree = "<group>";
+		};
+		064B9358265C992B00474F15 /* AskCoin-HD */ = {
+			isa = PBXGroup;
+			children = (
+				064B9359265C992B00474F15 /* ASKHDUtils.swift */,
+				064B935A265C992B00474F15 /* Keychain.swift */,
+				064B935B265C992B00474F15 /* SwiftBigInteger */,
+				064B935E265C992B00474F15 /* RIPEMD */,
+			);
+			path = "AskCoin-HD";
+			sourceTree = "<group>";
+		};
+		064B935B265C992B00474F15 /* SwiftBigInteger */ = {
+			isa = PBXGroup;
+			children = (
+				064B935C265C992B00474F15 /* SMP.swift */,
+				064B935D265C992B00474F15 /* SMP Bignum Extensions.swift */,
+			);
+			path = SwiftBigInteger;
+			sourceTree = "<group>";
+		};
+		064B935E265C992B00474F15 /* RIPEMD */ = {
+			isa = PBXGroup;
+			children = (
+				064B935F265C992B00474F15 /* UInt32+CircularShift.swift */,
+				064B9360265C992B00474F15 /* RIPEMD.swift */,
+				064B9361265C992B00474F15 /* RIPEMD+Block.swift */,
+			);
+			path = RIPEMD;
+			sourceTree = "<group>";
+		};
+		064B9363265C992B00474F15 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				064B9364265C992B00474F15 /* PublicKey */,
+				064B9367265C992B00474F15 /* Decimals+Extensions.swift */,
+				064B9368265C992B00474F15 /* NSRegularExpression+Extensions.swift */,
+				064B9369265C992B00474F15 /* AccountMeta+Extensions.swift */,
+				064B936A265C992B00474F15 /* BytesEncodable.swift */,
+				064B936B265C992B00474F15 /* Bytes+Extensions.swift */,
+				064B936C265C992B00474F15 /* Number+Extensions.swift */,
+				064B936D265C992B00474F15 /* Data+Extensions.swift */,
+				064B936E265C992B00474F15 /* Error+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		064B9364265C992B00474F15 /* PublicKey */ = {
+			isa = PBXGroup;
+			children = (
+				064B9365265C992B00474F15 /* PublicKey+AssociatedTokenProgram.swift */,
+				064B9366265C992B00474F15 /* PublicKey+Extensions.swift */,
+			);
+			path = PublicKey;
+			sourceTree = "<group>";
+		};
+		064B936F265C992B00474F15 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				064B9370265C992B00474F15 /* mainnet-beta.tokens.json */,
+				064B9371265C992B00474F15 /* testnet.tokens.json */,
+				064B9372265C992B00474F15 /* devnet.tokens.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		064F84F42657D09500D45DF2 /* ViewModel */ = {
@@ -389,6 +774,53 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		064F8542265A6DB100D45DF2 /* TokenView */ = {
+			isa = PBXGroup;
+			children = (
+				064F854B265A6E3A00D45DF2 /* Navigation */,
+				064F8548265A6DD900D45DF2 /* ViewModel */,
+				064F8547265A6DD100D45DF2 /* UI */,
+			);
+			path = TokenView;
+			sourceTree = "<group>";
+		};
+		064F8547265A6DD100D45DF2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				064F8543265A6DCC00D45DF2 /* TokenViewController.swift */,
+				064F8544265A6DCC00D45DF2 /* TokenViewController.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		064F8548265A6DD900D45DF2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				064F8549265A6DED00D45DF2 /* TokenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		064F854B265A6E3A00D45DF2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				064F854C265A6E4A00D45DF2 /* TokenViewCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		064F8550265A7A4100D45DF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				064F854E265A76A600D45DF2 /* Wallet.swift */,
+				064F8551265A7A5200D45DF2 /* Token.swift */,
+				064F8553265A7AA200D45DF2 /* TokensList.swift */,
+				064F8555265A7ABF00D45DF2 /* TokenExtensions.swift */,
+				064F8557265A7ADF00D45DF2 /* TokenTag.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0667675A265535D000108D21 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,8 +837,6 @@
 				06F065EB26528ED300032BDA /* SummerTests */,
 				06F065F626528ED300032BDA /* SummerUITests */,
 				06F065D326528ED000032BDA /* Products */,
-				E439B1155BDDEEBB0DABE11B /* Pods */,
-				EEF8B4D443649CF34016E6F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -428,6 +858,7 @@
 				06F066082652935E00032BDA /* Views */,
 				06F065D526528ED000032BDA /* AppDelegate.swift */,
 				06F065D726528ED000032BDA /* SceneDelegate.swift */,
+				B3DE8B12265CD2FF00D6744A /* Summer-Bridging-Header.h */,
 				06F065DE26528ED300032BDA /* Assets.xcassets */,
 				06F065E026528ED300032BDA /* LaunchScreen.storyboard */,
 				06F065E326528ED300032BDA /* Info.plist */,
@@ -464,6 +895,7 @@
 		06F066082652935E00032BDA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				064F8542265A6DB100D45DF2 /* TokenView */,
 				064F8533265A37C000D45DF2 /* RestoreWallet */,
 				064F8527265A2F2E00D45DF2 /* Settings */,
 				064F850C2658D42300D45DF2 /* Wallet */,
@@ -519,27 +951,34 @@
 			path = UpsellView;
 			sourceTree = "<group>";
 		};
-		E439B1155BDDEEBB0DABE11B /* Pods */ = {
+		B3DE8A52265CCAE900D6744A /* Ed25519HD */ = {
 			isa = PBXGroup;
 			children = (
-				0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Summer.debug.xcconfig */,
-				332972D988648C52A04B9BD5 /* Pods-Summer.release.xcconfig */,
-				0F1B93634E52E96A24B0D517 /* Pods-Summer-SummerUITests.debug.xcconfig */,
-				217ED3484008182CBE5AB1DA /* Pods-Summer-SummerUITests.release.xcconfig */,
-				A28F2919EDCCCFD4845B2F1C /* Pods-SummerTests.debug.xcconfig */,
-				942470114EFD538CFDF434D3 /* Pods-SummerTests.release.xcconfig */,
+				B3DE8A53265CCAF400D6744A /* Ed25519HDKey.swift */,
+				B3DE8A58265CCAF400D6744A /* Extensions.swift */,
+				B3DE8A57265CCAF400D6744A /* Keys.swift */,
 			);
-			path = Pods;
+			path = Ed25519HD;
 			sourceTree = "<group>";
 		};
-		EEF8B4D443649CF34016E6F5 /* Frameworks */ = {
+		B3DE8B11265CD2EC00D6744A /* CKSecp256k1 */ = {
 			isa = PBXGroup;
 			children = (
-				C2992D04AEF60D15E4079590 /* Pods_Summer.framework */,
-				D1E94EB10036D21EC474B0E7 /* Pods_Summer_SummerUITests.framework */,
-				6C13E1095954D5F1C60AA09F /* Pods_SummerTests.framework */,
+				B3DE8B15265CD30000D6744A /* CKSecp256k1.h */,
+				B3DE8B17265CD30000D6744A /* CKSecp256k1.m */,
+				B3DE8B14265CD2FF00D6744A /* NSData+HexString.h */,
+				B3DE8B13265CD2FF00D6744A /* NSData+HexString.m */,
+				B3DE8B16265CD30000D6744A /* secp256k1.framework */,
 			);
-			name = Frameworks;
+			path = CKSecp256k1;
+			sourceTree = "<group>";
+		};
+		B3DE8B3D265CD66700D6744A /* ContResult */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE8B3E265CD67000D6744A /* ContResult.swift */,
+			);
+			path = ContResult;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,17 +988,26 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06F065FC26528ED300032BDA /* Build configuration list for PBXNativeTarget "Summer" */;
 			buildPhases = (
-				CFBE3E35E974A6B07C7C4BDB /* [CP] Check Pods Manifest.lock */,
 				06F065CE26528ED000032BDA /* Sources */,
 				06F065CF26528ED000032BDA /* Frameworks */,
 				06F065D026528ED000032BDA /* Resources */,
-				7A1DD55FADB21E40DF50EC9C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Summer;
+			packageProductDependencies = (
+				B3DE8ACD265CCFDF00D6744A /* KeychainSwift */,
+				B3DE8AD3265CD05E00D6744A /* CryptoSwift */,
+				B3DE8AE7265CD0EA00D6744A /* Starscream */,
+				B3DE8AED265CD15900D6744A /* RxAlamofire */,
+				B3DE8AFE265CD1C600D6744A /* RxSwift */,
+				B3DE8B00265CD1C600D6744A /* RxRelay */,
+				B3DE8B02265CD1C600D6744A /* RxCocoa */,
+				B3DE8B04265CD1C600D6744A /* RxBlocking */,
+				B3DE8B2F265CD4CF00D6744A /* TweetNacl */,
+			);
 			productName = Summer;
 			productReference = 06F065D226528ED000032BDA /* Summer.app */;
 			productType = "com.apple.product-type.application";
@@ -568,7 +1016,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06F065FF26528ED300032BDA /* Build configuration list for PBXNativeTarget "SummerTests" */;
 			buildPhases = (
-				7A78ECB356241F661DB8C8A6 /* [CP] Check Pods Manifest.lock */,
 				06F065E426528ED300032BDA /* Sources */,
 				06F065E526528ED300032BDA /* Frameworks */,
 				06F065E626528ED300032BDA /* Resources */,
@@ -587,11 +1034,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06F0660226528ED300032BDA /* Build configuration list for PBXNativeTarget "SummerUITests" */;
 			buildPhases = (
-				56BE659234E42DC78F771F70 /* [CP] Check Pods Manifest.lock */,
 				06F065EF26528ED300032BDA /* Sources */,
 				06F065F026528ED300032BDA /* Frameworks */,
 				06F065F126528ED300032BDA /* Resources */,
-				F74EE5FC96ED3ED9A6228B0D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -614,6 +1059,7 @@
 				TargetAttributes = {
 					06F065D126528ED000032BDA = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1240;
 					};
 					06F065E726528ED300032BDA = {
 						CreatedOnToolsVersion = 12.5;
@@ -634,6 +1080,14 @@
 				Base,
 			);
 			mainGroup = 06F065C926528ED000032BDA;
+			packageReferences = (
+				B3DE8ACC265CCFDF00D6744A /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				B3DE8AD2265CD05E00D6744A /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				B3DE8AE6265CD0EA00D6744A /* XCRemoteSwiftPackageReference "Starscream" */,
+				B3DE8AEC265CD15900D6744A /* XCRemoteSwiftPackageReference "RxAlamofire" */,
+				B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B3DE8B2E265CD4CF00D6744A /* XCRemoteSwiftPackageReference "tweetnacl-swiftwrap" */,
+			);
 			productRefGroup = 06F065D326528ED000032BDA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -652,12 +1106,16 @@
 			files = (
 				06676759265535CD00108D21 /* UpsellViewController.xib in Resources */,
 				064F85112658D43D00D45DF2 /* WalletViewController.xib in Resources */,
+				064B93B4265C992C00474F15 /* devnet.tokens.json in Resources */,
 				064F852B265A2F4400D45DF2 /* SettingsViewController.xib in Resources */,
 				064F851C2658DEC300D45DF2 /* WalletHeaderView.xib in Resources */,
+				064F8546265A6DCC00D45DF2 /* TokenViewController.xib in Resources */,
 				064F8539265A37E200D45DF2 /* RestoreWalletViewController.xib in Resources */,
+				064B93B3265C992C00474F15 /* testnet.tokens.json in Resources */,
 				064F850B2658B17700D45DF2 /* SeedPhaseCollectionViewCell.xib in Resources */,
 				064F84FC2658A7B300D45DF2 /* CreateWalletViewController.xib in Resources */,
 				06F065E226528ED300032BDA /* LaunchScreen.storyboard in Resources */,
+				064B93B2265C992C00474F15 /* mainnet-beta.tokens.json in Resources */,
 				064F85212658E5B700D45DF2 /* WalletTableViewCell.xib in Resources */,
 				064F8526265A0B8700D45DF2 /* FooterView.xib in Resources */,
 				06F065DF26528ED300032BDA /* Assets.xcassets in Resources */,
@@ -681,142 +1139,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		56BE659234E42DC78F771F70 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Summer-SummerUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A1DD55FADB21E40DF50EC9C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summer/Pods-Summer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summer/Pods-Summer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summer/Pods-Summer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A78ECB356241F661DB8C8A6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SummerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CFBE3E35E974A6B07C7C4BDB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Summer-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F74EE5FC96ED3ED9A6228B0D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		06F065CE26528ED000032BDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				064B93AC265C992B00474F15 /* AccountMeta+Extensions.swift in Sources */,
+				064B937B265C992B00474F15 /* FeeRelayer+Models.swift in Sources */,
 				064F8530265A309500D45DF2 /* SettingsViewCoordinator.swift in Sources */,
+				064B9377265C992B00474F15 /* SolanaSDK+Close.swift in Sources */,
 				064F85202658E5B700D45DF2 /* WalletTableViewCell.swift in Sources */,
+				064F8556265A7ABF00D45DF2 /* TokenExtensions.swift in Sources */,
+				064F854D265A6E4A00D45DF2 /* TokenViewCoordinator.swift in Sources */,
+				064B9390265C992B00474F15 /* SolanaSDK+Request.swift in Sources */,
+				064B93AD265C992B00474F15 /* BytesEncodable.swift in Sources */,
+				064B9375265C992B00474F15 /* SolanaSDK+Actions.swift in Sources */,
 				064F8524265A0B7B00D45DF2 /* FooterView.swift in Sources */,
 				064F84F72657D0B600D45DF2 /* UpsellViewCoordinator.swift in Sources */,
+				064B9389265C992B00474F15 /* DerivablePath.swift in Sources */,
+				064B93A1265C992B00474F15 /* Keychain.swift in Sources */,
+				064B9374265C992B00474F15 /* SolanaSDK+Pool.swift in Sources */,
+				064B9394265C992B00474F15 /* SolanaSDK+Tokens.swift in Sources */,
+				064B939F265C992B00474F15 /* Base58.swift in Sources */,
 				06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */,
+				064F8545265A6DCC00D45DF2 /* TokenViewController.swift in Sources */,
+				064B9393265C992B00474F15 /* SolanaSDK.swift in Sources */,
+				064B93B1265C992C00474F15 /* Error+Extensions.swift in Sources */,
 				064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */,
+				064B9379265C992B00474F15 /* SolanaSDK+CreateTokenAccount.swift in Sources */,
+				064B938F265C992B00474F15 /* TokenList.swift in Sources */,
 				064F84FE2658A7D100D45DF2 /* CreateWalletViewModel.swift in Sources */,
 				06F0660C2652941200032BDA /* StartViewController.swift in Sources */,
+				064B9373265C992B00474F15 /* SolanaSDK+Swap.swift in Sources */,
+				B3DE8B3F265CD67000D6744A /* ContResult.swift in Sources */,
+				064B9388265C992B00474F15 /* ParsedTransaction.swift in Sources */,
+				064B93AA265C992B00474F15 /* Decimals+Extensions.swift in Sources */,
+				B3DE8A59265CCAF400D6744A /* Ed25519HDKey.swift in Sources */,
+				064B9382265C992B00474F15 /* BufferLayout.swift in Sources */,
+				B3DE8B18265CD30000D6744A /* NSData+HexString.m in Sources */,
+				B3DE8A5B265CCAF400D6744A /* Extensions.swift in Sources */,
+				064B93A9265C992B00474F15 /* PublicKey+Extensions.swift in Sources */,
 				064F85062658AF2D00D45DF2 /* SeedPhraseGenerator.swift in Sources */,
 				06F066102652945000032BDA /* StartViewModel.swift in Sources */,
 				064F8532265A30A100D45DF2 /* SettingsViewModel.swift in Sources */,
+				064B937F265C992B00474F15 /* TokenSwapInfo.swift in Sources */,
 				064F851A2658DEAD00D45DF2 /* WalletHeaderView.swift in Sources */,
+				064B937C265C992B00474F15 /* SolanaSDK+Notifications.swift in Sources */,
 				06F06607265292DA00032BDA /* Coordinator.swift in Sources */,
+				064B9378265C992B00474F15 /* SolanaSDK+AssociatedAccount.swift in Sources */,
+				064B9395265C992B00474F15 /* TokenSwapProgram.swift in Sources */,
+				064B9386265C992B00474F15 /* Network.swift in Sources */,
+				064F854A265A6DED00D45DF2 /* TokenViewModel.swift in Sources */,
+				064B9392265C992B00474F15 /* SolanaSDKWallet.swift in Sources */,
+				064B9387265C992B00474F15 /* SolanaSDK+Models.swift in Sources */,
+				064B9398265C992B00474F15 /* SystemProgram.swift in Sources */,
+				064B9376265C992B00474F15 /* SolanaSDK+Send.swift in Sources */,
+				064B9385265C992B00474F15 /* ConfirmedTransaction.swift in Sources */,
+				064B9381265C992B00474F15 /* Mint.swift in Sources */,
+				064F854F265A76A700D45DF2 /* Wallet.swift in Sources */,
+				064B938D265C992B00474F15 /* Transaction.swift in Sources */,
+				064B937D265C992B00474F15 /* SolanaSDK+Methods.swift in Sources */,
+				064B93A0265C992B00474F15 /* ASKHDUtils.swift in Sources */,
+				064F8558265A7ADF00D45DF2 /* TokenTag.swift in Sources */,
+				064B9391265C992B00474F15 /* Account.swift in Sources */,
+				064B93AB265C992B00474F15 /* NSRegularExpression+Extensions.swift in Sources */,
 				064F84FB2658A7B300D45DF2 /* CreateWalletViewController.swift in Sources */,
+				064B93A7265C992B00474F15 /* TransactionParser.swift in Sources */,
+				064B938E265C992B00474F15 /* APIEndPoint.swift in Sources */,
+				064F8552265A7A5200D45DF2 /* Token.swift in Sources */,
+				064B938A265C992B00474F15 /* Pool.swift in Sources */,
+				064B938B265C992B00474F15 /* TransactionInstruction.swift in Sources */,
+				064B9384265C992B00474F15 /* Error.swift in Sources */,
 				06676758265535CD00108D21 /* UpsellViewController.swift in Sources */,
 				0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */,
 				064F8540265A382E00D45DF2 /* RestoreWalletViewModel.swift in Sources */,
+				064B9396265C992B00474F15 /* TokenProgram.swift in Sources */,
+				064B937E265C992B00474F15 /* PublicKey.swift in Sources */,
+				064B939B265C992B00474F15 /* NaclLowLevel.swift in Sources */,
+				064B937A265C992B00474F15 /* FeeRelayer.swift in Sources */,
 				064F8538265A37E200D45DF2 /* RestoreWalletViewController.swift in Sources */,
+				064B9383265C992B00474F15 /* AccountInfo.swift in Sources */,
+				064B93A4265C992B00474F15 /* UInt32+CircularShift.swift in Sources */,
+				064B93B0265C992C00474F15 /* Data+Extensions.swift in Sources */,
+				064B939C265C992B00474F15 /* Logger.swift in Sources */,
 				064F85172658D4CD00D45DF2 /* WalletCoordinatior.swift in Sources */,
 				064F852A265A2F4400D45DF2 /* SettingsViewController.swift in Sources */,
+				064B93A8265C992B00474F15 /* PublicKey+AssociatedTokenProgram.swift in Sources */,
+				064B93A6265C992B00474F15 /* RIPEMD+Block.swift in Sources */,
+				064B939A265C992B00474F15 /* TokenListsParser.swift in Sources */,
+				064B9399265C992B00474F15 /* Socket.swift in Sources */,
+				064B938C265C992B00474F15 /* Message.swift in Sources */,
 				0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */,
 				06F065D626528ED000032BDA /* AppDelegate.swift in Sources */,
+				064B93AF265C992C00474F15 /* Number+Extensions.swift in Sources */,
+				064B93A2265C992B00474F15 /* SMP.swift in Sources */,
 				064F85102658D43D00D45DF2 /* WalletViewController.swift in Sources */,
+				064B93AE265C992C00474F15 /* Bytes+Extensions.swift in Sources */,
+				B3DE8B1A265CD30000D6744A /* CKSecp256k1.m in Sources */,
+				064B93A5265C992B00474F15 /* RIPEMD.swift in Sources */,
 				06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */,
 				064F853D265A381300D45DF2 /* RestoreWalletCoordinator.swift in Sources */,
 				064F85132658D46800D45DF2 /* WalletViewModel.swift in Sources */,
+				B3DE8A5A265CCAF400D6744A /* Keys.swift in Sources */,
+				064F8554265A7AA200D45DF2 /* TokensList.swift in Sources */,
+				064B9397265C992B00474F15 /* AssociatedTokenProgram.swift in Sources */,
+				064B9380265C992B00474F15 /* EmptyInfo.swift in Sources */,
+				064B93A3265C992B00474F15 /* SMP Bignum Extensions.swift in Sources */,
+				064B939D265C992B00474F15 /* Wordlists.swift in Sources */,
 				064F85032658A8D200D45DF2 /* CreateWalletCoordinator.swift in Sources */,
 				064F850A2658B17700D45DF2 /* SeedPhaseCollectionViewCell.swift in Sources */,
+				064B939E265C992B00474F15 /* Mnemonic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,12 +1413,16 @@
 		};
 		06F065FD26528ED300032BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Summer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Summer/Dependencys/CKSecp256k1",
+				);
 				INFOPLIST_FILE = Summer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -995,6 +1431,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.Summer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Summer/Summer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1002,12 +1440,16 @@
 		};
 		06F065FE26528ED300032BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 332972D988648C52A04B9BD5 /* Pods-Summer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Summer/Dependencys/CKSecp256k1",
+				);
 				INFOPLIST_FILE = Summer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1016,6 +1458,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.Summer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Summer/Summer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1023,7 +1466,6 @@
 		};
 		06F0660026528ED300032BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A28F2919EDCCCFD4845B2F1C /* Pods-SummerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1046,7 +1488,6 @@
 		};
 		06F0660126528ED300032BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 942470114EFD538CFDF434D3 /* Pods-SummerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1069,7 +1510,6 @@
 		};
 		06F0660326528ED300032BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F1B93634E52E96A24B0D517 /* Pods-Summer-SummerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1090,7 +1530,6 @@
 		};
 		06F0660426528ED300032BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 217ED3484008182CBE5AB1DA /* Pods-Summer-SummerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1149,6 +1588,105 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B3DE8ACC265CCFDF00D6744A /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+		B3DE8AD2265CD05E00D6744A /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+		B3DE8AE6265CD0EA00D6744A /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.4;
+			};
+		};
+		B3DE8AEC265CD15900D6744A /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.1;
+			};
+		};
+		B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
+		B3DE8B2E265CD4CF00D6744A /* XCRemoteSwiftPackageReference "tweetnacl-swiftwrap" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bitmark-inc/tweetnacl-swiftwrap.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3DE8ACD265CCFDF00D6744A /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8ACC265CCFDF00D6744A /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		B3DE8AD3265CD05E00D6744A /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AD2265CD05E00D6744A /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+		B3DE8AE7265CD0EA00D6744A /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AE6265CD0EA00D6744A /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+		B3DE8AED265CD15900D6744A /* RxAlamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AEC265CD15900D6744A /* XCRemoteSwiftPackageReference "RxAlamofire" */;
+			productName = RxAlamofire;
+		};
+		B3DE8AFE265CD1C600D6744A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B3DE8B00265CD1C600D6744A /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		B3DE8B02265CD1C600D6744A /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B3DE8B04265CD1C600D6744A /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		B3DE8B2F265CD4CF00D6744A /* TweetNacl */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8B2E265CD4CF00D6744A /* XCRemoteSwiftPackageReference "tweetnacl-swiftwrap" */;
+			productName = TweetNacl;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06F065CA26528ED000032BDA /* Project object */;
 }

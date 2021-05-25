@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SolanaSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

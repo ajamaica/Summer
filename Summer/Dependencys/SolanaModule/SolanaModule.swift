@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SolanaSwift
 import RxSwift
 
 protocol SolanaClient {
@@ -15,8 +14,9 @@ protocol SolanaClient {
     func getBalance(completition: @escaping(Result<UInt64, Error>) -> ())
     func getPublicKey(completition: @escaping(Result<String, Error>) -> ())
     func sendSPL(mintAddress: String, decimals: UInt8, from: String, to: String, amount: UInt64, completition: @escaping(Result<String, Error>) -> ())
-    func getSPLTokens(completition: @escaping(Result<[SolanaSDK.Wallet], Error>) -> ())
-    func addSPLToken(mintAddress: String, completition: @escaping(Result<(signature: String, newPubkey: String), Error>) -> ())
+    func getTokenWallets(completition: @escaping(Result<[SummerWallet], Error>) -> ())
+    func addToken(mintAddress: String, completition: @escaping(Result<(signature: String, newPubkey: String), Error>) -> ())
+    func getTokenAccountBalance(token: String, completition: @escaping(Result<SolanaSDK.TokenAccountBalance, Error>) -> ())
 
 }
 
@@ -142,12 +142,33 @@ class ConcreteSolanaClient: SolanaClient {
         }
     }
     
-    func getSPLTokens(completition: @escaping(Result<[SolanaSDK.Wallet], Error>) -> ()) {
+    func getTokenWallets(completition: @escaping(Result<[SummerWallet], Error>) -> ()) {
         do{
             let account = try getAccount().get()
             self.solana.getTokenWallets(account: account.publicKey.base58EncodedString)
-                .subscribe { wallets in
-                completition(.success(wallets))
+                .map {
+                    return $0
+                        .map {
+                        let extensions = SummerTokenExtensions(website: $0.token.extensions?.website, bridgeContract: $0.token.extensions?.bridgeContract)
+                        let token = SummerToken(_tags: [], chainId: $0.token.chainId, address: $0.token.address, symbol: $0.token.symbol, name: $0.token.name, decimals: $0.token.decimals, logoURI: $0.token.logoURI, extensions: extensions)
+                        return SummerWallet(pubkey: $0.pubkey, lamports: $0.lamports, token: token, liquidity: $0.isLiquidity)
+                    }
+                }
+                .subscribe { result in
+                    completition(.success(result))
+                }
+            .disposed(by: disposeBag)
+        } catch let e {
+            completition(.failure(e))
+        }
+    }
+    
+    func getTokenAccountBalance(token: String, completition: @escaping(Result<SolanaSDK.TokenAccountBalance, Error>) -> ()) {
+        do{
+            let _ = try getAccount().get()
+            self.solana.getTokenAccountBalance(pubkey: token)
+                .subscribe {
+                completition($0)
             }
             .disposed(by: disposeBag)
         } catch let e {
@@ -155,7 +176,7 @@ class ConcreteSolanaClient: SolanaClient {
         }
     }
     
-    func addSPLToken(mintAddress: String, completition: @escaping(Result<(signature: String, newPubkey: String), Error>) -> ()) {
+    func addToken(mintAddress: String, completition: @escaping(Result<(signature: String, newPubkey: String), Error>) -> ()) {
         do{
             let _ = try getAccount().get()
             self.solana.createTokenAccount(mintAddress: mintAddress)
@@ -167,4 +188,8 @@ class ConcreteSolanaClient: SolanaClient {
             completition(.failure(e))
         }
     }
+}
+
+public enum WrappingToken: String {
+    case sollet, wormhole
 }

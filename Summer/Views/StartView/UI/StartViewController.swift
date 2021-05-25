@@ -27,13 +27,15 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        
-        self.viewModel.hasAccount { result in
-            switch result {
-            case .success():
-                self.delegate?.goToWallet()
-            case .failure:
-                self.delegate?.goToStartUpsell()
+        let seconds = 1.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            self.viewModel.hasAccount { result in
+                switch result {
+                case .success():
+                    self.delegate?.goToWallet()
+                case .failure:
+                    self.delegate?.goToStartUpsell()
+                }
             }
         }
     }
