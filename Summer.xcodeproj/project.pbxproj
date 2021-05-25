@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -124,9 +124,21 @@
 		06F0660D2652941200032BDA /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F0660B2652941200032BDA /* StartViewController.xib */; };
 		06F066102652945000032BDA /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F0660F2652945000032BDA /* StartViewModel.swift */; };
 		06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F06613265294DB00032BDA /* StartViewCoordinator.swift */; };
-		387584B681A28936A6AA6394 /* Pods_SummerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C13E1095954D5F1C60AA09F /* Pods_SummerTests.framework */; };
-		CF6298B1325318A629EF02DE /* Pods_Summer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2992D04AEF60D15E4079590 /* Pods_Summer.framework */; };
-		DE39740136B37770922890F1 /* Pods_Summer_SummerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E94EB10036D21EC474B0E7 /* Pods_Summer_SummerUITests.framework */; };
+		B3DE8A59265CCAF400D6744A /* Ed25519HDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8A53265CCAF400D6744A /* Ed25519HDKey.swift */; };
+		B3DE8A5A265CCAF400D6744A /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8A57265CCAF400D6744A /* Keys.swift */; };
+		B3DE8A5B265CCAF400D6744A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8A58265CCAF400D6744A /* Extensions.swift */; };
+		B3DE8ACE265CCFDF00D6744A /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8ACD265CCFDF00D6744A /* KeychainSwift */; };
+		B3DE8AD4265CD05E00D6744A /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AD3265CD05E00D6744A /* CryptoSwift */; };
+		B3DE8AE8265CD0EA00D6744A /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AE7265CD0EA00D6744A /* Starscream */; };
+		B3DE8AEE265CD15900D6744A /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AED265CD15900D6744A /* RxAlamofire */; };
+		B3DE8AFF265CD1C600D6744A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AFE265CD1C600D6744A /* RxSwift */; };
+		B3DE8B01265CD1C600D6744A /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B00265CD1C600D6744A /* RxRelay */; };
+		B3DE8B03265CD1C600D6744A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B02265CD1C600D6744A /* RxCocoa */; };
+		B3DE8B05265CD1C600D6744A /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B04265CD1C600D6744A /* RxBlocking */; };
+		B3DE8B18265CD30000D6744A /* NSData+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8B13265CD2FF00D6744A /* NSData+HexString.m */; };
+		B3DE8B19265CD30000D6744A /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE8B16265CD30000D6744A /* secp256k1.framework */; };
+		B3DE8B1A265CD30000D6744A /* CKSecp256k1.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8B17265CD30000D6744A /* CKSecp256k1.m */; };
+		B3DE8B30265CD4CF00D6744A /* TweetNacl in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B2F265CD4CF00D6744A /* TweetNacl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,15 +282,15 @@
 		06F0660B2652941200032BDA /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		06F0660F2652945000032BDA /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		06F06613265294DB00032BDA /* StartViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewCoordinator.swift; sourceTree = "<group>"; };
-		0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Summer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer.debug.xcconfig"; path = "Target Support Files/Pods-Summer/Pods-Summer.debug.xcconfig"; sourceTree = "<group>"; };
-		0F1B93634E52E96A24B0D517 /* Pods-Summer-SummerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer-SummerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		217ED3484008182CBE5AB1DA /* Pods-Summer-SummerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer-SummerUITests.release.xcconfig"; path = "Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		332972D988648C52A04B9BD5 /* Pods-Summer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summer.release.xcconfig"; path = "Target Support Files/Pods-Summer/Pods-Summer.release.xcconfig"; sourceTree = "<group>"; };
-		6C13E1095954D5F1C60AA09F /* Pods_SummerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		942470114EFD538CFDF434D3 /* Pods-SummerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerTests.release.xcconfig"; path = "Target Support Files/Pods-SummerTests/Pods-SummerTests.release.xcconfig"; sourceTree = "<group>"; };
-		A28F2919EDCCCFD4845B2F1C /* Pods-SummerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerTests.debug.xcconfig"; path = "Target Support Files/Pods-SummerTests/Pods-SummerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C2992D04AEF60D15E4079590 /* Pods_Summer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Summer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1E94EB10036D21EC474B0E7 /* Pods_Summer_SummerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Summer_SummerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3DE8A53265CCAF400D6744A /* Ed25519HDKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ed25519HDKey.swift; sourceTree = "<group>"; };
+		B3DE8A57265CCAF400D6744A /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		B3DE8A58265CCAF400D6744A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B3DE8B12265CD2FF00D6744A /* Summer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Summer-Bridging-Header.h"; sourceTree = "<group>"; };
+		B3DE8B13265CD2FF00D6744A /* NSData+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+HexString.m"; sourceTree = "<group>"; };
+		B3DE8B14265CD2FF00D6744A /* NSData+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+HexString.h"; sourceTree = "<group>"; };
+		B3DE8B15265CD30000D6744A /* CKSecp256k1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSecp256k1.h; sourceTree = "<group>"; };
+		B3DE8B16265CD30000D6744A /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = secp256k1.framework; sourceTree = "<group>"; };
+		B3DE8B17265CD30000D6744A /* CKSecp256k1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKSecp256k1.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +298,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF6298B1325318A629EF02DE /* Pods_Summer.framework in Frameworks */,
+				B3DE8AFF265CD1C600D6744A /* RxSwift in Frameworks */,
+				B3DE8B19265CD30000D6744A /* secp256k1.framework in Frameworks */,
+				B3DE8B05265CD1C600D6744A /* RxBlocking in Frameworks */,
+				B3DE8ACE265CCFDF00D6744A /* KeychainSwift in Frameworks */,
+				B3DE8B01265CD1C600D6744A /* RxRelay in Frameworks */,
+				B3DE8AD4265CD05E00D6744A /* CryptoSwift in Frameworks */,
+				B3DE8AEE265CD15900D6744A /* RxAlamofire in Frameworks */,
+				B3DE8B03265CD1C600D6744A /* RxCocoa in Frameworks */,
+				B3DE8B30265CD4CF00D6744A /* TweetNacl in Frameworks */,
+				B3DE8AE8265CD0EA00D6744A /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +315,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				387584B681A28936A6AA6394 /* Pods_SummerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +322,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE39740136B37770922890F1 /* Pods_Summer_SummerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +331,8 @@
 		0648DA4726553EA3005EAE15 /* Dependencys */ = {
 			isa = PBXGroup;
 			children = (
+				B3DE8B11265CD2EC00D6744A /* CKSecp256k1 */,
+				B3DE8A52265CCAE900D6744A /* Ed25519HD */,
 				064B931F265C991A00474F15 /* Solana */,
 				064F85042658AF2200D45DF2 /* SeedPhraseGenerator */,
 				0648DA4B26554004005EAE15 /* SolanaModule */,
@@ -813,8 +834,6 @@
 				06F065EB26528ED300032BDA /* SummerTests */,
 				06F065F626528ED300032BDA /* SummerUITests */,
 				06F065D326528ED000032BDA /* Products */,
-				E439B1155BDDEEBB0DABE11B /* Pods */,
-				EEF8B4D443649CF34016E6F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -836,6 +855,7 @@
 				06F066082652935E00032BDA /* Views */,
 				06F065D526528ED000032BDA /* AppDelegate.swift */,
 				06F065D726528ED000032BDA /* SceneDelegate.swift */,
+				B3DE8B12265CD2FF00D6744A /* Summer-Bridging-Header.h */,
 				06F065DE26528ED300032BDA /* Assets.xcassets */,
 				06F065E026528ED300032BDA /* LaunchScreen.storyboard */,
 				06F065E326528ED300032BDA /* Info.plist */,
@@ -928,27 +948,26 @@
 			path = UpsellView;
 			sourceTree = "<group>";
 		};
-		E439B1155BDDEEBB0DABE11B /* Pods */ = {
+		B3DE8A52265CCAE900D6744A /* Ed25519HD */ = {
 			isa = PBXGroup;
 			children = (
-				0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Summer.debug.xcconfig */,
-				332972D988648C52A04B9BD5 /* Pods-Summer.release.xcconfig */,
-				0F1B93634E52E96A24B0D517 /* Pods-Summer-SummerUITests.debug.xcconfig */,
-				217ED3484008182CBE5AB1DA /* Pods-Summer-SummerUITests.release.xcconfig */,
-				A28F2919EDCCCFD4845B2F1C /* Pods-SummerTests.debug.xcconfig */,
-				942470114EFD538CFDF434D3 /* Pods-SummerTests.release.xcconfig */,
+				B3DE8A53265CCAF400D6744A /* Ed25519HDKey.swift */,
+				B3DE8A58265CCAF400D6744A /* Extensions.swift */,
+				B3DE8A57265CCAF400D6744A /* Keys.swift */,
 			);
-			path = Pods;
+			path = Ed25519HD;
 			sourceTree = "<group>";
 		};
-		EEF8B4D443649CF34016E6F5 /* Frameworks */ = {
+		B3DE8B11265CD2EC00D6744A /* CKSecp256k1 */ = {
 			isa = PBXGroup;
 			children = (
-				C2992D04AEF60D15E4079590 /* Pods_Summer.framework */,
-				D1E94EB10036D21EC474B0E7 /* Pods_Summer_SummerUITests.framework */,
-				6C13E1095954D5F1C60AA09F /* Pods_SummerTests.framework */,
+				B3DE8B15265CD30000D6744A /* CKSecp256k1.h */,
+				B3DE8B17265CD30000D6744A /* CKSecp256k1.m */,
+				B3DE8B14265CD2FF00D6744A /* NSData+HexString.h */,
+				B3DE8B13265CD2FF00D6744A /* NSData+HexString.m */,
+				B3DE8B16265CD30000D6744A /* secp256k1.framework */,
 			);
-			name = Frameworks;
+			path = CKSecp256k1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -958,17 +977,26 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06F065FC26528ED300032BDA /* Build configuration list for PBXNativeTarget "Summer" */;
 			buildPhases = (
-				CFBE3E35E974A6B07C7C4BDB /* [CP] Check Pods Manifest.lock */,
 				06F065CE26528ED000032BDA /* Sources */,
 				06F065CF26528ED000032BDA /* Frameworks */,
 				06F065D026528ED000032BDA /* Resources */,
-				7A1DD55FADB21E40DF50EC9C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Summer;
+			packageProductDependencies = (
+				B3DE8ACD265CCFDF00D6744A /* KeychainSwift */,
+				B3DE8AD3265CD05E00D6744A /* CryptoSwift */,
+				B3DE8AE7265CD0EA00D6744A /* Starscream */,
+				B3DE8AED265CD15900D6744A /* RxAlamofire */,
+				B3DE8AFE265CD1C600D6744A /* RxSwift */,
+				B3DE8B00265CD1C600D6744A /* RxRelay */,
+				B3DE8B02265CD1C600D6744A /* RxCocoa */,
+				B3DE8B04265CD1C600D6744A /* RxBlocking */,
+				B3DE8B2F265CD4CF00D6744A /* TweetNacl */,
+			);
 			productName = Summer;
 			productReference = 06F065D226528ED000032BDA /* Summer.app */;
 			productType = "com.apple.product-type.application";
@@ -977,7 +1005,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06F065FF26528ED300032BDA /* Build configuration list for PBXNativeTarget "SummerTests" */;
 			buildPhases = (
-				7A78ECB356241F661DB8C8A6 /* [CP] Check Pods Manifest.lock */,
 				06F065E426528ED300032BDA /* Sources */,
 				06F065E526528ED300032BDA /* Frameworks */,
 				06F065E626528ED300032BDA /* Resources */,
@@ -996,11 +1023,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06F0660226528ED300032BDA /* Build configuration list for PBXNativeTarget "SummerUITests" */;
 			buildPhases = (
-				56BE659234E42DC78F771F70 /* [CP] Check Pods Manifest.lock */,
 				06F065EF26528ED300032BDA /* Sources */,
 				06F065F026528ED300032BDA /* Frameworks */,
 				06F065F126528ED300032BDA /* Resources */,
-				F74EE5FC96ED3ED9A6228B0D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1023,6 +1048,7 @@
 				TargetAttributes = {
 					06F065D126528ED000032BDA = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1240;
 					};
 					06F065E726528ED300032BDA = {
 						CreatedOnToolsVersion = 12.5;
@@ -1043,6 +1069,14 @@
 				Base,
 			);
 			mainGroup = 06F065C926528ED000032BDA;
+			packageReferences = (
+				B3DE8ACC265CCFDF00D6744A /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				B3DE8AD2265CD05E00D6744A /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				B3DE8AE6265CD0EA00D6744A /* XCRemoteSwiftPackageReference "Starscream" */,
+				B3DE8AEC265CD15900D6744A /* XCRemoteSwiftPackageReference "RxAlamofire" */,
+				B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B3DE8B2E265CD4CF00D6744A /* XCRemoteSwiftPackageReference "tweetnacl-swiftwrap" */,
+			);
 			productRefGroup = 06F065D326528ED000032BDA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1094,109 +1128,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		56BE659234E42DC78F771F70 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Summer-SummerUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A1DD55FADB21E40DF50EC9C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summer/Pods-Summer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summer/Pods-Summer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summer/Pods-Summer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A78ECB356241F661DB8C8A6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SummerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CFBE3E35E974A6B07C7C4BDB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Summer-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F74EE5FC96ED3ED9A6228B0D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summer-SummerUITests/Pods-Summer-SummerUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		06F065CE26528ED000032BDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1231,7 +1162,10 @@
 				064B9373265C992B00474F15 /* SolanaSDK+Swap.swift in Sources */,
 				064B9388265C992B00474F15 /* ParsedTransaction.swift in Sources */,
 				064B93AA265C992B00474F15 /* Decimals+Extensions.swift in Sources */,
+				B3DE8A59265CCAF400D6744A /* Ed25519HDKey.swift in Sources */,
 				064B9382265C992B00474F15 /* BufferLayout.swift in Sources */,
+				B3DE8B18265CD30000D6744A /* NSData+HexString.m in Sources */,
+				B3DE8A5B265CCAF400D6744A /* Extensions.swift in Sources */,
 				064B93A9265C992B00474F15 /* PublicKey+Extensions.swift in Sources */,
 				064F85062658AF2D00D45DF2 /* SeedPhraseGenerator.swift in Sources */,
 				06F066102652945000032BDA /* StartViewModel.swift in Sources */,
@@ -1289,10 +1223,12 @@
 				064B93A2265C992B00474F15 /* SMP.swift in Sources */,
 				064F85102658D43D00D45DF2 /* WalletViewController.swift in Sources */,
 				064B93AE265C992C00474F15 /* Bytes+Extensions.swift in Sources */,
+				B3DE8B1A265CD30000D6744A /* CKSecp256k1.m in Sources */,
 				064B93A5265C992B00474F15 /* RIPEMD.swift in Sources */,
 				06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */,
 				064F853D265A381300D45DF2 /* RestoreWalletCoordinator.swift in Sources */,
 				064F85132658D46800D45DF2 /* WalletViewModel.swift in Sources */,
+				B3DE8A5A265CCAF400D6744A /* Keys.swift in Sources */,
 				064F8554265A7AA200D45DF2 /* TokensList.swift in Sources */,
 				064B9397265C992B00474F15 /* AssociatedTokenProgram.swift in Sources */,
 				064B9380265C992B00474F15 /* EmptyInfo.swift in Sources */,
@@ -1465,12 +1401,16 @@
 		};
 		06F065FD26528ED300032BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B7B8A3DB6DDAAF03BDFEAE3 /* Pods-Summer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Summer/Dependencys/CKSecp256k1",
+				);
 				INFOPLIST_FILE = Summer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1479,6 +1419,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.Summer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Summer/Summer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1486,12 +1428,16 @@
 		};
 		06F065FE26528ED300032BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 332972D988648C52A04B9BD5 /* Pods-Summer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AS27RQMK8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Summer/Dependencys/CKSecp256k1",
+				);
 				INFOPLIST_FILE = Summer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1500,6 +1446,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arturojamaica.Summer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Summer/Summer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1507,7 +1454,6 @@
 		};
 		06F0660026528ED300032BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A28F2919EDCCCFD4845B2F1C /* Pods-SummerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1530,7 +1476,6 @@
 		};
 		06F0660126528ED300032BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 942470114EFD538CFDF434D3 /* Pods-SummerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1553,7 +1498,6 @@
 		};
 		06F0660326528ED300032BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F1B93634E52E96A24B0D517 /* Pods-Summer-SummerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1574,7 +1518,6 @@
 		};
 		06F0660426528ED300032BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 217ED3484008182CBE5AB1DA /* Pods-Summer-SummerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1633,6 +1576,105 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B3DE8ACC265CCFDF00D6744A /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+		B3DE8AD2265CD05E00D6744A /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+		B3DE8AE6265CD0EA00D6744A /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.4;
+			};
+		};
+		B3DE8AEC265CD15900D6744A /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.1;
+			};
+		};
+		B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
+		B3DE8B2E265CD4CF00D6744A /* XCRemoteSwiftPackageReference "tweetnacl-swiftwrap" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bitmark-inc/tweetnacl-swiftwrap.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3DE8ACD265CCFDF00D6744A /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8ACC265CCFDF00D6744A /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		B3DE8AD3265CD05E00D6744A /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AD2265CD05E00D6744A /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+		B3DE8AE7265CD0EA00D6744A /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AE6265CD0EA00D6744A /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+		B3DE8AED265CD15900D6744A /* RxAlamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AEC265CD15900D6744A /* XCRemoteSwiftPackageReference "RxAlamofire" */;
+			productName = RxAlamofire;
+		};
+		B3DE8AFE265CD1C600D6744A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B3DE8B00265CD1C600D6744A /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		B3DE8B02265CD1C600D6744A /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B3DE8B04265CD1C600D6744A /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		B3DE8B2F265CD4CF00D6744A /* TweetNacl */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3DE8B2E265CD4CF00D6744A /* XCRemoteSwiftPackageReference "tweetnacl-swiftwrap" */;
+			productName = TweetNacl;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06F065CA26528ED000032BDA /* Project object */;
 }

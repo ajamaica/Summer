@@ -8,7 +8,6 @@
 import Foundation
 import TweetNacl
 import CryptoSwift
-import Ed25519HDKeySwift
 
 public extension SolanaSDK {
     struct Account: Codable, Hashable {

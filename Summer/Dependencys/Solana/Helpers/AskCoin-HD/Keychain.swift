@@ -8,7 +8,6 @@
 
 import UIKit
 import CryptoSwift
-import ASKSecp256k1
 
 let BTCKeychainMainnetPrivateVersion: UInt32 = 0x0488ADE4
 let BTCKeychainMainnetPublicVersion: UInt32 = 0x0488B21E
