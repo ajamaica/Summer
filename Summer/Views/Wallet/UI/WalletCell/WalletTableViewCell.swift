@@ -6,6 +6,9 @@
 //
 
 import UIKit
+struct WalletTableViewCellViewModel {
+    
+}
 
 class WalletTableViewCell: UITableViewCell {
 

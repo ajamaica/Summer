@@ -6,7 +6,11 @@
 //
 
 import Foundation
-import SolanaSwift
+
+enum WalletViewModelState {
+    case updatingWallet
+    case updatedWallets([SummerWallet])
+}
 
 class WalletViewModel {
     private let solana: SolanaClient
@@ -22,8 +26,12 @@ class WalletViewModel {
         self.solana.getBalance(completition: completition)
     }
     
-    func getWallets(completition: @escaping(Result<[SolanaSDK.Wallet], Error>) -> ()){
-        self.solana.getSPLTokens(completition: completition)
+    func getTokenBalance(token: String, completition: @escaping(Result<SolanaSDK.TokenAccountBalance, Error>) -> ()){
+        self.solana.getTokenAccountBalance(token: token, completition: completition)
+    }
+    
+    func getTokenWallets(completition: @escaping(Result<[SummerWallet], Error>) -> ()){
+        self.solana.getTokenWallets(completition: completition)
     }
     
 }

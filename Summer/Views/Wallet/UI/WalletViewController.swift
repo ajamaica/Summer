@@ -9,6 +9,7 @@ import UIKit
 
 protocol WalletViewControllerDelegate: AnyObject {
     func goToSettings()
+    func goToToken()
     
 }
 let WalletTableViewCellIdentifier = "WalletTableViewCell"
@@ -63,8 +64,23 @@ class WalletViewController: UIViewController {
         walletTableView.contentInsetAdjustmentBehavior = .never
         
         
-        self.viewModel.getWallets { result in
-            
+        self.viewModel.getTokenWallets { result in
+            switch result {
+            case .success(let wallets):
+                debugPrint(wallets)
+                wallets.forEach { wallet in
+                    self.viewModel.getTokenBalance(token: wallet.pubkey!) { result2 in
+                        switch result2{
+                        case .success(let r):
+                            debugPrint(r)
+                        case .failure(_):
+                            break
+                        }
+                    }
+                }
+            case .failure(_):
+                break
+            }
         }
     }
     

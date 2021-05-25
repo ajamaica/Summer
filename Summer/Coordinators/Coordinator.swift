@@ -70,4 +70,10 @@ class Coordinator {
         coordinator.start()
         childCoordinators.append(coordinator)
     }
+    
+    func showToken() {
+        let coordinator = TokenViewCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
 }

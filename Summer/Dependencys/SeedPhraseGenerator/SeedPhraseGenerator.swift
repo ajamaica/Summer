@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SolanaSwift
 
 typealias SeedPhraseCollection = [String]
 

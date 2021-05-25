@@ -7,7 +7,6 @@
 
 import Foundation
 import KeychainSwift
-import SolanaSwift
 
 struct KeychainAccountStorageModule: SolanaSDKAccountStorage {
     private let tokenKey = "Summer"
