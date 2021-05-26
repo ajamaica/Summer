@@ -9,17 +9,15 @@
 /* Begin PBXBuildFile section */
 		0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */; };
 		0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4C2655400D005EAE15 /* SolanaModule.swift */; };
-		064B9373265C992B00474F15 /* SolanaSDK+Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9322265C992900474F15 /* SolanaSDK+Swap.swift */; };
-		064B9374265C992B00474F15 /* SolanaSDK+Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9323265C992900474F15 /* SolanaSDK+Pool.swift */; };
-		064B9375265C992B00474F15 /* SolanaSDK+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9324265C992900474F15 /* SolanaSDK+Actions.swift */; };
-		064B9376265C992B00474F15 /* SolanaSDK+Send.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9325265C992900474F15 /* SolanaSDK+Send.swift */; };
-		064B9377265C992B00474F15 /* SolanaSDK+Close.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9326265C992900474F15 /* SolanaSDK+Close.swift */; };
-		064B9378265C992B00474F15 /* SolanaSDK+AssociatedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9327265C992900474F15 /* SolanaSDK+AssociatedAccount.swift */; };
-		064B9379265C992B00474F15 /* SolanaSDK+CreateTokenAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9328265C992900474F15 /* SolanaSDK+CreateTokenAccount.swift */; };
-		064B937A265C992B00474F15 /* FeeRelayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932A265C992900474F15 /* FeeRelayer.swift */; };
-		064B937B265C992B00474F15 /* FeeRelayer+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932B265C992900474F15 /* FeeRelayer+Models.swift */; };
-		064B937C265C992B00474F15 /* SolanaSDK+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932C265C992900474F15 /* SolanaSDK+Notifications.swift */; };
-		064B937D265C992B00474F15 /* SolanaSDK+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932D265C992900474F15 /* SolanaSDK+Methods.swift */; };
+		064B9373265C992B00474F15 /* Solana+Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9322265C992900474F15 /* Solana+Swap.swift */; };
+		064B9374265C992B00474F15 /* Solana+Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9323265C992900474F15 /* Solana+Pool.swift */; };
+		064B9375265C992B00474F15 /* Solana+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9324265C992900474F15 /* Solana+Actions.swift */; };
+		064B9376265C992B00474F15 /* Solana+Send.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9325265C992900474F15 /* Solana+Send.swift */; };
+		064B9377265C992B00474F15 /* Solana+Close.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9326265C992900474F15 /* Solana+Close.swift */; };
+		064B9378265C992B00474F15 /* Solana+AssociatedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9327265C992900474F15 /* Solana+AssociatedAccount.swift */; };
+		064B9379265C992B00474F15 /* Solana+CreateTokenAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9328265C992900474F15 /* Solana+CreateTokenAccount.swift */; };
+		064B937C265C992B00474F15 /* Solana+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932C265C992900474F15 /* Solana+Notifications.swift */; };
+		064B937D265C992B00474F15 /* Solana+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932D265C992900474F15 /* Solana+Methods.swift */; };
 		064B937E265C992B00474F15 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B932F265C992A00474F15 /* PublicKey.swift */; };
 		064B937F265C992B00474F15 /* TokenSwapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9331265C992A00474F15 /* TokenSwapInfo.swift */; };
 		064B9380265C992B00474F15 /* EmptyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9332265C992A00474F15 /* EmptyInfo.swift */; };
@@ -42,7 +40,7 @@
 		064B9391265C992B00474F15 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9345265C992A00474F15 /* Account.swift */; };
 		064B9392265C992B00474F15 /* SolanaSDKWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9346265C992A00474F15 /* SolanaSDKWallet.swift */; };
 		064B9393265C992B00474F15 /* Solana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9347265C992A00474F15 /* Solana.swift */; };
-		064B9394265C992B00474F15 /* SolanaSDK+Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9348265C992A00474F15 /* SolanaSDK+Tokens.swift */; };
+		064B9394265C992B00474F15 /* Solana+Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B9348265C992A00474F15 /* Solana+Tokens.swift */; };
 		064B9395265C992B00474F15 /* TokenSwapProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B934A265C992A00474F15 /* TokenSwapProgram.swift */; };
 		064B9396265C992B00474F15 /* TokenProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B934B265C992A00474F15 /* TokenProgram.swift */; };
 		064B9397265C992B00474F15 /* AssociatedTokenProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B934C265C992A00474F15 /* AssociatedTokenProgram.swift */; };
@@ -162,17 +160,15 @@
 /* Begin PBXFileReference section */
 		0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccountStorage.swift; sourceTree = "<group>"; };
 		0648DA4C2655400D005EAE15 /* SolanaModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaModule.swift; sourceTree = "<group>"; };
-		064B9322265C992900474F15 /* SolanaSDK+Swap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Swap.swift"; sourceTree = "<group>"; };
-		064B9323265C992900474F15 /* SolanaSDK+Pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Pool.swift"; sourceTree = "<group>"; };
-		064B9324265C992900474F15 /* SolanaSDK+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Actions.swift"; sourceTree = "<group>"; };
-		064B9325265C992900474F15 /* SolanaSDK+Send.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Send.swift"; sourceTree = "<group>"; };
-		064B9326265C992900474F15 /* SolanaSDK+Close.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Close.swift"; sourceTree = "<group>"; };
-		064B9327265C992900474F15 /* SolanaSDK+AssociatedAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+AssociatedAccount.swift"; sourceTree = "<group>"; };
-		064B9328265C992900474F15 /* SolanaSDK+CreateTokenAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+CreateTokenAccount.swift"; sourceTree = "<group>"; };
-		064B932A265C992900474F15 /* FeeRelayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeeRelayer.swift; sourceTree = "<group>"; };
-		064B932B265C992900474F15 /* FeeRelayer+Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeeRelayer+Models.swift"; sourceTree = "<group>"; };
-		064B932C265C992900474F15 /* SolanaSDK+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Notifications.swift"; sourceTree = "<group>"; };
-		064B932D265C992900474F15 /* SolanaSDK+Methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Methods.swift"; sourceTree = "<group>"; };
+		064B9322265C992900474F15 /* Solana+Swap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Solana+Swap.swift"; sourceTree = "<group>"; };
+		064B9323265C992900474F15 /* Solana+Pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Solana+Pool.swift"; sourceTree = "<group>"; };
+		064B9324265C992900474F15 /* Solana+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Solana+Actions.swift"; sourceTree = "<group>"; };
+		064B9325265C992900474F15 /* Solana+Send.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Solana+Send.swift"; sourceTree = "<group>"; };
+		064B9326265C992900474F15 /* Solana+Close.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Solana+Close.swift"; sourceTree = "<group>"; };
+		064B9327265C992900474F15 /* Solana+AssociatedAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Solana+AssociatedAccount.swift"; sourceTree = "<group>"; };
+		064B9328265C992900474F15 /* Solana+CreateTokenAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Solana+CreateTokenAccount.swift"; sourceTree = "<group>"; };
+		064B932C265C992900474F15 /* Solana+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Solana+Notifications.swift"; sourceTree = "<group>"; };
+		064B932D265C992900474F15 /* Solana+Methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Solana+Methods.swift"; sourceTree = "<group>"; };
 		064B932F265C992A00474F15 /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
 		064B9331265C992A00474F15 /* TokenSwapInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenSwapInfo.swift; sourceTree = "<group>"; };
 		064B9332265C992A00474F15 /* EmptyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyInfo.swift; sourceTree = "<group>"; };
@@ -195,7 +191,7 @@
 		064B9345265C992A00474F15 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		064B9346265C992A00474F15 /* SolanaSDKWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolanaSDKWallet.swift; sourceTree = "<group>"; };
 		064B9347265C992A00474F15 /* Solana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Solana.swift; sourceTree = "<group>"; };
-		064B9348265C992A00474F15 /* SolanaSDK+Tokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SolanaSDK+Tokens.swift"; sourceTree = "<group>"; };
+		064B9348265C992A00474F15 /* Solana+Tokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Solana+Tokens.swift"; sourceTree = "<group>"; };
 		064B934A265C992A00474F15 /* TokenSwapProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenSwapProgram.swift; sourceTree = "<group>"; };
 		064B934B265C992A00474F15 /* TokenProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenProgram.swift; sourceTree = "<group>"; };
 		064B934C265C992A00474F15 /* AssociatedTokenProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedTokenProgram.swift; sourceTree = "<group>"; };
@@ -365,50 +361,40 @@
 			isa = PBXGroup;
 			children = (
 				064B9363265C992B00474F15 /* Extensions */,
-				064B9329265C992900474F15 /* FeeRelayer */,
 				064B9350265C992B00474F15 /* Helpers */,
 				064B932E265C992A00474F15 /* Models */,
 				064B9349265C992A00474F15 /* Programs */,
 				064B936F265C992B00474F15 /* Resources */,
 				064B934E265C992A00474F15 /* Socket */,
+				064B9320265C992900474F15 /* Solana+Actions */,
+				064B932D265C992900474F15 /* Solana+Methods.swift */,
+				064B932C265C992900474F15 /* Solana+Notifications.swift */,
+				064B9348265C992A00474F15 /* Solana+Tokens.swift */,
 				064B9347265C992A00474F15 /* Solana.swift */,
-				064B9320265C992900474F15 /* SolanaSDK+Actions */,
-				064B932D265C992900474F15 /* SolanaSDK+Methods.swift */,
-				064B932C265C992900474F15 /* SolanaSDK+Notifications.swift */,
-				064B9348265C992A00474F15 /* SolanaSDK+Tokens.swift */,
 			);
 			path = Solana;
 			sourceTree = "<group>";
 		};
-		064B9320265C992900474F15 /* SolanaSDK+Actions */ = {
+		064B9320265C992900474F15 /* Solana+Actions */ = {
 			isa = PBXGroup;
 			children = (
 				064B9321265C992900474F15 /* Swap */,
-				064B9324265C992900474F15 /* SolanaSDK+Actions.swift */,
-				064B9325265C992900474F15 /* SolanaSDK+Send.swift */,
-				064B9326265C992900474F15 /* SolanaSDK+Close.swift */,
-				064B9327265C992900474F15 /* SolanaSDK+AssociatedAccount.swift */,
-				064B9328265C992900474F15 /* SolanaSDK+CreateTokenAccount.swift */,
+				064B9324265C992900474F15 /* Solana+Actions.swift */,
+				064B9325265C992900474F15 /* Solana+Send.swift */,
+				064B9326265C992900474F15 /* Solana+Close.swift */,
+				064B9327265C992900474F15 /* Solana+AssociatedAccount.swift */,
+				064B9328265C992900474F15 /* Solana+CreateTokenAccount.swift */,
 			);
-			path = "SolanaSDK+Actions";
+			path = "Solana+Actions";
 			sourceTree = "<group>";
 		};
 		064B9321265C992900474F15 /* Swap */ = {
 			isa = PBXGroup;
 			children = (
-				064B9322265C992900474F15 /* SolanaSDK+Swap.swift */,
-				064B9323265C992900474F15 /* SolanaSDK+Pool.swift */,
+				064B9322265C992900474F15 /* Solana+Swap.swift */,
+				064B9323265C992900474F15 /* Solana+Pool.swift */,
 			);
 			path = Swap;
-			sourceTree = "<group>";
-		};
-		064B9329265C992900474F15 /* FeeRelayer */ = {
-			isa = PBXGroup;
-			children = (
-				064B932A265C992900474F15 /* FeeRelayer.swift */,
-				064B932B265C992900474F15 /* FeeRelayer+Models.swift */,
-			);
-			path = FeeRelayer;
 			sourceTree = "<group>";
 		};
 		064B932E265C992A00474F15 /* Models */ = {
@@ -1145,32 +1131,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				064B93AC265C992B00474F15 /* AccountMeta+Extensions.swift in Sources */,
-				064B937B265C992B00474F15 /* FeeRelayer+Models.swift in Sources */,
 				064F8530265A309500D45DF2 /* SettingsViewCoordinator.swift in Sources */,
-				064B9377265C992B00474F15 /* SolanaSDK+Close.swift in Sources */,
+				064B9377265C992B00474F15 /* Solana+Close.swift in Sources */,
 				064F85202658E5B700D45DF2 /* WalletTableViewCell.swift in Sources */,
 				064F8556265A7ABF00D45DF2 /* TokenExtensions.swift in Sources */,
 				064F854D265A6E4A00D45DF2 /* TokenViewCoordinator.swift in Sources */,
 				064B9390265C992B00474F15 /* SolanaSDK+Request.swift in Sources */,
 				064B93AD265C992B00474F15 /* BytesEncodable.swift in Sources */,
-				064B9375265C992B00474F15 /* SolanaSDK+Actions.swift in Sources */,
+				064B9375265C992B00474F15 /* Solana+Actions.swift in Sources */,
 				064F8524265A0B7B00D45DF2 /* FooterView.swift in Sources */,
 				064F84F72657D0B600D45DF2 /* UpsellViewCoordinator.swift in Sources */,
 				064B9389265C992B00474F15 /* DerivablePath.swift in Sources */,
 				064B93A1265C992B00474F15 /* Keychain.swift in Sources */,
-				064B9374265C992B00474F15 /* SolanaSDK+Pool.swift in Sources */,
-				064B9394265C992B00474F15 /* SolanaSDK+Tokens.swift in Sources */,
+				064B9374265C992B00474F15 /* Solana+Pool.swift in Sources */,
+				064B9394265C992B00474F15 /* Solana+Tokens.swift in Sources */,
 				064B939F265C992B00474F15 /* Base58.swift in Sources */,
 				06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */,
 				064F8545265A6DCC00D45DF2 /* TokenViewController.swift in Sources */,
 				064B9393265C992B00474F15 /* Solana.swift in Sources */,
 				064B93B1265C992C00474F15 /* Error+Extensions.swift in Sources */,
 				064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */,
-				064B9379265C992B00474F15 /* SolanaSDK+CreateTokenAccount.swift in Sources */,
+				064B9379265C992B00474F15 /* Solana+CreateTokenAccount.swift in Sources */,
 				064B938F265C992B00474F15 /* TokenList.swift in Sources */,
 				064F84FE2658A7D100D45DF2 /* CreateWalletViewModel.swift in Sources */,
 				06F0660C2652941200032BDA /* StartViewController.swift in Sources */,
-				064B9373265C992B00474F15 /* SolanaSDK+Swap.swift in Sources */,
+				064B9373265C992B00474F15 /* Solana+Swap.swift in Sources */,
 				B3DE8B3F265CD67000D6744A /* ContResult.swift in Sources */,
 				064B9388265C992B00474F15 /* ParsedTransaction.swift in Sources */,
 				064B93AA265C992B00474F15 /* Decimals+Extensions.swift in Sources */,
@@ -1184,21 +1169,21 @@
 				064F8532265A30A100D45DF2 /* SettingsViewModel.swift in Sources */,
 				064B937F265C992B00474F15 /* TokenSwapInfo.swift in Sources */,
 				064F851A2658DEAD00D45DF2 /* WalletHeaderView.swift in Sources */,
-				064B937C265C992B00474F15 /* SolanaSDK+Notifications.swift in Sources */,
+				064B937C265C992B00474F15 /* Solana+Notifications.swift in Sources */,
 				06F06607265292DA00032BDA /* Coordinator.swift in Sources */,
-				064B9378265C992B00474F15 /* SolanaSDK+AssociatedAccount.swift in Sources */,
+				064B9378265C992B00474F15 /* Solana+AssociatedAccount.swift in Sources */,
 				064B9395265C992B00474F15 /* TokenSwapProgram.swift in Sources */,
 				064B9386265C992B00474F15 /* Network.swift in Sources */,
 				064F854A265A6DED00D45DF2 /* TokenViewModel.swift in Sources */,
 				064B9392265C992B00474F15 /* SolanaSDKWallet.swift in Sources */,
 				064B9387265C992B00474F15 /* SolanaSDK+Models.swift in Sources */,
 				064B9398265C992B00474F15 /* SystemProgram.swift in Sources */,
-				064B9376265C992B00474F15 /* SolanaSDK+Send.swift in Sources */,
+				064B9376265C992B00474F15 /* Solana+Send.swift in Sources */,
 				064B9385265C992B00474F15 /* ConfirmedTransaction.swift in Sources */,
 				064B9381265C992B00474F15 /* Mint.swift in Sources */,
 				064F854F265A76A700D45DF2 /* Wallet.swift in Sources */,
 				064B938D265C992B00474F15 /* Transaction.swift in Sources */,
-				064B937D265C992B00474F15 /* SolanaSDK+Methods.swift in Sources */,
+				064B937D265C992B00474F15 /* Solana+Methods.swift in Sources */,
 				064B93A0265C992B00474F15 /* ASKHDUtils.swift in Sources */,
 				064F8558265A7ADF00D45DF2 /* TokenTag.swift in Sources */,
 				064B9391265C992B00474F15 /* Account.swift in Sources */,
@@ -1216,7 +1201,6 @@
 				064B9396265C992B00474F15 /* TokenProgram.swift in Sources */,
 				064B937E265C992B00474F15 /* PublicKey.swift in Sources */,
 				064B939B265C992B00474F15 /* NaclLowLevel.swift in Sources */,
-				064B937A265C992B00474F15 /* FeeRelayer.swift in Sources */,
 				064F8538265A37E200D45DF2 /* RestoreWalletViewController.swift in Sources */,
 				064B9383265C992B00474F15 /* AccountInfo.swift in Sources */,
 				064B93A4265C992B00474F15 /* UInt32+CircularShift.swift in Sources */,

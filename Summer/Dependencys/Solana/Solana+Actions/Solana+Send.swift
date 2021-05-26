@@ -50,14 +50,6 @@ extension Solana {
                     throw error
                 }
                 .flatMap {
-                    // real transaction without fee
-                    if !isSimulation && withoutFee {
-                        let feeRelayer = FeeRelayer(solanaAPIClient: self)
-                        return feeRelayer.transferSOL(
-                            to: destination,
-                            amount: amount
-                        )
-                    }
 
                     // transaction with fee, can be a simulation
                     let instruction = SystemProgram.transferInstruction(
@@ -99,23 +91,10 @@ extension Solana {
         from fromPublicKey: String,
         to destinationAddress: String,
         amount: UInt64,
-        withoutFee: Bool = true,
         isSimulation: Bool = false
     ) -> Single<TransactionID> {
         guard let account = self.accountStorage.account else {
             return .error(Error.unauthorized)
-        }
-
-        // real transaction without fee
-        if !isSimulation && withoutFee {
-            let feeRelayer = FeeRelayer(solanaAPIClient: self)
-            return feeRelayer.transferSPLToken(
-                mintAddress: mintAddress,
-                from: fromPublicKey,
-                to: destinationAddress,
-                amount: amount,
-                decimals: decimals
-            )
         }
 
         return findSPLTokenDestinationAddress(
