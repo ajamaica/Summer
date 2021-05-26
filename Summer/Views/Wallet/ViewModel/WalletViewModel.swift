@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Solana
 
 enum WalletViewModelState {
     case updatingWallet

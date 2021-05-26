@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import Solana
 
 protocol SolanaClient {
     func deleteAccount(completition: @escaping((Result<(), Error>)-> Void))
