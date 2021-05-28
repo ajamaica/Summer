@@ -10,7 +10,7 @@ import UIKit
 protocol WalletViewControllerDelegate: AnyObject {
     func goToSettings()
     func goToToken()
-    
+
 }
 let WalletTableViewCellIdentifier = "WalletTableViewCell"
 class WalletViewController: UIViewController {
@@ -24,11 +24,11 @@ class WalletViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if let headerView = walletTableView.tableHeaderView {
@@ -50,7 +50,7 @@ class WalletViewController: UIViewController {
             }
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         headerView = .fromNib()
@@ -62,15 +62,14 @@ class WalletViewController: UIViewController {
         walletTableView.dataSource = self
         walletTableView.register(UINib(nibName: WalletTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: WalletTableViewCellIdentifier)
         walletTableView.contentInsetAdjustmentBehavior = .never
-        
-        
+
         self.viewModel.getTokenWallets { result in
             switch result {
             case .success(let wallets):
                 debugPrint(wallets)
                 wallets.forEach { wallet in
                     self.viewModel.getTokenBalance(token: wallet.pubkey!) { result2 in
-                        switch result2{
+                        switch result2 {
                         case .success(let r):
                             debugPrint(r)
                         case .failure(_):
@@ -83,19 +82,19 @@ class WalletViewController: UIViewController {
             }
         }
     }
-    
+
     @objc
-    func settingsAction(sender: UIButton){
+    func settingsAction(sender: UIButton) {
         delegate?.goToSettings()
     }
 }
 
 extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: WalletTableViewCellIdentifier, for: indexPath)
     }

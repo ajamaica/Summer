@@ -16,27 +16,27 @@ enum Retry<Failure: Error>: Error {
 
 struct Cont<A> {
     private let runCont: (@escaping (A) -> Void) -> Void
-    
+
     init(_ run: @escaping (@escaping (A) -> Void) -> Void) {
         self.runCont = run
     }
-    
+
     static func pure(_ a: A) -> Cont<A> {
         return Cont<A> { cb in cb(a) }
     }
-    
+
     func map<B>(_ f: @escaping (A) -> B) -> Cont<B> {
         return Cont<B> { cb in
             self.runCont { a in cb(f(a)) }
         }
     }
-    
+
     func flatMap<B>(_ f: @escaping (A) -> Cont<B>) -> Cont<B> {
         return Cont<B> { cb in
             self.runCont { a in f(a).runCont(cb) }
         }
     }
-    
+
     func run(_ action: @escaping (A) -> Void) {
         runCont(action)
     }
@@ -44,7 +44,7 @@ struct Cont<A> {
 
 struct ContResult<Success, Failure: Error> {
     private let cont: Cont<Result<Success, Failure>>
-    
+
     init(_ cont: Cont<Result<Success, Failure>>) {
         self.cont = cont
     }
@@ -72,7 +72,7 @@ struct ContResult<Success, Failure: Error> {
             return .failure(`else`())
         }
     }
-    
+
     static func retry(attempts: Int, operation: @escaping () -> ContResult<Success, Retry<Failure>>) -> ContResult<Success, Failure> {
         return operation().recover {
             switch $0 {
@@ -100,11 +100,11 @@ struct ContResult<Success, Failure: Error> {
             }
         })
     }
-    
+
     func mapError<NewFailure>(_ f: @escaping (Failure) -> NewFailure) -> ContResult<Success, NewFailure> {
         return ContResult<Success, NewFailure>(cont.map { $0.mapError(f) })
     }
-    
+
     func recover<NewFailure>(_ f: @escaping (Failure) -> ContResult<Success, NewFailure>) -> ContResult<Success, NewFailure> {
         return ContResult<Success, NewFailure>(cont.flatMap { result in
             Cont { cb in
@@ -120,21 +120,21 @@ struct ContResult<Success, Failure: Error> {
             return .success($0)
         }
     }
-    
+
     func run(_ action: @escaping (Result<Success, Failure>) -> Void) {
         return cont.run(action)
     }
-    
+
     static func map2<A, B>(_ ra: ContResult<A, Failure>, _ rb: ContResult<B, Failure>, f: @escaping(A, B) -> Success) -> ContResult<Success, Failure> {
         return ra.flatMap { a in rb.map { b in f(a, b) } }
     }
-    
+
     static func flatMap2<A, B>(_ ra: ContResult<A, Failure>, _ rb: ContResult<B, Failure>, f: @escaping(A, B) -> ContResult<Success, Failure>) -> ContResult<Success, Failure> {
         return ra.flatMap { a in rb.flatMap { b in f(a, b) } }
     }
 }
 
-public typealias Action1<R> = (R) -> ()
+public typealias Action1<R> = (R) -> Void
 public extension Result {
 
     @discardableResult
@@ -144,7 +144,7 @@ public extension Result {
         }
         return self
     }
-    
+
     @discardableResult
     func onSuccess(_ action: @escaping Action1<Success>) -> Result {
         return also(action)
@@ -163,19 +163,18 @@ public extension Result {
     static func sequence(_ array: [Result]) -> Result<[Success], Failure> {
         var result = Result<[Success], Failure>.success([])
         for item in array {
-            result = result.flatMap { item.map(Array<Success>.concat($0)) }
+            result = result.flatMap { item.map([Success].concat($0)) }
         }
         return result
     }
 }
 
 extension Array {
-    static func concat<V>(_ array: Array<V>) -> (V) -> Array<V> {
+    static func concat<V>(_ array: [V]) -> (V) -> [V] {
         return { element in
-            var copy = Array<V>(array)
+            var copy = [V](array)
             copy.append(element)
             return copy
         }
     }
 }
-

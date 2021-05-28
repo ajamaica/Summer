@@ -24,7 +24,7 @@ class Coordinator {
     func dismissModal() {
         navigationController?.dismiss(animated: true, completion: nil)
     }
-    
+
     func boot(windowScene: UIWindowScene) -> UIWindow {
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window.windowScene = windowScene
@@ -33,44 +33,44 @@ class Coordinator {
         self.showStart()
         return window
     }
-    
+
     func showStart() {
         self.navigationController?.popToRootViewController(animated: false)
         let coordinator = StartViewCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()
         childCoordinators = [coordinator]
     }
-    
+
     func showUpsell() {
         let coordinator = UpsellViewCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
-    
+
     func showCreateWallet() {
         let coordinator = CreateWalletCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
-    
+
     func showWallet() {
         let coordinator = WalletCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
-    
+
     func showRestoreWallet() {
         let coordinator = RestoreWalletCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
-    
+
     func showSettings() {
         let coordinator = SettingsViewCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
-    
+
     func showToken() {
         let coordinator = TokenViewCoordinator(applicationComponent: applicationComponent, navigationController: navigationController)
         coordinator.start()

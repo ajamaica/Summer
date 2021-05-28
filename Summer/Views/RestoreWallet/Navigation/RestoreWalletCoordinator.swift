@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol RestoreWalletCoordinatorDelegate : AnyObject { }
+protocol RestoreWalletCoordinatorDelegate: AnyObject { }
 
-class RestoreWalletCoordinator : Coordinator{
+class RestoreWalletCoordinator: Coordinator {
     weak var delegate: RestoreWalletCoordinatorDelegate?
     func start() {
         guard let navigationController = navigationController else { return }
@@ -19,8 +19,8 @@ class RestoreWalletCoordinator : Coordinator{
         navigationController.pushViewController(viewController, animated: true)
     }
 }
-extension RestoreWalletCoordinator : RestoreWalletViewControllerDelegate{
+extension RestoreWalletCoordinator: RestoreWalletViewControllerDelegate {
     func goToWallet() {
         showWallet()
-    }    
+    }
 }

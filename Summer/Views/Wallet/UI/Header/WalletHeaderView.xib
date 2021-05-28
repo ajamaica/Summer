@@ -17,9 +17,6 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderBackground" translatesAutoresizingMaskIntoConstraints="NO" id="HTt-Et-Ija">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="220" id="ayI-aa-GPM"/>
-                    </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="hXq-jg-lqR">
                     <rect key="frame" x="156" y="54" width="102.5" height="115"/>
@@ -118,7 +115,7 @@
                 <constraint firstAttribute="bottom" secondItem="HTt-Et-Ija" secondAttribute="bottom" constant="50" id="LyB-FZ-R5n"/>
                 <constraint firstItem="cZC-gp-sZo" firstAttribute="top" secondItem="hXq-jg-lqR" secondAttribute="top" constant="-7" id="Ncf-0V-CNW"/>
                 <constraint firstItem="hXq-jg-lqR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YDy-s3-LsW"/>
-                <constraint firstItem="hXq-jg-lqR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="Z2r-Qb-nyW"/>
+                <constraint firstItem="hXq-jg-lqR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="54" id="Z2r-Qb-nyW"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cZC-gp-sZo" secondAttribute="trailing" constant="20" id="dkM-6y-UtE"/>
                 <constraint firstItem="HTt-Et-Ija" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qf3-Xz-vwz"/>
                 <constraint firstItem="HTt-Et-Ija" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="sMg-cl-up0"/>

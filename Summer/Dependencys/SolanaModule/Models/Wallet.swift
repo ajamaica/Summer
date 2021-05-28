@@ -7,8 +7,8 @@
 
 import Foundation
 
-public protocol Wallet: Hashable  {
-    associatedtype T : Token
+public protocol Wallet: Hashable {
+    associatedtype T: Token
     var pubkey: String? { get }
     var lamports: UInt64? { get }
     var token: T { get }
@@ -30,7 +30,7 @@ struct SummerWallet: Wallet {
     var token: SummerToken
     var userInfo: AnyHashable?
     let liquidity: Bool?
-    
+
     init(pubkey: String? = nil, lamports: UInt64? = nil, token: SummerToken, liquidity: Bool? = false) {
         self.pubkey = pubkey
         self.lamports = lamports

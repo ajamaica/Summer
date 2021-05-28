@@ -24,6 +24,5 @@ extension SettingsViewCoordinator: SettingsViewControllerDelegate {
     func logout() {
         showStart()
     }
-    
-    
+
 }

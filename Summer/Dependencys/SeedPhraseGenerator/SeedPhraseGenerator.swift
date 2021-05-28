@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Solana
 
 typealias SeedPhraseCollection = [String]
 
@@ -21,11 +22,11 @@ class ConcreteSeedPhrase: SeedPhrase {
         let mnemonic = Mnemonic(strength: strength, wordlist: wordlist)
         return mnemonic.phrase
     }
-    
+
     func isValid(wordlist: [String]) -> Bool {
         return Mnemonic.isValid(phrase: wordlist)
     }
-    
+
     func getSeedPhrase() -> SeedPhraseCollection {
         guard let _seedPhase = seedPhase else {
             seedPhase = createSeedFrase()

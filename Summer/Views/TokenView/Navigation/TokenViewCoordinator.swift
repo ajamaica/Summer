@@ -8,10 +8,10 @@
 import Foundation
 
 protocol TokenViewCoordinatorCoordinatorDelegate: AnyObject {
-    
+
 }
 
-class TokenViewCoordinator : Coordinator{
+class TokenViewCoordinator: Coordinator {
     weak var delegate: TokenViewCoordinatorCoordinatorDelegate?
     func start() {
         guard let navigationController = navigationController else { return }
@@ -21,6 +21,6 @@ class TokenViewCoordinator : Coordinator{
         navigationController.pushViewController(viewController, animated: true)
     }
 }
-extension TokenViewCoordinator : TokenViewControllerDelegate{
+extension TokenViewCoordinator: TokenViewControllerDelegate {
 
 }

@@ -10,14 +10,14 @@ import Foundation
 class CreateWalletViewModel {
     private var seedPhrase = ConcreteSeedPhrase()
     private let solana: SolanaClient
-    init(solana: SolanaClient){
+    init(solana: SolanaClient) {
         self.solana = solana
     }
     func getSeedPhrase() -> SeedPhraseCollection {
         seedPhrase.getSeedPhrase()
     }
-    
-    func createWallet(completition: @escaping((Result<(), Error>)-> ())){
+
+    func createWallet(completition: @escaping((Result<(), Error>)-> Void)) {
         solana.createAccount(withPhrase: getSeedPhrase(), completition: completition)
     }
 }
