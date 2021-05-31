@@ -9,7 +9,6 @@ import Foundation
 import Solana
 import RxSwift
 
-
 class WalletViewModel {
     let solana: SolanaClient
 
@@ -17,12 +16,17 @@ class WalletViewModel {
         self.solana = solana
     }
 
-    func getAddress() -> Single<String> {
-        return self.solana.getPublicKey()
+    func getSolanaWallet() -> Single<SummerWallet> {
+        return self.solana.getPublicKey().map {
+            SummerWallet.nativeSolana(pubkey: $0, lamport: nil)
+        }
     }
 
     func getTokenWallets() -> Single<[SummerWallet]> {
-        return self.solana.getTokenWallets()
+        return getSolanaWallet().flatMap { solanaWallet in
+            return self.solana.getTokenWallets().map {
+                return [solanaWallet] + $0
+            }
+        }
     }
-
 }

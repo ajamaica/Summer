@@ -65,7 +65,8 @@ class WalletViewController: UIViewController {
         walletTableView.contentInsetAdjustmentBehavior = .never
         
         self.viewModel.getTokenWallets().asObservable().bind(to: walletTableView.rx.items(cellIdentifier: WalletTableViewCellIdentifier, cellType: WalletTableViewCell.self)) { index, model, cell in
-            cell.setViewModel(.init(solana: self.viewModel.solana, wallet: model))
+            let wModel: TokenType = (index == 0) ? .solana(model.pubkey!) : .token(model)
+            cell.setViewModel(.init(solana: self.viewModel.solana, tokenType: wModel))
         }
         .disposed(by: disposeBag)
     }

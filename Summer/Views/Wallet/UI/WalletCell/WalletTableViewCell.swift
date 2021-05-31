@@ -10,11 +10,16 @@ import RxSwift
 import Solana
 import Kingfisher
 
+enum TokenType {
+    case solana(String)
+    case token(SummerWallet)
+}
+
 class WalletTableViewCellViewModel {
-    let wallet: SummerWallet
+    let tokenType: TokenType
     private let solana: SolanaClient
-    init(solana: SolanaClient, wallet: SummerWallet) {
-        self.wallet = wallet
+    init(solana: SolanaClient, tokenType: TokenType) {
+        self.tokenType = tokenType
         self.solana = solana
     }
     
@@ -41,12 +46,35 @@ class WalletTableViewCell: UITableViewCell {
     
     func setViewModel(_ viewModel: WalletTableViewCellViewModel){
         self.viewModel = viewModel
-        self.smalTickerLabel.text = "\(viewModel.wallet.token.symbol)"
-        self.tokenNameLabel.text = viewModel.wallet.token.name
-        self.tickerLabel.text = "\(viewModel.wallet.token.symbol)"
-        self.tokenImage.kf.setImage(with: URL(string: self.viewModel?.wallet.token.logoURI ?? ""))
+        
+        switch viewModel.tokenType {
+        case .solana(let address):
+            setSOLUI(address: address)
+        case .token(let wallet):
+            setTokenUI(wallet: wallet)
+        }
+        
+    }
+    
+    private func setSOLUI(address: String){
+        self.smalTickerLabel.text = "SOL"
+        self.tokenNameLabel.text = "Solana"
+        self.tickerLabel.text = "SOL"
+        self.tokenImage.image = UIImage(named: "tokenLogo")
         self.tokenImage.layer.cornerRadius = 40/2
-        self.viewModel?.getTokenBalance(token: viewModel.wallet.pubkey!)
+        self.viewModel?.getBalance()
+            .subscribe(onSuccess: {
+                self.ammountLabel.text = "\(Double($0)/pow(10.0,9.0))"
+        }).disposed(by: disposeBag)
+    }
+    
+    private func setTokenUI(wallet: SummerWallet){
+        self.smalTickerLabel.text = "\(wallet.token.symbol)"
+        self.tokenNameLabel.text = wallet.token.name
+        self.tickerLabel.text = "\(wallet.token.symbol)"
+        self.tokenImage.kf.setImage(with: URL(string: wallet.token.logoURI ?? ""))
+        self.tokenImage.layer.cornerRadius = 40/2
+        self.viewModel?.getTokenBalance(token: wallet.pubkey!)
             .subscribe(onSuccess: {
                 self.ammountLabel.text = "\($0.uiAmountString ?? $0.amount)"
         }).disposed(by: disposeBag)
