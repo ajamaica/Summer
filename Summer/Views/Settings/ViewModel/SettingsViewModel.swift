@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class SettingsViewModel {
     private let solana: SolanaClient
@@ -13,7 +14,7 @@ class SettingsViewModel {
         self.solana = solana
     }
 
-    func logout(completition: @escaping ((Result<(), Error>) -> Void)) {
-        self.solana.deleteAccount(completition: completition)
+    func logout() -> Single<Void> {
+        self.solana.deleteAccount()
     }
 }

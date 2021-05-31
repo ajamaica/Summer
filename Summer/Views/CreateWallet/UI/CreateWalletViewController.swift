@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol CreateWalletViewControllerDelegate: AnyObject {
     func goToWallet()
@@ -13,6 +14,7 @@ protocol CreateWalletViewControllerDelegate: AnyObject {
 
 class CreateWalletViewController: UIViewController {
 
+    let disposeBag = DisposeBag()
     @IBOutlet weak var seedPhaseCollection: UICollectionView!
     let viewModel: CreateWalletViewModel
     weak var delegate: CreateWalletViewControllerDelegate?
@@ -45,14 +47,9 @@ class CreateWalletViewController: UIViewController {
     }
 
     @IBAction func doneAction(_ sender: Any) {
-        self.viewModel.createWallet { result in
-            switch result {
-            case .success():
-                self.delegate?.goToWallet()
-            case .failure(_):
-                break
-            }
-        }
+        self.viewModel.createWallet().subscribe(onSuccess: {
+            self.delegate?.goToWallet()
+        }).disposed(by: disposeBag)
     }
 }
 

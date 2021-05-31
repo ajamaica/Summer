@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol SettingsViewControllerDelegate: AnyObject {
     func logout()
@@ -13,6 +14,7 @@ protocol SettingsViewControllerDelegate: AnyObject {
 
 class SettingsViewController: UIViewController {
 
+    let disposeBag = DisposeBag()
     let viewModel: SettingsViewModel
     weak var delegate: SettingsViewControllerDelegate?
     init( viewModel: SettingsViewModel) {
@@ -40,13 +42,8 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func deleteWallet(_ sender: Any) {
-        self.viewModel.logout { result in
-            switch result {
-            case .success():
-                self.delegate?.logout()
-            case .failure(_):
-                break
-            }
-        }
+        self.viewModel.logout().subscribe(onSuccess:  {
+            self.delegate?.logout()
+        }).disposed(by: disposeBag)
     }
 }

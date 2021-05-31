@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class CreateWalletViewModel {
     private var seedPhrase = ConcreteSeedPhrase()
@@ -17,7 +18,7 @@ class CreateWalletViewModel {
         seedPhrase.getSeedPhrase()
     }
 
-    func createWallet(completition: @escaping((Result<(), Error>)-> Void)) {
-        solana.createAccount(withPhrase: getSeedPhrase(), completition: completition)
+    func createWallet() -> Single<Void> {
+        solana.createAccount(withPhrase: getSeedPhrase())
     }
 }

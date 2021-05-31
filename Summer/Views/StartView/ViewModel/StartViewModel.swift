@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class StartViewModel {
     private let solana: SolanaClient
@@ -13,14 +14,7 @@ class StartViewModel {
         self.solana = solana
     }
 
-    func hasAccount(completition: @escaping(Result<Void, Error>) -> Void) {
-        self.solana.getPublicKey { result in
-            switch result {
-            case .success:
-                completition(.success(()))
-            case .failure(let error):
-                completition(.failure(error))
-            }
-        }
+    func hasAccount() -> Single<String> {
+        self.solana.getPublicKey()
     }
 }

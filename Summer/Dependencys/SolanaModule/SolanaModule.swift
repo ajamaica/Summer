@@ -10,15 +10,14 @@ import RxSwift
 import Solana
 
 protocol SolanaClient {
-    func deleteAccount(completition: @escaping((Result<(), Error>)-> Void))
-    func createAccount(withPhrase: SeedPhraseCollection, completition: @escaping((Result<(), Error>)-> Void))
-    func getBalance(completition: @escaping(Result<UInt64, Error>) -> Void)
-    func getPublicKey(completition: @escaping(Result<String, Error>) -> Void)
-    func sendSPL(mintAddress: String, decimals: UInt8, from: String, to: String, amount: UInt64, completition: @escaping(Result<String, Error>) -> Void)
-    func getTokenWallets(completition: @escaping(Result<[SummerWallet], Error>) -> Void)
-    func addToken(mintAddress: String, completition: @escaping(Result<(signature: String, newPubkey: String), Error>) -> Void)
-    func getTokenAccountBalance(token: String, completition: @escaping(Result<Solana.TokenAccountBalance, Error>) -> Void)
-
+    func deleteAccount() -> Single<Void>
+    func createAccount(withPhrase: SeedPhraseCollection) -> Single<Void>
+    func getBalance() -> Single<UInt64>
+    func getPublicKey() -> Single<String>
+    func sendSPL(mintAddress: String, decimals: UInt8, from: String, to: String, amount: UInt64) -> Single<String>
+    func getTokenWallets() -> Single<[SummerWallet]>
+    func addToken(mintAddress: String) -> Single<(signature: String, newPubkey: String)>
+    func getTokenAccountBalance(token: String) -> Single<SummerTokenAccountBalance>
 }
 
 class SolanaModule {
@@ -46,7 +45,7 @@ class ConcreteSolanaClient: SolanaClient {
     let network: Solana.Network
 
     var solana: Solana {
-        Solana(endpoint: Solana.APIEndPoint(url: self.endpoint.rawValue, network: self.network), accountStorage: self.accountStorage) }
+        Solana(endpoint: Solana.RpcApiEndPoint.devnetSolana, accountStorage: self.accountStorage) }
 
     init(endpoint: SolanaEnpoint, network: Solana.Network, accountStorage: KeychainAccountStorageModule) {
         self.network = network
@@ -54,17 +53,13 @@ class ConcreteSolanaClient: SolanaClient {
         self.endpoint = endpoint
     }
 
-    func deleteAccount(completition: @escaping((Result<(), Error>)-> Void)) {
-        do {
-            _ = try getAccount().get()
-            self.solana.accountStorage.clear()
-            return completition(.success(()))
-        } catch let e {
-            return completition(.failure(e))
+    func deleteAccount() -> Single<Void>  {
+        return self.getAccount().flatMap { account in
+            return .just(self.solana.accountStorage.clear())
         }
     }
 
-    func createAccount(withPhrase: SeedPhraseCollection, completition: @escaping((Result<(), Error>)-> Void)) {
+    func createAccount(withPhrase: SeedPhraseCollection) -> Single<Void> {
         do {
             var network: Solana.Network!
             switch endpoint {
@@ -77,51 +72,35 @@ class ConcreteSolanaClient: SolanaClient {
             }
             let account = try Solana.Account(phrase: withPhrase, network: network, derivablePath: .default)
             try self.solana.accountStorage.save(account)
-            return completition(.success(()))
+            return Single.just(())
         } catch let e {
-            return completition(.failure(e))
+            return Single.error(e)
         }
     }
 
-    func getBalance(completition: @escaping(Result<UInt64, Error>) -> Void) {
-        do {
-            let account = try getAccount().get()
-            self.solana.getBalance(account: account.publicKey.base58EncodedString, commitment: "recent")
-                .subscribe { balance in
-                    completition(.success(balance))
-            }
-            .disposed(by: disposeBag)
-        } catch let e {
-            completition(.failure(e))
+    func getBalance() -> Single<UInt64> {
+        return self.getAccount().flatMap { account in
+             self.solana.getBalance(account: account.publicKey.base58EncodedString, commitment: "recent")
         }
     }
 
-    private func getAccount() -> Result<Solana.Account, SolanaClientError> {
+    private func getAccount() -> Single<Solana.Account> {
         if let account = self.solana.accountStorage.account {
-            return .success(account)
+            return .just(account)
         } else {
-            return .failure(.accountNotSet)
+            return .error(SolanaClientError.accountNotSet)
         }
     }
 
-    func getPublicKey(completition: @escaping(Result<String, Error>) -> Void) {
-        do {
-            let account = try getAccount().get()
-            return completition(.success(account.publicKey.base58EncodedString))
-        } catch let e {
-            completition(.failure(e))
+    func getPublicKey() -> Single<String> {
+        return self.getAccount().map { account in
+            account.publicKey.base58EncodedString
         }
     }
 
-    func sendSOL(to: String, amount: UInt64, completition: @escaping(Result<String, Error>) -> Void) {
-        do {
-            _ = try getAccount().get()
-            self.solana.sendSOL(to: to, amount: amount).subscribe { balance in
-                completition(.success(balance))
-            }
-            .disposed(by: disposeBag)
-        } catch let e {
-            completition(.failure(e))
+    func sendSOL(to: String, amount: UInt64) -> Single<String> {
+        return self.getAccount().flatMap { account in
+            self.solana.sendSOL(to: to, amount: amount)
         }
     }
 
@@ -129,64 +108,37 @@ class ConcreteSolanaClient: SolanaClient {
                  decimals: UInt8,
                  from: String,
                  to: String,
-                 amount: UInt64,
-                 completition: @escaping(Result<String, Error>) -> Void) {
-        do {
-            _ = try getAccount().get()
+                 amount: UInt64) -> Single<String> {
+        
+        return self.getAccount().flatMap { account in
             self.solana.sendSPLTokens(mintAddress: mintAddress, decimals: decimals, from: from, to: to, amount: amount)
-                .subscribe { balance in
-                completition(.success(balance))
-            }
-            .disposed(by: disposeBag)
-        } catch let e {
-            completition(.failure(e))
         }
     }
 
-    func getTokenWallets(completition: @escaping(Result<[SummerWallet], Error>) -> Void) {
-        do {
-            let account = try getAccount().get()
+    func getTokenWallets() -> Single<[SummerWallet]> {
+        return self.getAccount().flatMap { account in
             self.solana.getTokenWallets(account: account.publicKey.base58EncodedString)
+        }.map{
+            return $0
                 .map {
-                    return $0
-                        .map {
-                        let extensions = SummerTokenExtensions(website: $0.token.extensions?.website, bridgeContract: $0.token.extensions?.bridgeContract)
-                        let token = SummerToken(_tags: [], chainId: $0.token.chainId, address: $0.token.address, symbol: $0.token.symbol, name: $0.token.name, decimals: $0.token.decimals, logoURI: $0.token.logoURI, extensions: extensions)
-                        return SummerWallet(pubkey: $0.pubkey, lamports: $0.lamports, token: token, liquidity: $0.isLiquidity)
-                    }
-                }
-                .subscribe { result in
-                    completition(.success(result))
-                }
-            .disposed(by: disposeBag)
-        } catch let e {
-            completition(.failure(e))
-        }
-    }
-
-    func getTokenAccountBalance(token: String, completition: @escaping(Result<Solana.TokenAccountBalance, Error>) -> Void) {
-        do {
-            _ = try getAccount().get()
-            self.solana.getTokenAccountBalance(pubkey: token)
-                .subscribe {
-                completition($0)
+                let extensions = SummerTokenExtensions(website: $0.token.extensions?.website, bridgeContract: $0.token.extensions?.bridgeContract)
+                let token = SummerToken(_tags: [], chainId: $0.token.chainId, address: $0.token.address, symbol: $0.token.symbol, name: $0.token.name, decimals: $0.token.decimals, logoURI: $0.token.logoURI, extensions: extensions)
+                return SummerWallet(pubkey: $0.pubkey, lamports: $0.lamports, token: token, liquidity: $0.isLiquidity)
             }
-            .disposed(by: disposeBag)
-        } catch let e {
-            completition(.failure(e))
         }
     }
 
-    func addToken(mintAddress: String, completition: @escaping(Result<(signature: String, newPubkey: String), Error>) -> Void) {
-        do {
-            _ = try getAccount().get()
+    func getTokenAccountBalance(token: String) -> Single<SummerTokenAccountBalance> {
+        return self.getAccount().flatMap { account in
+            self.solana.getTokenAccountBalance(pubkey: token).map{
+                SummerTokenAccountBalance(uiAmount: $0.uiAmount, amount: $0.amount, decimals: $0.decimals, uiAmountString: $0.uiAmountString)
+            }
+        }
+    }
+
+    func addToken(mintAddress: String) -> Single<(signature: String, newPubkey: String)> {
+        return self.getAccount().flatMap { account in
             self.solana.createTokenAccount(mintAddress: mintAddress)
-                .subscribe { result in
-                completition(.success(result))
-            }
-            .disposed(by: disposeBag)
-        } catch let e {
-            completition(.failure(e))
         }
     }
 }
@@ -194,3 +146,5 @@ class ConcreteSolanaClient: SolanaClient {
 public enum WrappingToken: String {
     case sollet, wormhole
 }
+
+

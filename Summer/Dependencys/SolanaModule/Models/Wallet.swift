@@ -37,4 +37,26 @@ struct SummerWallet: Wallet {
         self.token = token
         self.liquidity = liquidity
     }
+    
+    public static func nativeSolana(
+        pubkey: String?,
+        lamport: UInt64?
+    ) -> SummerWallet {
+        SummerWallet(
+            pubkey: pubkey,
+            lamports: lamport,
+            token: .init(
+                _tags: [],
+                chainId: 101,
+                address: "So11111111111111111111111111111111111111112",
+                symbol: "SOL",
+                name: "Solana",
+                decimals: 9,
+                logoURI: nil,
+                tags: [],
+                extensions: nil
+            ),
+            liquidity: false
+        )
+    }
 }
