@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol RestoreWalletViewControllerDelegate: AnyObject {
     func goToWallet()
 }
 
 class RestoreWalletViewController: UIViewController {
-
+    let disposeBag = DisposeBag()
     @IBOutlet weak var seedPhraseTextField: UITextView!
     let viewModel: RestoreWalletViewModel
     weak var delegate: RestoreWalletViewControllerDelegate?
@@ -51,14 +52,9 @@ class RestoreWalletViewController: UIViewController {
     }
 
     @IBAction func restoreWallet(_ sender: Any) {
-        self.viewModel.restoreWallet(wordlist: self.seedPhraseTextField.text.split { $0 == " " }.map(String.init)) { result in
-            switch result {
-            case .success():
-                self.delegate?.goToWallet()
-            case .failure(_):
-                break
-            }
-        }
+        self.viewModel.restoreWallet(wordlist: self.seedPhraseTextField.text.split { $0 == " " }.map(String.init)).subscribe(onSuccess: {
+            self.delegate?.goToWallet()
+        }).disposed(by: disposeBag)
     }
 }
 

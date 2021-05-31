@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxDataSources
 
 protocol WalletViewControllerDelegate: AnyObject {
     func goToSettings()
@@ -15,6 +17,7 @@ protocol WalletViewControllerDelegate: AnyObject {
 let WalletTableViewCellIdentifier = "WalletTableViewCell"
 class WalletViewController: UIViewController {
 
+    let disposeBag = DisposeBag()
     @IBOutlet weak var walletTableView: UITableView!
     var headerView: WalletHeaderView!
     var footerView: FooterView!
@@ -58,44 +61,17 @@ class WalletViewController: UIViewController {
         headerView.settingsButton.addTarget(self, action: #selector(settingsAction(sender:)), for: .touchUpInside)
         walletTableView.tableHeaderView = headerView
         walletTableView.tableFooterView = footerView
-        walletTableView.delegate = self
-        walletTableView.dataSource = self
         walletTableView.register(UINib(nibName: WalletTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: WalletTableViewCellIdentifier)
         walletTableView.contentInsetAdjustmentBehavior = .never
-
-        self.viewModel.getTokenWallets { result in
-            switch result {
-            case .success(let wallets):
-                debugPrint(wallets)
-                wallets.forEach { wallet in
-                    self.viewModel.getTokenBalance(token: wallet.pubkey!) { result2 in
-                        switch result2 {
-                        case .success(let r):
-                            debugPrint(r)
-                        case .failure(_):
-                            break
-                        }
-                    }
-                }
-            case .failure(_):
-                break
-            }
+        
+        self.viewModel.getTokenWallets().asObservable().bind(to: walletTableView.rx.items(cellIdentifier: WalletTableViewCellIdentifier, cellType: WalletTableViewCell.self)) { index, model, cell in
+            cell.setViewModel(.init(solana: self.viewModel.solana, wallet: model))
         }
+        .disposed(by: disposeBag)
     }
 
     @objc
     func settingsAction(sender: UIButton) {
         delegate?.goToSettings()
-    }
-}
-
-extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: WalletTableViewCellIdentifier, for: indexPath)
     }
 }

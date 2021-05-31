@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */; };
 		0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4C2655400D005EAE15 /* SolanaModule.swift */; };
-		064B93B9265DE8CA00474F15 /* secp256k1 in Frameworks */ = {isa = PBXBuildFile; productRef = 064B93B8265DE8CA00474F15 /* secp256k1 */; };
-		064B93BF265DF1FE00474F15 /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = 064B93BE265DF1FE00474F15 /* Solana */; };
 		064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F22657D06600D45DF2 /* UpsellViewModel.swift */; };
 		064F84F72657D0B600D45DF2 /* UpsellViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F62657D0B600D45DF2 /* UpsellViewCoordinator.swift */; };
 		064F84FB2658A7B300D45DF2 /* CreateWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F92658A7B300D45DF2 /* CreateWalletViewController.swift */; };
@@ -47,6 +45,7 @@
 		064F8554265A7AA200D45DF2 /* TokensList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8553265A7AA200D45DF2 /* TokensList.swift */; };
 		064F8556265A7ABF00D45DF2 /* TokenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8555265A7ABF00D45DF2 /* TokenExtensions.swift */; };
 		064F8558265A7ADF00D45DF2 /* TokenTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8557265A7ADF00D45DF2 /* TokenTag.swift */; };
+		0661049926625C0700D39BD6 /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = 0661049826625C0700D39BD6 /* Solana */; };
 		06676758265535CD00108D21 /* UpsellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06676756265535CD00108D21 /* UpsellViewController.swift */; };
 		06676759265535CD00108D21 /* UpsellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06676757265535CD00108D21 /* UpsellViewController.xib */; };
 		06F065D626528ED000032BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D526528ED000032BDA /* AppDelegate.swift */; };
@@ -60,16 +59,16 @@
 		06F0660D2652941200032BDA /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F0660B2652941200032BDA /* StartViewController.xib */; };
 		06F066102652945000032BDA /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F0660F2652945000032BDA /* StartViewModel.swift */; };
 		06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F06613265294DB00032BDA /* StartViewCoordinator.swift */; };
+		06F63A2C2664FBF9009925BE /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 06F63A2B2664FBF9009925BE /* Differentiator */; };
+		06F63A2E2664FBF9009925BE /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 06F63A2D2664FBF9009925BE /* RxDataSources */; };
+		06F63A3126650129009925BE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 06F63A3026650129009925BE /* Kingfisher */; };
+		06F63A3326650280009925BE /* SolanaTokenAccountBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F63A3226650280009925BE /* SolanaTokenAccountBalance.swift */; };
 		B3DE8ACE265CCFDF00D6744A /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8ACD265CCFDF00D6744A /* KeychainSwift */; };
 		B3DE8AD4265CD05E00D6744A /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AD3265CD05E00D6744A /* CryptoSwift */; };
-		B3DE8AE8265CD0EA00D6744A /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AE7265CD0EA00D6744A /* Starscream */; };
-		B3DE8AEE265CD15900D6744A /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AED265CD15900D6744A /* RxAlamofire */; };
 		B3DE8AFF265CD1C600D6744A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8AFE265CD1C600D6744A /* RxSwift */; };
 		B3DE8B01265CD1C600D6744A /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B00265CD1C600D6744A /* RxRelay */; };
 		B3DE8B03265CD1C600D6744A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B02265CD1C600D6744A /* RxCocoa */; };
 		B3DE8B05265CD1C600D6744A /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B04265CD1C600D6744A /* RxBlocking */; };
-		B3DE8B30265CD4CF00D6744A /* TweetNacl in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B2F265CD4CF00D6744A /* TweetNacl */; };
-		B3DE8B3F265CD67000D6744A /* ContResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE8B3E265CD67000D6744A /* ContResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,8 +146,8 @@
 		06F0660B2652941200032BDA /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		06F0660F2652945000032BDA /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		06F06613265294DB00032BDA /* StartViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewCoordinator.swift; sourceTree = "<group>"; };
+		06F63A3226650280009925BE /* SolanaTokenAccountBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaTokenAccountBalance.swift; sourceTree = "<group>"; };
 		B3DE8B12265CD2FF00D6744A /* Summer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Summer-Bridging-Header.h"; sourceTree = "<group>"; };
-		B3DE8B3E265CD67000D6744A /* ContResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,16 +156,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3DE8AFF265CD1C600D6744A /* RxSwift in Frameworks */,
-				064B93B9265DE8CA00474F15 /* secp256k1 in Frameworks */,
 				B3DE8B05265CD1C600D6744A /* RxBlocking in Frameworks */,
 				B3DE8ACE265CCFDF00D6744A /* KeychainSwift in Frameworks */,
+				06F63A2E2664FBF9009925BE /* RxDataSources in Frameworks */,
+				06F63A3126650129009925BE /* Kingfisher in Frameworks */,
 				B3DE8B01265CD1C600D6744A /* RxRelay in Frameworks */,
 				B3DE8AD4265CD05E00D6744A /* CryptoSwift in Frameworks */,
-				B3DE8AEE265CD15900D6744A /* RxAlamofire in Frameworks */,
-				064B93BF265DF1FE00474F15 /* Solana in Frameworks */,
+				0661049926625C0700D39BD6 /* Solana in Frameworks */,
+				06F63A2C2664FBF9009925BE /* Differentiator in Frameworks */,
 				B3DE8B03265CD1C600D6744A /* RxCocoa in Frameworks */,
-				B3DE8B30265CD4CF00D6744A /* TweetNacl in Frameworks */,
-				B3DE8AE8265CD0EA00D6744A /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +188,6 @@
 		0648DA4726553EA3005EAE15 /* Dependencys */ = {
 			isa = PBXGroup;
 			children = (
-				B3DE8B3D265CD66700D6744A /* ContResult */,
 				064F85042658AF2200D45DF2 /* SeedPhraseGenerator */,
 				0648DA4B26554004005EAE15 /* SolanaModule */,
 				0648DA4826553EBA005EAE15 /* KeychainAccountStorage */,
@@ -462,6 +459,7 @@
 				064F8553265A7AA200D45DF2 /* TokensList.swift */,
 				064F8555265A7ABF00D45DF2 /* TokenExtensions.swift */,
 				064F8557265A7ADF00D45DF2 /* TokenTag.swift */,
+				06F63A3226650280009925BE /* SolanaTokenAccountBalance.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -596,14 +594,6 @@
 			path = UpsellView;
 			sourceTree = "<group>";
 		};
-		B3DE8B3D265CD66700D6744A /* ContResult */ = {
-			isa = PBXGroup;
-			children = (
-				B3DE8B3E265CD67000D6744A /* ContResult.swift */,
-			);
-			path = ContResult;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -623,15 +613,14 @@
 			packageProductDependencies = (
 				B3DE8ACD265CCFDF00D6744A /* KeychainSwift */,
 				B3DE8AD3265CD05E00D6744A /* CryptoSwift */,
-				B3DE8AE7265CD0EA00D6744A /* Starscream */,
-				B3DE8AED265CD15900D6744A /* RxAlamofire */,
 				B3DE8AFE265CD1C600D6744A /* RxSwift */,
 				B3DE8B00265CD1C600D6744A /* RxRelay */,
 				B3DE8B02265CD1C600D6744A /* RxCocoa */,
 				B3DE8B04265CD1C600D6744A /* RxBlocking */,
-				B3DE8B2F265CD4CF00D6744A /* TweetNacl */,
-				064B93B8265DE8CA00474F15 /* secp256k1 */,
-				064B93BE265DF1FE00474F15 /* Solana */,
+				0661049826625C0700D39BD6 /* Solana */,
+				06F63A2B2664FBF9009925BE /* Differentiator */,
+				06F63A2D2664FBF9009925BE /* RxDataSources */,
+				06F63A3026650129009925BE /* Kingfisher */,
 			);
 			productName = Summer;
 			productReference = 06F065D226528ED000032BDA /* Summer.app */;
@@ -708,12 +697,10 @@
 			packageReferences = (
 				B3DE8ACC265CCFDF00D6744A /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				B3DE8AD2265CD05E00D6744A /* XCRemoteSwiftPackageReference "CryptoSwift" */,
-				B3DE8AE6265CD0EA00D6744A /* XCRemoteSwiftPackageReference "Starscream" */,
-				B3DE8AEC265CD15900D6744A /* XCRemoteSwiftPackageReference "RxAlamofire" */,
 				B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */,
-				B3DE8B2E265CD4CF00D6744A /* XCRemoteSwiftPackageReference "tweetnacl-swiftwrap" */,
-				064B93B7265DE8CA00474F15 /* XCRemoteSwiftPackageReference "secp256k1.swift" */,
-				064B93BD265DF1FE00474F15 /* XCRemoteSwiftPackageReference "Solana" */,
+				0661049726625C0700D39BD6 /* XCRemoteSwiftPackageReference "Solana" */,
+				06F63A2A2664FBF9009925BE /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				06F63A2F26650128009925BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 06F065D326528ED000032BDA /* Products */;
 			projectDirPath = "";
@@ -779,7 +766,6 @@
 				064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */,
 				064F84FE2658A7D100D45DF2 /* CreateWalletViewModel.swift in Sources */,
 				06F0660C2652941200032BDA /* StartViewController.swift in Sources */,
-				B3DE8B3F265CD67000D6744A /* ContResult.swift in Sources */,
 				064F85062658AF2D00D45DF2 /* SeedPhraseGenerator.swift in Sources */,
 				06F066102652945000032BDA /* StartViewModel.swift in Sources */,
 				064F8532265A30A100D45DF2 /* SettingsViewModel.swift in Sources */,
@@ -800,6 +786,7 @@
 				06F065D626528ED000032BDA /* AppDelegate.swift in Sources */,
 				064F85102658D43D00D45DF2 /* WalletViewController.swift in Sources */,
 				06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */,
+				06F63A3326650280009925BE /* SolanaTokenAccountBalance.swift in Sources */,
 				064F853D265A381300D45DF2 /* RestoreWalletCoordinator.swift in Sources */,
 				064F85132658D46800D45DF2 /* WalletViewModel.swift in Sources */,
 				064F8554265A7AA200D45DF2 /* TokensList.swift in Sources */,
@@ -1146,20 +1133,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		064B93B7265DE8CA00474F15 /* XCRemoteSwiftPackageReference "secp256k1.swift" */ = {
+		0661049726625C0700D39BD6 /* XCRemoteSwiftPackageReference "Solana" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Boilertalk/secp256k1.swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.4;
-			};
-		};
-		064B93BD265DF1FE00474F15 /* XCRemoteSwiftPackageReference "Solana" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ajamaica/Solana.Swift";
+			repositoryURL = "file:///Users/arturojamaica/Development/ios/Solana.Swift/Solana/";
 			requirement = {
 				branch = master;
 				kind = branch;
+			};
+		};
+		06F63A2A2664FBF9009925BE /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		06F63A2F26650128009925BE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
 			};
 		};
 		B3DE8ACC265CCFDF00D6744A /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
@@ -1178,22 +1173,6 @@
 				minimumVersion = 1.4.0;
 			};
 		};
-		B3DE8AE6265CD0EA00D6744A /* XCRemoteSwiftPackageReference "Starscream" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daltoniam/Starscream.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.4;
-			};
-		};
-		B3DE8AEC265CD15900D6744A /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.1.1;
-			};
-		};
 		B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -1202,26 +1181,28 @@
 				minimumVersion = 6.2.0;
 			};
 		};
-		B3DE8B2E265CD4CF00D6744A /* XCRemoteSwiftPackageReference "tweetnacl-swiftwrap" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/bitmark-inc/tweetnacl-swiftwrap.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.2;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		064B93B8265DE8CA00474F15 /* secp256k1 */ = {
+		0661049826625C0700D39BD6 /* Solana */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 064B93B7265DE8CA00474F15 /* XCRemoteSwiftPackageReference "secp256k1.swift" */;
-			productName = secp256k1;
-		};
-		064B93BE265DF1FE00474F15 /* Solana */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 064B93BD265DF1FE00474F15 /* XCRemoteSwiftPackageReference "Solana" */;
+			package = 0661049726625C0700D39BD6 /* XCRemoteSwiftPackageReference "Solana" */;
 			productName = Solana;
+		};
+		06F63A2B2664FBF9009925BE /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06F63A2A2664FBF9009925BE /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		06F63A2D2664FBF9009925BE /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06F63A2A2664FBF9009925BE /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		06F63A3026650129009925BE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06F63A2F26650128009925BE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		B3DE8ACD265CCFDF00D6744A /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1232,16 +1213,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B3DE8AD2265CD05E00D6744A /* XCRemoteSwiftPackageReference "CryptoSwift" */;
 			productName = CryptoSwift;
-		};
-		B3DE8AE7265CD0EA00D6744A /* Starscream */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B3DE8AE6265CD0EA00D6744A /* XCRemoteSwiftPackageReference "Starscream" */;
-			productName = Starscream;
-		};
-		B3DE8AED265CD15900D6744A /* RxAlamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B3DE8AEC265CD15900D6744A /* XCRemoteSwiftPackageReference "RxAlamofire" */;
-			productName = RxAlamofire;
 		};
 		B3DE8AFE265CD1C600D6744A /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1262,11 +1233,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxBlocking;
-		};
-		B3DE8B2F265CD4CF00D6744A /* TweetNacl */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B3DE8B2E265CD4CF00D6744A /* XCRemoteSwiftPackageReference "tweetnacl-swiftwrap" */;
-			productName = TweetNacl;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

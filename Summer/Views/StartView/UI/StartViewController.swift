@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol StartViewControllerDelegate: AnyObject {
     func goToStartUpsell()
@@ -13,6 +14,7 @@ protocol StartViewControllerDelegate: AnyObject {
 }
 class StartViewController: UIViewController {
 
+    let disposeBag = DisposeBag()
     let viewModel: StartViewModel
     weak var delegate: StartViewControllerDelegate?
     init( viewModel: StartViewModel) {
@@ -28,16 +30,13 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         let seconds = 1.0
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            self.viewModel.hasAccount { result in
-                switch result {
-                case .success():
-                    self.delegate?.goToWallet()
-                case .failure:
-                    self.delegate?.goToStartUpsell()
-                }
-            }
-        }
+        self.viewModel.hasAccount()
+            .delay(.seconds(Int(seconds)), scheduler: MainScheduler.instance)
+            .subscribe(onSuccess: { _ in
+                self.delegate?.goToWallet()
+            }, onFailure: { _ in 
+                self.delegate?.goToStartUpsell()
+            }).disposed(by: disposeBag)
     }
 
 }

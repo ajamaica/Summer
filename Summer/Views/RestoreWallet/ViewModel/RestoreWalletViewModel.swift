@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 enum RestoreWalletViewModelError: Error {
     case invalidSeed
@@ -17,10 +18,10 @@ class RestoreWalletViewModel {
         self.solana = solana
     }
 
-    func restoreWallet(wordlist: [String], completition: @escaping ((Result<(), Error>) -> Void)) {
+    func restoreWallet(wordlist: [String]) -> Single<Void> {
         guard seedPhrase.isValid(wordlist: wordlist) == true else {
-            return completition(.failure(RestoreWalletViewModelError.invalidSeed))
+            return Single.error(RestoreWalletViewModelError.invalidSeed)
         }
-        solana.createAccount(withPhrase: wordlist, completition: completition)
+        return solana.createAccount(withPhrase: wordlist)
     }
 }
