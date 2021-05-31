@@ -59,7 +59,7 @@ class WalletTableViewCell: UITableViewCell {
     private func setSOLUI(address: String){
         self.smalTickerLabel.text = "SOL"
         self.tokenNameLabel.text = "Solana"
-        self.tickerLabel.text = "SOL"
+        self.tickerLabel.text = "(SOL)"
         self.tokenImage.image = UIImage(named: "tokenLogo")
         self.tokenImage.layer.cornerRadius = 40/2
         self.viewModel?.getBalance()
@@ -69,7 +69,7 @@ class WalletTableViewCell: UITableViewCell {
     }
     
     private func setTokenUI(wallet: SummerWallet){
-        self.smalTickerLabel.text = "\(wallet.token.symbol)"
+        self.smalTickerLabel.text = (!wallet.token.symbol.isEmpty) ? "(\(wallet.token.symbol))" : ""
         self.tokenNameLabel.text = wallet.token.name
         self.tickerLabel.text = "\(wallet.token.symbol)"
         self.tokenImage.kf.setImage(with: URL(string: wallet.token.logoURI ?? ""))
