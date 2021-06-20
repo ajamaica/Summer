@@ -63,8 +63,9 @@ class WalletTableViewCell: UITableViewCell {
         self.tokenImage.image = UIImage(named: "tokenLogo")
         self.tokenImage.layer.cornerRadius = 40/2
         self.viewModel?.getBalance()
-            .subscribe(onSuccess: {
-                self.ammountLabel.text = "\(Double($0)/pow(10.0,9.0))"
+            .observe(on: MainScheduler.init())
+            .subscribe(onSuccess: { [weak self] value in
+                self?.ammountLabel.text = "\(Double(value)/pow(10.0,9.0))"
         }).disposed(by: disposeBag)
     }
     
@@ -75,8 +76,9 @@ class WalletTableViewCell: UITableViewCell {
         self.tokenImage.kf.setImage(with: URL(string: wallet.token.logoURI ?? ""))
         self.tokenImage.layer.cornerRadius = 40/2
         self.viewModel?.getTokenBalance(token: wallet.pubkey!)
-            .subscribe(onSuccess: {
-                self.ammountLabel.text = "\($0.uiAmountString ?? $0.amount)"
+            .observe(on: MainScheduler.init())
+            .subscribe(onSuccess: { [weak self] value in
+                self?.ammountLabel.text = "\(value.uiAmountString ?? value.amount)"
         }).disposed(by: disposeBag)
     }
 }

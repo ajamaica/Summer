@@ -63,7 +63,7 @@ class WalletViewController: UIViewController {
         walletTableView.tableFooterView = footerView
         walletTableView.register(UINib(nibName: WalletTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: WalletTableViewCellIdentifier)
         walletTableView.contentInsetAdjustmentBehavior = .never
-        
+        walletTableView.delegate = self
         self.viewModel.getTokenWallets().asObservable().bind(to: walletTableView.rx.items(cellIdentifier: WalletTableViewCellIdentifier, cellType: WalletTableViewCell.self)) { index, model, cell in
             let wModel: TokenType = (index == 0) ? .solana(model.pubkey!) : .token(model)
             cell.setViewModel(.init(solana: self.viewModel.solana, tokenType: wModel))
@@ -74,5 +74,11 @@ class WalletViewController: UIViewController {
     @objc
     func settingsAction(sender: UIButton) {
         delegate?.goToSettings()
+    }
+}
+
+extension WalletViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.goToToken()
     }
 }
