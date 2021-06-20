@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import Solana
+import RxSolana
 
 protocol SolanaClient {
     func deleteAccount() -> Single<Void>
@@ -39,43 +40,34 @@ enum SolanaEnpoint: String {
 
 class ConcreteSolanaClient: SolanaClient {
     private let accountStorage: KeychainAccountStorageModule
-    private let endpoint: SolanaEnpoint
+    private let endpoint: RPCEndpoint
     private let disposeBag =  DisposeBag()
 
-    let network: Solana.Network
+    let network = NetworkingRouter(endpoint: .devnetSolana)
 
     var solana: Solana {
-        Solana(endpoint: Solana.RpcApiEndPoint.devnetSolana, accountStorage: self.accountStorage) }
+        Solana(router: network, accountStorage: self.accountStorage)
+    }
 
-    init(endpoint: SolanaEnpoint, network: Solana.Network, accountStorage: KeychainAccountStorageModule) {
-        self.network = network
+    init(endpoint: RPCEndpoint, accountStorage: KeychainAccountStorageModule) {
         self.accountStorage = accountStorage
         self.endpoint = endpoint
     }
 
     func deleteAccount() -> Single<Void>  {
-        return self.getAccount().flatMap { account in
-            return .just(self.solana.accountStorage.clear())
+        Single.create { emitter in
+            emitter(self.accountStorage.clear())
+            return Disposables.create()
         }
     }
 
     func createAccount(withPhrase: SeedPhraseCollection) -> Single<Void> {
-        do {
-            var network: Solana.Network!
-            switch endpoint {
-            case .mainnetBeta:
-                network = .mainnetBeta
-            case .devnet:
-                network = .devnet
-            case .testnet:
-                network = .testnet
-            }
-            let account = try Solana.Account(phrase: withPhrase, network: network, derivablePath: .default)
-            try self.solana.accountStorage.save(account)
-            return Single.just(())
-        } catch let e {
-            return Single.error(e)
+        Single.create { emitter in
+            let account = Account(phrase: withPhrase, network: self.endpoint.network, derivablePath: .default)!
+            emitter(self.solana.accountStorage.save(account))
+            return Disposables.create()
         }
+        
     }
 
     func getBalance() -> Single<UInt64> {
@@ -84,12 +76,11 @@ class ConcreteSolanaClient: SolanaClient {
         }
     }
 
-    private func getAccount() -> Single<Solana.Account> {
-        if let account = self.solana.accountStorage.account {
-            return .just(account)
-        } else {
+    private func getAccount() -> Single<Account> {
+        guard let account = self.solana.accountStorage.account else {
             return .error(SolanaClientError.accountNotSet)
         }
+        return .just(account)
     }
 
     func getPublicKey() -> Single<String> {

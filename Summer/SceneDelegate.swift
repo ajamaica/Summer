@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Solana
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let accountStorage = KeychainAccountStorageModule()
-        let solanaClient = ConcreteSolanaClient(endpoint: .devnet, network: .devnet, accountStorage: accountStorage)
+        let solanaClient = ConcreteSolanaClient(endpoint: .devnetSolana, accountStorage: accountStorage)
         let applicationComponent = AppComponent(solanaModule: SolanaModule(solana: solanaClient))
 
         let coordinator = Coordinator(applicationComponent: applicationComponent, navigationController: navigationController)
