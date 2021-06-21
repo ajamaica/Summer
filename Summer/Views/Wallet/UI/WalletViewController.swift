@@ -15,6 +15,7 @@ protocol WalletViewControllerDelegate: AnyObject {
 
 }
 let WalletTableViewCellIdentifier = "WalletTableViewCell"
+let NftTableViewCellIdentifier = "NftTableViewCell"
 class WalletViewController: UIViewController {
 
     let disposeBag = DisposeBag()
@@ -58,27 +59,46 @@ class WalletViewController: UIViewController {
         super.viewDidLoad()
         headerView = .fromNib()
         footerView = .fromNib()
+        headerView.nftsButton.addTarget(self, action: #selector(nftAction(sender:)), for: .touchUpInside)
+        headerView.tokensButton.addTarget(self, action: #selector(tokenAction(sender:)), for: .touchUpInside)
         headerView.settingsButton.addTarget(self, action: #selector(settingsAction(sender:)), for: .touchUpInside)
         walletTableView.tableHeaderView = headerView
         walletTableView.tableFooterView = footerView
         walletTableView.register(UINib(nibName: WalletTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: WalletTableViewCellIdentifier)
+        walletTableView.register(UINib(nibName: NftTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: NftTableViewCellIdentifier)
         walletTableView.contentInsetAdjustmentBehavior = .never
         walletTableView.delegate = self
-        self.viewModel.getTokenWallets().asObservable().bind(to: walletTableView.rx.items(cellIdentifier: WalletTableViewCellIdentifier, cellType: WalletTableViewCell.self)) { index, model, cell in
-            let wModel: TokenType = (index == 0) ? .solana(model.pubkey!) : .token(model)
-            cell.setViewModel(.init(solana: self.viewModel.solana, tokenType: wModel))
-        }
-        .disposed(by: disposeBag)
+        tokenAction(sender: headerView.tokensButton)
     }
 
     @objc
     func settingsAction(sender: UIButton) {
         delegate?.goToSettings()
     }
+    
+    @objc
+    func nftAction(sender: UIButton) {
+        walletTableView.dataSource = nil
+        self.viewModel.getNFTs().asObservable().bind(to: walletTableView.rx.items(cellIdentifier:NftTableViewCellIdentifier, cellType:  NftTableViewCell.self)) { index, model, cell in
+            cell.setViewModel(.init(nft: model))
+        }
+        .disposed(by: disposeBag)
+    }
+    
+    @objc
+    func tokenAction(sender: UIButton) {
+        walletTableView.dataSource = nil
+        self.viewModel.getTokenWallets().asObservable().bind(to: walletTableView.rx.items(cellIdentifier: WalletTableViewCellIdentifier, cellType: WalletTableViewCell.self)) { index, model, cell in
+            let wModel: TokenType = (index == 0) ? .solana(model.pubkey!) : .token(model)
+            cell.setViewModel(.init(solana: self.viewModel.solana, tokenType: wModel))
+        }
+        .disposed(by: disposeBag)
+    }
 }
 
 extension WalletViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.goToToken()
+        
+        //self.delegate?.goToToken()
     }
 }
