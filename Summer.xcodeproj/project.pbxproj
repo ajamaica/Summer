@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06064466267F5FE200B062CD /* NftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06064464267F5FE100B062CD /* NftTableViewCell.swift */; };
+		06064467267F5FE200B062CD /* NftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06064465267F5FE100B062CD /* NftTableViewCell.xib */; };
+		0606446C268020E600B062CD /* solanashue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0606446A268020E500B062CD /* solanashue.usdz */; };
+		0606446D268020E600B062CD /* solana_bot.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0606446B268020E500B062CD /* solana_bot.gif */; };
+		060644782680B65200B062CD /* RxSolana in Frameworks */ = {isa = PBXBuildFile; productRef = 060644772680B65200B062CD /* RxSolana */; };
+		0606447A2680B65200B062CD /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = 060644792680B65200B062CD /* Solana */; };
 		0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */; };
 		0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4C2655400D005EAE15 /* SolanaModule.swift */; };
 		064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F22657D06600D45DF2 /* UpsellViewModel.swift */; };
@@ -47,8 +53,6 @@
 		064F8558265A7ADF00D45DF2 /* TokenTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8557265A7ADF00D45DF2 /* TokenTag.swift */; };
 		06676758265535CD00108D21 /* UpsellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06676756265535CD00108D21 /* UpsellViewController.swift */; };
 		06676759265535CD00108D21 /* UpsellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06676757265535CD00108D21 /* UpsellViewController.xib */; };
-		0687A754267E229900AF3DC6 /* RxSolana in Frameworks */ = {isa = PBXBuildFile; productRef = 0687A753267E229900AF3DC6 /* RxSolana */; };
-		0687A756267E229900AF3DC6 /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = 0687A755267E229900AF3DC6 /* Solana */; };
 		06F065D626528ED000032BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D526528ED000032BDA /* AppDelegate.swift */; };
 		06F065D826528ED000032BDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F065D726528ED000032BDA /* SceneDelegate.swift */; };
 		06F065DF26528ED300032BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F065DE26528ED300032BDA /* Assets.xcassets */; };
@@ -89,6 +93,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06064464267F5FE100B062CD /* NftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftTableViewCell.swift; sourceTree = "<group>"; };
+		06064465267F5FE100B062CD /* NftTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NftTableViewCell.xib; sourceTree = "<group>"; };
+		0606446A268020E500B062CD /* solanashue.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = solanashue.usdz; sourceTree = "<group>"; };
+		0606446B268020E500B062CD /* solana_bot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = solana_bot.gif; sourceTree = "<group>"; };
 		0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccountStorage.swift; sourceTree = "<group>"; };
 		0648DA4C2655400D005EAE15 /* SolanaModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaModule.swift; sourceTree = "<group>"; };
 		064F84F22657D06600D45DF2 /* UpsellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsellViewModel.swift; sourceTree = "<group>"; };
@@ -155,16 +163,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0606447A2680B65200B062CD /* Solana in Frameworks */,
 				B3DE8AFF265CD1C600D6744A /* RxSwift in Frameworks */,
 				B3DE8B05265CD1C600D6744A /* RxBlocking in Frameworks */,
-				0687A754267E229900AF3DC6 /* RxSolana in Frameworks */,
 				B3DE8ACE265CCFDF00D6744A /* KeychainSwift in Frameworks */,
 				06F63A2E2664FBF9009925BE /* RxDataSources in Frameworks */,
 				06F63A3126650129009925BE /* Kingfisher in Frameworks */,
 				B3DE8B01265CD1C600D6744A /* RxRelay in Frameworks */,
-				0687A756267E229900AF3DC6 /* Solana in Frameworks */,
 				06F63A2C2664FBF9009925BE /* Differentiator in Frameworks */,
 				B3DE8B03265CD1C600D6744A /* RxCocoa in Frameworks */,
+				060644782680B65200B062CD /* RxSolana in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +193,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06064463267F5FBF00B062CD /* NFTCell */ = {
+			isa = PBXGroup;
+			children = (
+				06064464267F5FE100B062CD /* NftTableViewCell.swift */,
+				06064465267F5FE100B062CD /* NftTableViewCell.xib */,
+			);
+			path = NFTCell;
+			sourceTree = "<group>";
+		};
+		06064468268020CE00B062CD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				06064469268020DA00B062CD /* NFT */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		06064469268020DA00B062CD /* NFT */ = {
+			isa = PBXGroup;
+			children = (
+				0606446A268020E500B062CD /* solanashue.usdz */,
+				0606446B268020E500B062CD /* solana_bot.gif */,
+			);
+			path = NFT;
+			sourceTree = "<group>";
+		};
 		0648DA4726553EA3005EAE15 /* Dependencys */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +328,7 @@
 		064F850D2658D42800D45DF2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				06064463267F5FBF00B062CD /* NFTCell */,
 				064F8522265A0B5700D45DF2 /* Footer */,
 				064F851D2658E59700D45DF2 /* WalletCell */,
 				064F85182658DE7600D45DF2 /* Header */,
@@ -496,6 +531,7 @@
 		06F065D426528ED000032BDA /* Summer */ = {
 			isa = PBXGroup;
 			children = (
+				06064468268020CE00B062CD /* Assets */,
 				0648DA4726553EA3005EAE15 /* Dependencys */,
 				06F06605265292C600032BDA /* Coordinators */,
 				06F066082652935E00032BDA /* Views */,
@@ -619,8 +655,8 @@
 				06F63A2B2664FBF9009925BE /* Differentiator */,
 				06F63A2D2664FBF9009925BE /* RxDataSources */,
 				06F63A3026650129009925BE /* Kingfisher */,
-				0687A753267E229900AF3DC6 /* RxSolana */,
-				0687A755267E229900AF3DC6 /* Solana */,
+				060644772680B65200B062CD /* RxSolana */,
+				060644792680B65200B062CD /* Solana */,
 			);
 			productName = Summer;
 			productReference = 06F065D226528ED000032BDA /* Summer.app */;
@@ -699,7 +735,7 @@
 				B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				06F63A2A2664FBF9009925BE /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				06F63A2F26650128009925BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				0687A752267E229900AF3DC6 /* XCRemoteSwiftPackageReference "Solana.Swift" */,
+				060644762680B65200B062CD /* XCRemoteSwiftPackageReference "Solana.Swift" */,
 			);
 			productRefGroup = 06F065D326528ED000032BDA /* Products */;
 			projectDirPath = "";
@@ -717,8 +753,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0606446C268020E600B062CD /* solanashue.usdz in Resources */,
 				06676759265535CD00108D21 /* UpsellViewController.xib in Resources */,
 				064F85112658D43D00D45DF2 /* WalletViewController.xib in Resources */,
+				06064467267F5FE200B062CD /* NftTableViewCell.xib in Resources */,
+				0606446D268020E600B062CD /* solana_bot.gif in Resources */,
 				064F852B265A2F4400D45DF2 /* SettingsViewController.xib in Resources */,
 				064F851C2658DEC300D45DF2 /* WalletHeaderView.xib in Resources */,
 				064F8546265A6DCC00D45DF2 /* TokenViewController.xib in Resources */,
@@ -762,6 +801,7 @@
 				064F84F72657D0B600D45DF2 /* UpsellViewCoordinator.swift in Sources */,
 				06F06614265294DB00032BDA /* StartViewCoordinator.swift in Sources */,
 				064F8545265A6DCC00D45DF2 /* TokenViewController.swift in Sources */,
+				06064466267F5FE200B062CD /* NftTableViewCell.swift in Sources */,
 				064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */,
 				064F84FE2658A7D100D45DF2 /* CreateWalletViewModel.swift in Sources */,
 				06F0660C2652941200032BDA /* StartViewController.swift in Sources */,
@@ -1132,7 +1172,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0687A752267E229900AF3DC6 /* XCRemoteSwiftPackageReference "Solana.Swift" */ = {
+		060644762680B65200B062CD /* XCRemoteSwiftPackageReference "Solana.Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ajamaica/Solana.Swift.git";
 			requirement = {
@@ -1175,14 +1215,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0687A753267E229900AF3DC6 /* RxSolana */ = {
+		060644772680B65200B062CD /* RxSolana */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0687A752267E229900AF3DC6 /* XCRemoteSwiftPackageReference "Solana.Swift" */;
+			package = 060644762680B65200B062CD /* XCRemoteSwiftPackageReference "Solana.Swift" */;
 			productName = RxSolana;
 		};
-		0687A755267E229900AF3DC6 /* Solana */ = {
+		060644792680B65200B062CD /* Solana */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0687A752267E229900AF3DC6 /* XCRemoteSwiftPackageReference "Solana.Swift" */;
+			package = 060644762680B65200B062CD /* XCRemoteSwiftPackageReference "Solana.Swift" */;
 			productName = Solana;
 		};
 		06F63A2B2664FBF9009925BE /* Differentiator */ = {
