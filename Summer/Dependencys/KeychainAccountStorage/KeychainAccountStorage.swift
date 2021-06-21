@@ -9,6 +9,9 @@ import Foundation
 import KeychainSwift
 import Solana
 
+enum SolanaAccountStorageError: Error {
+    case unauthorized
+}
 struct KeychainAccountStorageModule: SolanaAccountStorage {
     private let tokenKey = "Summer"
     private let keychain = KeychainSwift()
@@ -23,9 +26,13 @@ struct KeychainAccountStorageModule: SolanaAccountStorage {
         }
     }
 
-    var account: Account? {
-        guard let data = keychain.getData(tokenKey) else {return nil}
-        return try? JSONDecoder().decode(Account.self, from: data)
+    var account: Result<Account, Error> {
+        // Read from the keychain
+        guard let data = keychain.getData(tokenKey) else { return .failure(SolanaAccountStorageError.unauthorized)  }
+        if let account = try? JSONDecoder().decode(Account.self, from: data) {
+            return .success(account)
+        }
+        return .failure(SolanaAccountStorageError.unauthorized)
     }
     func clear() -> Result<Void, Error> {
         keychain.clear()
