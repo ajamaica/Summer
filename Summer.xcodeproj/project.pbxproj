@@ -1136,8 +1136,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ajamaica/Solana.Swift.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		06F63A2A2664FBF9009925BE /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
