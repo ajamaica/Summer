@@ -11,8 +11,6 @@
 		06064467267F5FE200B062CD /* NftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06064465267F5FE100B062CD /* NftTableViewCell.xib */; };
 		0606446C268020E600B062CD /* solanashue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0606446A268020E500B062CD /* solanashue.usdz */; };
 		0606446D268020E600B062CD /* solana_bot.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0606446B268020E500B062CD /* solana_bot.gif */; };
-		060644782680B65200B062CD /* RxSolana in Frameworks */ = {isa = PBXBuildFile; productRef = 060644772680B65200B062CD /* RxSolana */; };
-		0606447A2680B65200B062CD /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = 060644792680B65200B062CD /* Solana */; };
 		0648DA4A26553EC2005EAE15 /* KeychainAccountStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4926553EC2005EAE15 /* KeychainAccountStorage.swift */; };
 		0648DA4D2655400D005EAE15 /* SolanaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648DA4C2655400D005EAE15 /* SolanaModule.swift */; };
 		064F84F32657D06600D45DF2 /* UpsellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F84F22657D06600D45DF2 /* UpsellViewModel.swift */; };
@@ -73,6 +71,7 @@
 		B3DE8B01265CD1C600D6744A /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B00265CD1C600D6744A /* RxRelay */; };
 		B3DE8B03265CD1C600D6744A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B02265CD1C600D6744A /* RxCocoa */; };
 		B3DE8B05265CD1C600D6744A /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B3DE8B04265CD1C600D6744A /* RxBlocking */; };
+		B7E0E5ED284FB126007A6F2D /* RxSolana in Frameworks */ = {isa = PBXBuildFile; productRef = B7E0E5EC284FB126007A6F2D /* RxSolana */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,8 +162,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0606447A2680B65200B062CD /* Solana in Frameworks */,
 				B3DE8AFF265CD1C600D6744A /* RxSwift in Frameworks */,
+				B7E0E5ED284FB126007A6F2D /* RxSolana in Frameworks */,
 				B3DE8B05265CD1C600D6744A /* RxBlocking in Frameworks */,
 				B3DE8ACE265CCFDF00D6744A /* KeychainSwift in Frameworks */,
 				06F63A2E2664FBF9009925BE /* RxDataSources in Frameworks */,
@@ -172,7 +171,6 @@
 				B3DE8B01265CD1C600D6744A /* RxRelay in Frameworks */,
 				06F63A2C2664FBF9009925BE /* Differentiator in Frameworks */,
 				B3DE8B03265CD1C600D6744A /* RxCocoa in Frameworks */,
-				060644782680B65200B062CD /* RxSolana in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,8 +653,7 @@
 				06F63A2B2664FBF9009925BE /* Differentiator */,
 				06F63A2D2664FBF9009925BE /* RxDataSources */,
 				06F63A3026650129009925BE /* Kingfisher */,
-				060644772680B65200B062CD /* RxSolana */,
-				060644792680B65200B062CD /* Solana */,
+				B7E0E5EC284FB126007A6F2D /* RxSolana */,
 			);
 			productName = Summer;
 			productReference = 06F065D226528ED000032BDA /* Summer.app */;
@@ -735,7 +732,7 @@
 				B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				06F63A2A2664FBF9009925BE /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				06F63A2F26650128009925BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				060644762680B65200B062CD /* XCRemoteSwiftPackageReference "Solana.Swift" */,
+				B7E0E5EB284FB126007A6F2D /* XCRemoteSwiftPackageReference "RxSolana.Swift" */,
 			);
 			productRefGroup = 06F065D326528ED000032BDA /* Products */;
 			projectDirPath = "";
@@ -1172,14 +1169,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		060644762680B65200B062CD /* XCRemoteSwiftPackageReference "Solana.Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ajamaica/Solana.Swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		06F63A2A2664FBF9009925BE /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
@@ -1212,19 +1201,17 @@
 				minimumVersion = 6.2.0;
 			};
 		};
+		B7E0E5EB284FB126007A6F2D /* XCRemoteSwiftPackageReference "RxSolana.Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OpenSolana/RxSolana.Swift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		060644772680B65200B062CD /* RxSolana */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 060644762680B65200B062CD /* XCRemoteSwiftPackageReference "Solana.Swift" */;
-			productName = RxSolana;
-		};
-		060644792680B65200B062CD /* Solana */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 060644762680B65200B062CD /* XCRemoteSwiftPackageReference "Solana.Swift" */;
-			productName = Solana;
-		};
 		06F63A2B2664FBF9009925BE /* Differentiator */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 06F63A2A2664FBF9009925BE /* XCRemoteSwiftPackageReference "RxDataSources" */;
@@ -1264,6 +1251,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B3DE8AFD265CD1C600D6744A /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxBlocking;
+		};
+		B7E0E5EC284FB126007A6F2D /* RxSolana */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7E0E5EB284FB126007A6F2D /* XCRemoteSwiftPackageReference "RxSolana.Swift" */;
+			productName = RxSolana;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

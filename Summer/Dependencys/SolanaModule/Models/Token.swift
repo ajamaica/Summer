@@ -10,10 +10,10 @@ import Foundation
 public protocol Token: Hashable, Decodable {
     associatedtype TT: TokenTag
     associatedtype TE: TokenExtensions
-    var chainId: Int { get }
+    var chainId: Int? { get }
     var address: String { get }
-    var symbol: String { get }
-    var name: String { get }
+    var symbol: String? { get }
+    var name: String? { get }
     var decimals: UInt8 { get }
     var logoURI: String? { get }
     var tags: [TT] { get }
@@ -23,16 +23,16 @@ public protocol Token: Hashable, Decodable {
 struct SummerToken: Token {
 
     let _tags: [String]
-    let chainId: Int
+    let chainId: Int?
     let address: String
-    let symbol: String
-    let name: String
+    let symbol: String?
+    let name: String?
     let decimals: UInt8
     let logoURI: String?
     var tags: [SummerTokenTag] = []
     let extensions: SummerTokenExtensions?
 
-    public init(_tags: [String], chainId: Int, address: String, symbol: String, name: String, decimals: UInt8, logoURI: String?, tags: [SummerTokenTag] = [], extensions: SummerTokenExtensions?) {
+    public init(_tags: [String], chainId: Int?, address: String, symbol: String?, name: String?, decimals: UInt8, logoURI: String?, tags: [SummerTokenTag] = [], extensions: SummerTokenExtensions?) {
         self._tags = _tags
         self.chainId = chainId
         self.address = address

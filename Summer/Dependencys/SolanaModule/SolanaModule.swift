@@ -15,7 +15,7 @@ protocol SolanaClient {
     func createAccount(withPhrase: SeedPhraseCollection) -> Single<Void>
     func getBalance() -> Single<UInt64>
     func getPublicKey() -> Single<String>
-    func sendSPL(mintAddress: String, decimals: UInt8, from: String, to: String, amount: UInt64) -> Single<String>
+    func sendSPL(mintAddress: String, from: String, to: String, amount: UInt64) -> Single<String>
     func getTokenWallets() -> Single<[SummerWallet]>
     func addToken(mintAddress: String) -> Single<(signature: String, newPubkey: String)>
     func getTokenAccountBalance(token: String) -> Single<SummerTokenAccountBalance>
@@ -46,7 +46,7 @@ class ConcreteSolanaClient: SolanaClient {
     let network = NetworkingRouter(endpoint: .devnetSolana)
 
     var solana: Solana {
-        Solana(router: network, accountStorage: self.accountStorage)
+        Solana(router: network)
     }
 
     init(endpoint: RPCEndpoint, accountStorage: KeychainAccountStorageModule) {
@@ -64,7 +64,7 @@ class ConcreteSolanaClient: SolanaClient {
     func createAccount(withPhrase: SeedPhraseCollection) -> Single<Void> {
         Single.create { emitter in
             let account = Account(phrase: withPhrase, network: self.endpoint.network, derivablePath: .default)!
-            emitter(self.solana.auth.save(account))
+            emitter(self.accountStorage.save(account))
             return Disposables.create()
         }
         
@@ -77,7 +77,7 @@ class ConcreteSolanaClient: SolanaClient {
     }
 
     private func getAccount() -> Single<Account> {
-        guard let account = try? self.solana.auth.account.get() else {
+        guard let account = try? self.accountStorage.account.get() else {
             return .error(SolanaClientError.accountNotSet)
         }
         return .just(account)
@@ -91,30 +91,29 @@ class ConcreteSolanaClient: SolanaClient {
 
     func sendSOL(to: String, amount: UInt64) -> Single<String> {
         return self.getAccount().flatMap { account in
-            self.solana.action.sendSOL(to: to, amount: amount)
+            self.solana.action.sendSOL(to: to, from: account, amount: amount)
         }
     }
 
     func sendSPL(mintAddress: String,
-                 decimals: UInt8,
                  from: String,
                  to: String,
                  amount: UInt64) -> Single<String> {
         
         return self.getAccount().flatMap { account in
-            self.solana.action.sendSPLTokens(mintAddress: mintAddress, decimals: decimals, from: from, to: to, amount: amount)
+            self.solana.action.sendSPLTokens(mintAddress: mintAddress, from: from, to: to, amount: amount, payer: account)
         }
     }
 
     func getTokenWallets() -> Single<[SummerWallet]> {
         return self.getAccount().flatMap { account in
             self.solana.action.getTokenWallets(account: account.publicKey.base58EncodedString)
-        }.map{
+        }.map {
             return $0
                 .map {
-                let extensions = SummerTokenExtensions(website: $0.token.extensions?.website, bridgeContract: $0.token.extensions?.bridgeContract)
-                let token = SummerToken(_tags: [], chainId: $0.token.chainId, address: $0.token.address, symbol: $0.token.symbol, name: $0.token.name, decimals: $0.token.decimals, logoURI: $0.token.logoURI, extensions: extensions)
-                return SummerWallet(pubkey: $0.pubkey, lamports: $0.lamports, token: token, liquidity: $0.isLiquidity)
+                    let extensions = SummerTokenExtensions(website: $0.token?.extensions?.website, bridgeContract: $0.token?.extensions?.bridgeContract)
+                    let token = SummerToken(_tags: [], chainId: $0.token?.chainId, address: $0.token!.address, symbol: $0.token?.symbol, name: $0.token?.name, decimals: $0.ammount?.decimals ?? 0, logoURI: $0.token?.logoURI, extensions: extensions)
+                return SummerWallet(pubkey: $0.pubkey, token: token, liquidity: $0.isLiquidity)
             }
         }
     }
@@ -129,7 +128,7 @@ class ConcreteSolanaClient: SolanaClient {
 
     func addToken(mintAddress: String) -> Single<(signature: String, newPubkey: String)> {
         return self.getAccount().flatMap { account in
-            self.solana.action.createTokenAccount(mintAddress: mintAddress)
+            self.solana.action.createTokenAccount(mintAddress: mintAddress, payer: account)
         }
     }
 }
